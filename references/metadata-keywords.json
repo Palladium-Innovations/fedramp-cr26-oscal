@@ -1,0 +1,34 @@
+{
+  "props": [
+    {
+      "name": "keywords",
+      "values": [
+        "FedRAMP",
+        "FedRAMP 20x",
+        "FedRAMP Rev5",
+        "Consolidated Rules for 2026",
+        "CR26",
+        "cloud security",
+        "cloud service offering",
+        "authorization",
+        "continuous monitoring",
+        "cybersecurity",
+        "security requirements",
+        "machine-readable requirements",
+        "compliance automation",
+        "control catalog",
+        "control assessment",
+        "assessment evidence",
+        "OSCAL",
+        "Open Security Controls Assessment Language",
+        "NIST SP 800-53",
+        "Risk Management Framework",
+        "vulnerability management",
+        "identity and access management",
+        "incident response",
+        "configuration management",
+        "system security"
+      ]
+    }
+  ]
+}

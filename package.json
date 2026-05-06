@@ -1,0 +1,26 @@
+{
+  "name": "fedramp-cr26-oscal",
+  "version": "0.1.0",
+  "description": "Unofficial OSCAL catalog and profile generator for FedRAMP Consolidated Rules for 2026 preview data.",
+  "type": "module",
+  "bin": {
+    "cr26-oscal": "./src/cli.js"
+  },
+  "scripts": {
+    "generate": "bun src/cli.js",
+    "validate:oscal": "bun src/validate-oscal.js",
+    "test": "bun test",
+    "check": "bun test"
+  },
+  "keywords": [
+    "fedramp",
+    "cr26",
+    "oscal",
+    "compliance-as-code",
+    "20x"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "bun": ">=1.2"
+  }
+}

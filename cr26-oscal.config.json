@@ -1,0 +1,133 @@
+{
+  "oscal": {
+    "version": "1.2.1",
+    "namespace": "http://csrc.nist.gov/ns/oscal/1.0",
+    "xmlModel": {
+      "schematypens": "http://www.w3.org/2001/XMLSchema",
+      "type": "application/xml",
+      "href": "https://github.com/usnistgov/OSCAL/releases/download/v1.2.1/oscal_complete_schema.xsd"
+    }
+  },
+  "output": {
+    "rootFolder": "FedRAMP",
+    "formats": [
+      {
+        "id": "xml",
+        "folder": "xml",
+        "extension": "xml"
+      },
+      {
+        "id": "json",
+        "folder": "json",
+        "extension": "json"
+      },
+      {
+        "id": "yaml",
+        "folder": "yaml",
+        "extension": "yaml"
+      }
+    ],
+    "catalogs": [
+      {
+        "id": "cr26",
+        "folder": "catalog",
+        "filenameBase": "FedRAMP_CR26_catalog",
+        "title": "FedRAMP Consolidated Rules for 2026 - Unofficial OSCAL Catalog",
+        "scopes": [
+          "both",
+          "20x",
+          "rev5"
+        ],
+        "includeKsi": true
+      }
+    ],
+    "profile": {
+      "folder": "profile",
+      "profiles": [
+        {
+          "id": "20x",
+          "folder": "20x",
+          "filenameBase": "FedRAMP_20x_profile",
+          "title": "FedRAMP 20x Consolidated Rules for 2026 - Unofficial OSCAL Profile",
+          "scopes": [
+            "both",
+            "20x"
+          ],
+          "includeKsi": true
+        },
+        {
+          "id": "rev5",
+          "folder": "rev5",
+          "filenameBase": "FedRAMP_rev5_profile",
+          "title": "FedRAMP Rev5 Consolidated Rules for 2026 - Unofficial OSCAL Profile",
+          "scopes": [
+            "both",
+            "rev5"
+          ],
+          "includeKsi": false
+        }
+      ]
+    },
+    "mapping": {
+      "folder": "mapping",
+      "formats": [
+        {
+          "id": "xml",
+          "folder": "xml",
+          "extension": "xml"
+        }
+      ],
+      "mappings": [
+        {
+          "id": "cr26-to-sp800-53-rev5",
+          "filenameBase": "FedRAMP_CR26_to_NIST_SP-800-53_rev5_mapping-collection",
+          "title": "FedRAMP CR26 to NIST SP 800-53 Rev5 - Unofficial OSCAL Mapping Collection",
+          "description": "Initial machine-derived mapping from CR26 source control references to NIST SP 800-53 Rev5 controls. Relationships require human review.",
+          "sourceResource": {
+            "type": "catalog",
+            "href": "../../catalog/xml/FedRAMP_CR26_catalog.xml"
+          },
+          "targetResource": {
+            "type": "catalog",
+            "href": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.4.0/src/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml"
+          },
+          "relationship": "intersects-with",
+          "method": "automation",
+          "matchingRationale": "semantic",
+          "status": "draft",
+          "scopes": [
+            "both",
+            "20x",
+            "rev5"
+          ],
+          "includeKsi": true
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "lastModified": "2026-05-05T00:00:00.00000-00:00",
+    "version": "0.1.0",
+    "propReferences": [
+      "references/metadata-keywords.json"
+    ],
+    "linkReferences": [
+      "references/metadata-links.json"
+    ],
+    "responsibilityReferences": [
+      "references/metadata-responsibility.json"
+    ],
+    "revisions": [
+      {
+        "title": "Initial harmonized OSCAL catalog generation",
+        "lastModified": "2026-05-05T00:00:00.00000-00:00",
+        "version": "0.1.0",
+        "oscalVersion": "1.2.1",
+        "versionHistory": {
+          "title": "fedramp-cr26-oscal 0.1.0 release history",
+          "href": "urn:palladium:fedramp-cr26-oscal:version-history:0.1.0"
+        }
+      }
+    ]
+  }
+}

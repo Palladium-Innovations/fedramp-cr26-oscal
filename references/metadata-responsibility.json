@@ -1,0 +1,58 @@
+{
+  "roles": [
+    {
+      "id": "creator",
+      "title": "Unofficial OSCAL Catalog Creator",
+      "profileTitle": "Unofficial OSCAL Profile Creator",
+      "mappingTitle": "Unofficial OSCAL Mapping Creator"
+    },
+    {
+      "id": "publisher",
+      "title": "Unofficial OSCAL Catalog Publisher",
+      "profileTitle": "Unofficial OSCAL Profile Publisher",
+      "mappingTitle": "Unofficial OSCAL Mapping Publisher"
+    },
+    {
+      "id": "contact",
+      "title": "Project Contact"
+    }
+  ],
+  "parties": [
+    {
+      "id": "palladium",
+      "type": "organization",
+      "name": "Palladium Innovations, LLC",
+      "emailAddresses": [
+        "oscal@go-palladium.com"
+      ],
+      "address": {
+        "addrLines": [
+          "341 Angela Lane"
+        ],
+        "city": "Mary Esther",
+        "state": "FL",
+        "postalCode": "32569"
+      }
+    }
+  ],
+  "responsibleParties": [
+    {
+      "roleId": "creator",
+      "partyIds": [
+        "palladium"
+      ]
+    },
+    {
+      "roleId": "publisher",
+      "partyIds": [
+        "palladium"
+      ]
+    },
+    {
+      "roleId": "contact",
+      "partyIds": [
+        "palladium"
+      ]
+    }
+  ]
+}

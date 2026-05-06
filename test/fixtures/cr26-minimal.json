@@ -1,0 +1,154 @@
+{
+  "info": {
+    "title": "FedRAMP Consolidated Rules for 2026 Public Preview",
+    "description": "Minimal fixture.",
+    "version": "2026.05.04.01-preview",
+    "last_updated": "2026-05-04"
+  },
+  "FRD": {
+    "info": {
+      "name": "FedRAMP Definitions",
+      "short_name": "FRD",
+      "web_name": "definitions",
+      "purpose": "Definitions.",
+      "status": "stable",
+      "effective": {
+        "both": {
+          "is": "required"
+        }
+      }
+    },
+    "data": {
+      "both": {
+        "FRD-CSP": {
+          "term": "Cloud Service Provider",
+          "definition": "A provider of a cloud service offering.",
+          "alts": [
+            "Provider"
+          ],
+          "updated": [
+            {
+              "date": "2026-05-04",
+              "comment": "Initial fixture."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "FRR": {
+    "VDR": {
+      "info": {
+        "name": "Vulnerability Detection and Response",
+        "short_name": "VDR",
+        "web_name": "vulnerability-detection-and-response",
+        "purpose": "Manage vulnerabilities.",
+        "status": "stable",
+        "effective": {
+          "20x": {
+            "is": "required"
+          },
+          "rev5": {
+            "is": "required"
+          }
+        },
+        "labels": {
+          "CSO": {
+            "name": "General Provider Responsibilities",
+            "description": "Rules for providers."
+          },
+          "AGM": {
+            "name": "Agency Guidance",
+            "description": "Rules for agencies."
+          }
+        }
+      },
+      "data": {
+        "both": {
+          "CSO": {
+            "VDR-CSO-DET": {
+              "name": "Vulnerability Detection",
+              "statement": "Providers MUST detect vulnerabilities.",
+              "primary_key_word": "MUST",
+              "affects": [
+                "Providers"
+              ],
+              "terms": [
+                "Cloud Service Provider"
+              ],
+              "controls": [
+                "ra-5"
+              ],
+              "updated": [
+                {
+                  "date": "2026-05-04",
+                  "comment": "Initial fixture."
+                }
+              ]
+            }
+          }
+        },
+        "20x": {
+          "AGM": {
+            "VDR-AGM-RVR": {
+              "name": "Review Vulnerability Reports",
+              "statement": "Agencies SHOULD review vulnerability reports.",
+              "primary_key_word": "SHOULD",
+              "affects": [
+                "Agencies"
+              ],
+              "updated": [
+                {
+                  "date": "2026-05-04",
+                  "comment": "Initial fixture."
+                }
+              ]
+            }
+          }
+        },
+        "rev5": {
+          "AGM": {
+            "VDR-AGM-ATO": {
+              "name": "Review Authorization Materials",
+              "statement": "Agencies SHOULD review authorization materials.",
+              "primary_key_word": "SHOULD",
+              "affects": [
+                "Agencies"
+              ],
+              "updated": [
+                {
+                  "date": "2026-05-04",
+                  "comment": "Initial fixture."
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "KSI": {
+    "IAM": {
+      "id": "KSI-IAM",
+      "name": "Identity and Access Management",
+      "web_name": "identity-and-access-management",
+      "short_name": "IAM",
+      "status": "stable",
+      "indicators": {
+        "KSI-IAM-AAM": {
+          "name": "Automating Account Management",
+          "statement": "Account lifecycle is automated.",
+          "controls": [
+            "ac-2.2"
+          ],
+          "updated": [
+            {
+              "date": "2026-05-04",
+              "comment": "Initial fixture."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
