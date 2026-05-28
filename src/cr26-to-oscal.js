@@ -62,6 +62,35 @@ function catalogScopes(catalog) {
   return catalog.scopes ?? ["both"];
 }
 
+function dataForScope(ruleSet, scope) {
+  if (ruleSet.data?.[scope]) {
+    return ruleSet.data[scope];
+  }
+
+  if (scope === "both" && ruleSet.data?.all) {
+    return ruleSet.data.all;
+  }
+
+  if (scope === "all" && ruleSet.data?.both) {
+    return ruleSet.data.both;
+  }
+
+  return {};
+}
+
+function subsetInfoForScope(ruleSet, scope, label) {
+  return ruleSet.info?.[scope]?.subsets?.[label] ?? ruleSet.info?.[scope]?.labels?.[label];
+}
+
+function findLabelInfo(ruleSet, label, scopes) {
+  return (
+    ruleSet.info.subsets?.[label] ??
+    ruleSet.info.labels?.[label] ??
+    scopes.map((scope) => subsetInfoForScope(ruleSet, scope, label)).find(Boolean) ??
+    { name: label }
+  );
+}
+
 function includesKsi(catalog) {
   return catalog.includeKsi ?? false;
 }
@@ -85,7 +114,7 @@ function frrControlIds(rules, scopes) {
 
   for (const ruleSet of Object.values(rules.FRR ?? {})) {
     for (const scope of scopes) {
-      for (const controls of Object.values(ruleSet.data?.[scope] ?? {})) {
+      for (const controls of Object.values(dataForScope(ruleSet, scope))) {
         ids.push(...Object.keys(controls));
       }
     }
@@ -114,7 +143,7 @@ function frrMappingEntries(rules, mapping) {
 
   for (const ruleSet of Object.values(rules.FRR ?? {})) {
     for (const scope of catalogScopes(mapping)) {
-      for (const controls of Object.values(ruleSet.data?.[scope] ?? {})) {
+      for (const controls of Object.values(dataForScope(ruleSet, scope))) {
         for (const [sourceId, item] of Object.entries(controls)) {
           const targetIds = mappingTargets(item);
 
@@ -622,7 +651,7 @@ function frrControlsByLabel(ruleSet, catalog) {
   const labels = new Map();
 
   for (const scope of catalogScopes(catalog)) {
-    for (const [label, controls] of Object.entries(ruleSet.data?.[scope] ?? {})) {
+    for (const [label, controls] of Object.entries(dataForScope(ruleSet, scope))) {
       labels.set(label, [...(labels.get(label) ?? []), ...Object.entries(controls)]);
     }
   }
@@ -633,11 +662,10 @@ function frrControlsByLabel(ruleSet, catalog) {
 function frrRuleSetGroupXml(key, ruleSet, catalog, context) {
   const controlsByLabel = frrControlsByLabel(ruleSet, catalog);
   const labelGroups = [];
+  const scopes = catalogScopes(catalog);
 
   for (const [label, controls] of controlsByLabel.entries()) {
-    const labelInfo = ruleSet.info.labels?.[label] ?? {
-      name: label
-    };
+    const labelInfo = findLabelInfo(ruleSet, label, scopes);
 
     labelGroups.push(`    <group class="section" id="${escapeXml(`${key}-${label}`)}">
       <title>${escapeXml(labelInfo.name)}</title>${groupPartXml("overview", labelInfo.description, "      ")}

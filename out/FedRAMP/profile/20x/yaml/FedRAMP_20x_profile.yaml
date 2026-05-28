@@ -41,11 +41,13 @@ profile:
     - with-ids:
       - CDS-CSO-PUB
       - CDS-CSO-SVC
+      - CDS-CSO-PAR
       - CDS-CSO-UTC
       - CDS-CSO-CBF
       - CDS-CSO-RIS
       - CDS-CSO-HAD
       - CDS-CSO-PSM
+      - CDS-CSO-RPS
       - CDS-TRC-USH
       - CDS-TRC-PAC
       - CDS-TRC-AAI
@@ -95,15 +97,13 @@ profile:
       - FSI-CSO-IMA
       - FSI-CSO-ACK
       - ICP-FRP-ORV
-      - ICP-CSO-PAR
       - ICP-CSO-EFR
-      - ICP-CSO-EFI
-      - ICP-CSO-AAP
-      - ICP-CSO-CSA
+      - ICP-CSO-DPR
       - ICP-CSO-IIR
       - ICP-CSO-OIR
       - ICP-CSO-FIR
-      - ICP-CSO-IRT
+      - ICP-CSO-EFI
+      - ICP-CSO-AIR
       - MAS-CSO-IIR
       - MAS-CSO-FLO
       - MAS-CSO-TPR
@@ -234,27 +234,37 @@ profile:
       - AGU-AGC-AIP
       - AGU-AGC-NAL
       - AGU-AGC-GRC
-      - AGU-AGC-CCA
       - AGU-AGC-NAR
       - AGU-AGC-NAI
-      - AGU-AGC-LLR
       - AGU-AGC-WKG
       - AGU-AGC-LIA
       - AGU-AGC-SIN
       - AGU-USE-ABU
-      - AGU-USE-ERP
-      - AGU-USE-CRC
       - AGU-USE-RCF
       - AGU-USE-RSG
-      - AGU-USE-CCP
+      - AGU-USE-AFR
       - AGU-USE-ROR
       - AGU-USE-NFC
-      - AGU-USE-ASC
       - AGU-USE-DSO
       - AGU-USE-NPC
-      - AGU-USE-INH
+      - AGU-USE-RIR
       - AGU-SPN-MRC
-      - AGU-SPN-OAR
+      - REC-FRP-RAO
+      - REC-FRP-FOC
+      - REC-FRP-DRD
+      - REC-IAS-ACC
+      - REC-IAS-ADA
+      - REC-IAS-PSC
+      - REC-IAS-ANR
+      - REC-IAS-RAS
+      - REC-IAS-RAR
+      - REC-IAS-SEP
+      - REC-IAS-RQU
+      - REC-IAS-AFI
+      - REC-IAS-CFI
+      - REC-IAS-PST
+      - REC-IAS-CAP
+      - REC-IAS-INV
       - KSI-CMT-LMC
       - KSI-CMT-RMV
       - KSI-CMT-RVP

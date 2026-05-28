@@ -121,6 +121,42 @@ catalog:
           - id: CDS-CSO-SVC_smt
             name: statement
             prose: Providers MUST publicly share a detailed list of specific services and their security categories that are included in the cloud service offering using clear feature or service names that align with standard public marketing materials; this list MUST be complete enough for a potential customer to determine which services are and are not included in the FedRAMP Minimum Assessment Scope without requesting access to underlying FedRAMP Certification Data.
+        - id: CDS-CSO-PAR
+          class: frr
+          title: Public Availability Reporting
+          links:
+          - href: '#df6206d3-ecb6-56d4-a92f-15449e7baa11'
+            rel: definition
+            text: All Necessary Parties
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+            rel: definition
+            text: Cloud Service Offering
+          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
+            rel: definition
+            text: Incident
+          - href: '#aac45a6b-0342-5b5b-8723-d69b693ae120'
+            rel: definition
+            text: Machine-Readable
+          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
+            rel: definition
+            text: Provider
+          parts:
+          - id: CDS-CSO-PAR_smt_a
+            name: statement
+            class: class-a
+            prose: "Providers with Class A Certifications SHOULD maintain a web service, available to all necessary parties, that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats; this service SHOULD be available even if the primary cloud service offering is unavailable."
+          - id: CDS-CSO-PAR_smt_b
+            name: statement
+            class: class-b
+            prose: "Providers with Class B Certifications MUST maintain a web service, available to all necessary parties, that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats; this service MUST be available even if the primary cloud service offering is unavailable."
+          - id: CDS-CSO-PAR_smt_c
+            name: statement
+            class: class-c
+            prose: "Providers with Class C Certifications MUST maintain a web service, available to all necessary parties, that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats; this service MUST be available even if the primary cloud service offering is unavailable."
+          - id: CDS-CSO-PAR_smt_d
+            name: statement
+            class: class-d
+            prose: "Providers with Class D Certifications MUST maintain a web service, available to all necessary parties, that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats; this service MUST be available even if the primary cloud service offering is unavailable."
         - id: CDS-CSO-UTC
           class: frr
           title: Use Trust Centers
@@ -227,19 +263,19 @@ catalog:
           - id: CDS-CSO-PSM_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MAY supply per-service FedRAMP Certification materials.
+            prose: Providers with Class A Certifications MAY supply per-service FedRAMP Certification materials.
           - id: CDS-CSO-PSM_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MAY supply per-service FedRAMP Certification materials.
+            prose: Providers with Class B Certifications MAY supply per-service FedRAMP Certification materials.
           - id: CDS-CSO-PSM_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings MAY supply per-service FedRAMP Certification materials.
+            prose: Providers with Class C Certifications MAY supply per-service FedRAMP Certification materials.
           - id: CDS-CSO-PSM_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings MUST supply per-service FedRAMP Certification materials.
+            prose: Providers with Class D Certifications MUST supply per-service FedRAMP Certification materials.
           - id: CDS-CSO-PSM_note_1
             name: guidance
             class: note
@@ -248,6 +284,29 @@ catalog:
             name: guidance
             class: note
             prose: Providers are encouraged to provide a single comprehensive set of materials for all shared aspects of the service offering and only provide separate materials for unique aspects of each service to minimize the burden on providers and agencies.
+        - id: CDS-CSO-RPS
+          class: frr
+          title: Responsible Public Sharing
+          links:
+          - href: '#7efa801a-7cd9-5f98-9fa8-daa9aa5f151a'
+            rel: definition
+            text: Certification Package
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+            rel: definition
+            text: Cloud Service Offering
+          - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
+            rel: definition
+            text: Likely
+          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
+            rel: definition
+            text: Provider
+          - href: '#2a869fa8-5fe4-53df-8881-089936855d71'
+            rel: definition
+            text: Responsibly
+          parts:
+          - id: CDS-CSO-RPS_smt
+            name: statement
+            prose: Providers MAY responsibly share some or all of the information in a FedRAMP Certification Package publicly or with other parties if the provider determines doing so will NOT likely have an adverse effect on the cloud service offering.
       - id: CDS-TRC
         class: section
         title: FedRAMP-Compatible Trust Centers
@@ -422,14 +481,14 @@ catalog:
         parts:
         - name: overview
           prose: These rules apply to providers for FedRAMP 20x Certifications.
-      - id: CDS-CSL
+      - id: CDS-CSF
         class: section
         title: Rev5-Specific Provider Responsibilities
         parts:
         - name: overview
           prose: These rules apply to providers for FedRAMP Rev5 Certifications.
         controls:
-        - id: CDS-CSL-TCM
+        - id: CDS-CSF-TCM
           class: frr
           title: Trust Center Migration
           links:
@@ -446,10 +505,10 @@ catalog:
             rel: definition
             text: Trust Center
           parts:
-          - id: CDS-CSL-TCM_smt
+          - id: CDS-CSF-TCM_smt
             name: statement
             prose: Providers MUST notify all necessary parties when migrating to a trust center and MUST provide information in their existing USDA Connect Community Portal secure folders explaining how to use the trust center to obtain FedRAMP Certification Data.
-        - id: CDS-CSL-SCD
+        - id: CDS-CSF-SCD
           class: frr
           title: Structured Certification Data
           links:
@@ -463,22 +522,22 @@ catalog:
             rel: definition
             text: Provider
           parts:
-          - id: CDS-CSL-SCD_smt_a
+          - id: CDS-CSF-SCD_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MUST supply semi-structured text-based FedRAMP Certification Data.
-          - id: CDS-CSL-SCD_smt_b
+            prose: Providers with Class A Certifications MUST supply semi-structured text-based FedRAMP Certification Data.
+          - id: CDS-CSF-SCD_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MUST supply semi-structured text-based FedRAMP Certification Data.
-          - id: CDS-CSL-SCD_smt_c
+            prose: Providers with Class B Certifications MUST supply semi-structured text-based FedRAMP Certification Data.
+          - id: CDS-CSF-SCD_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings MUST supply semi-structured text-based FedRAMP Certification Data.
-          - id: CDS-CSL-SCD_smt_d
+            prose: Providers with Class C Certifications MUST supply semi-structured text-based FedRAMP Certification Data.
+          - id: CDS-CSF-SCD_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings MUST supply comprehensive machine-readable FedRAMP Certification Data.
+            prose: Providers with Class D Certifications MUST supply comprehensive machine-readable FedRAMP Certification Data.
     - id: CCM
       class: rule-area
       title: Collaborative Continuous Monitoring
@@ -670,6 +729,12 @@ catalog:
           - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
             rel: definition
             text: Cloud Service Offering
+          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
+            rel: definition
+            text: FedRAMP Reportable Incident
+          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
+            rel: definition
+            text: Incident
           - href: '#0296a3ca-b388-5207-b6b3-3c4ebe86d4f0'
             rel: definition
             text: Ongoing Certification
@@ -860,19 +925,19 @@ catalog:
           - id: CCM-QTR-MTG_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings MAY host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
+            prose: "Providers with Class A Certifications MAY host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
           - id: CCM-QTR-MTG_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
+            prose: "Providers with Class B Certifications SHOULD host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
           - id: CCM-QTR-MTG_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings MUST host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
+            prose: "Providers with Class C Certifications MUST host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
           - id: CCM-QTR-MTG_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings MUST host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
+            prose: "Providers with Class D Certifications MUST host a synchronous Quarterly Review every 3 months, open to all necessary parties, to review aspects of the most recent Ongoing Certification Reports that the provider determines are of the most relevance to agencies."
         - id: CCM-QTR-REG
           class: frr
           title: Meeting Registration Info
@@ -1147,9 +1212,9 @@ catalog:
           class: frr
           title: Elevated Reaction Timeframes
           links:
-          - href: '#afa76858-d8f1-5a92-a522-c3ca0e3cd735'
+          - href: '#79c285a3-ed00-5d12-957d-d1057122851c'
             rel: definition
-            text: Catastrophic Adverse Effect
+            text: Debilitating Customer Effect
           - href: '#b4c747be-af61-5e69-ab92-404dc73c982f'
             rel: definition
             text: FedRAMP Certified
@@ -1163,7 +1228,7 @@ catalog:
           - id: FSI-FRP-ERT_note_1
             name: guidance
             class: note
-            prose: FedRAMP Class D Certified cloud service providers are expected to address Emergency messages (including tests) from FedRAMP with a reaction time appropriate to operating a service where failure to react rapidly might have a severe or catastrophic adverse effect on the U.S. Government; some Emergency messages may require faster reaction and all such messages should be addressed as quickly as possible.
+            prose: FedRAMP Class D Certified cloud service providers are expected to address Emergency messages (including tests) from FedRAMP with a reaction time appropriate to operating a service where failure to react rapidly might have a severe or debilitating customer effect on the U.S. Government; some Emergency messages may require faster reaction and all such messages should be addressed as quickly as possible.
         - id: FSI-FRP-COR
           class: frr
           title: Explain Corrective Actions
@@ -1210,7 +1275,7 @@ catalog:
           - id: FSI-CSO-INB_note_2
             name: guidance
             class: note
-            prose: If a provider establishes a new inbox in reaction to this guidance that is different from the Security Email then they must follow the FSI-CSO-NOC rules to notify FedRAMP.
+            prose: If a provider establishes a new inbox in reaction to this guidance that is different from the Security Email then they must follow the FSI-CSO-NOC (Notification of Changes) rules to notify FedRAMP.
         - id: FSI-CSO-NOC
           class: frr
           title: Notification of Changes
@@ -1324,7 +1389,7 @@ catalog:
       title: Incident Communications Procedures
       parts:
       - name: overview
-        prose: "The Incident Communications Procedures rules explain how providers must communicate incident information to FedRAMP, CISA, and government customers."
+        prose: The Incident Communications Procedures rules explain how providers must communicate incident information to FedRAMP and government customers.
       groups:
       - id: ICP-FRP
         class: section
@@ -1354,49 +1419,16 @@ catalog:
         - name: overview
           prose: These rules apply to providers with FedRAMP Certifications of any type.
         controls:
-        - id: ICP-CSO-PAR
-          class: frr
-          title: Public Availability Reporting
-          links:
-          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
-            rel: definition
-            text: Cloud Service Offering
-          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
-            rel: definition
-            text: Incident
-          - href: '#aac45a6b-0342-5b5b-8723-d69b693ae120'
-            rel: definition
-            text: Machine-Readable
-          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
-            rel: definition
-            text: Provider
-          parts:
-          - id: ICP-CSO-PAR_smt_a
-            name: statement
-            class: class-a
-            prose: "Providers of Class A offerings SHOULD maintain a publicly accessible status service that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats."
-          - id: ICP-CSO-PAR_smt_b
-            name: statement
-            class: class-b
-            prose: "Providers of Class B offerings SHOULD maintain a publicly accessible status service that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats."
-          - id: ICP-CSO-PAR_smt_c
-            name: statement
-            class: class-c
-            prose: "Providers of Class C offerings MUST maintain a publicly accessible status service that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats."
-          - id: ICP-CSO-PAR_smt_d
-            name: statement
-            class: class-d
-            prose: "Providers of Class D offerings MUST maintain a publicly accessible status service that indicates current and historical availability of core services within the cloud service offering over at least the past 30 days, including availability incidents, in both human-readable and machine-readable formats."
         - id: ICP-CSO-EFR
           class: frr
-          title: Evaluate Federal Reportability
+          title: Evaluate FedRAMP Reportability
           links:
+          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
+            rel: definition
+            text: FedRAMP Reportable Incident
           - href: '#d4b9caf0-97ab-59a0-b7e4-6b60be7b754c'
             rel: definition
             text: Federal Customer Data
-          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
-            rel: definition
-            text: Federal Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
@@ -1412,176 +1444,111 @@ catalog:
           parts:
           - id: ICP-CSO-EFR_smt
             name: statement
-            prose: Providers MUST promptly evaluate incidents to determine if they affect confidentiality or integrity of federal customer data or are likely to affect confidentiality or integrity of federal customer data.
-          - id: ICP-CSO-EFR_note_1
-            name: guidance
-            class: note
-            prose: An incident that meets this test is a federal reportable incident.
-        - id: ICP-CSO-EFI
+            prose: Providers MUST promptly evaluate incidents to determine if they affect confidentiality or integrity of federal customer data or are likely to affect confidentiality or integrity of federal customer data; such incidents are FedRAMP Reportable Incidents and must be reported following the FedRAMP Incident Communications Procedures.
+        - id: ICP-CSO-DPR
           class: frr
-          title: Estimate Federal Impact
+          title: Default PAIN Rating
           links:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#afa76858-d8f1-5a92-a522-c3ca0e3cd735'
-            rel: definition
-            text: Catastrophic Adverse Effect
           - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
             rel: definition
-            text: Federal Reportable Incident
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
-          - href: '#6e75c49b-a1f0-5e61-9505-dda52bc5d00d'
-            rel: definition
-            text: Limited Adverse Effect
-          - href: '#44aca505-21ec-5acf-a43e-009a819c136d'
-            rel: definition
-            text: Negligible Adverse Effect
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
+          - href: '#f00a3c3e-7591-5ab0-ba05-c2d3c2876e86'
+            rel: definition
+            text: Promptly
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
-          - href: '#158877ff-4e6a-50ce-8f01-1a5a0730ff92'
-            rel: definition
-            text: Serious Adverse Effect
           parts:
-          - id: ICP-CSO-EFI_smt
+          - id: ICP-CSO-DPR_smt
             name: statement
-            prose: Providers MUST evaluate federal reportable incidents to estimate adverse impact on government customers and assign a Potential Adverse Impact N-rating.
-        - id: ICP-CSO-AAP
-          class: frr
-          title: Notify All Affected Parties
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          - href: '#7075ad02-7478-50e0-aef3-6f4fe89d1c71'
-            rel: definition
-            text: All Affected Parties
-          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
-            rel: definition
-            text: Cloud Service Offering
-          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
-            rel: definition
-            text: Federal Reportable Incident
-          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
-            rel: definition
-            text: Incident
-          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
-            rel: definition
-            text: Provider
-          - href: '#2a869fa8-5fe4-53df-8881-089936855d71'
-            rel: definition
-            text: Responsibly
-          - href: '#6374f5b2-4fd2-5f1b-9c5d-0cd31b0367cf'
-            rel: definition
-            text: Trust Center
-          parts:
-          - id: ICP-CSO-AAP_smt
-            name: statement
-            prose: "Providers MUST responsibly notify all affected parties after identifying federal reportable incidents using email, push notification, form submission, secure portal upload, or another method specified by FedRAMP rules or written agency agreement."
-        - id: ICP-CSO-CSA
-          class: frr
-          title: Notify Cybersecurity and Infrastructure Security Agency
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          - href: '#d4b9caf0-97ab-59a0-b7e4-6b60be7b754c'
-            rel: definition
-            text: Federal Customer Data
-          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
-            rel: definition
-            text: Incident
-          - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
-            rel: definition
-            text: Likely
-          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
-            rel: definition
-            text: Provider
-          - href: '#2a869fa8-5fe4-53df-8881-089936855d71'
-            rel: definition
-            text: Responsibly
-          - href: '#3c623a28-172d-5321-88d8-480005a18fe4'
-            rel: reference
-          parts:
-          - id: ICP-CSO-CSA_smt
-            name: statement
-            prose: "Providers MUST responsibly notify the Cybersecurity and Infrastructure Security Agency if an incident affects or is likely to affect the confidentiality or integrity of federal customer data, following the Cybersecurity and Infrastructure Security Agency Federal Incident Notification Guidelines."
+            prose: Providers MUST treat FedRAMP Reportable Incidents as if they have a Potential Agency Impact N-rating (PAIN) of 5 UNLESS they promptly estimate the PAIN rating following the rule in ICP-CSO-EFI (Estimate Federal Impact).
         - id: ICP-CSO-IIR
           class: frr
           title: Initial Incident Report
           links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
           - href: '#7075ad02-7478-50e0-aef3-6f4fe89d1c71'
             rel: definition
             text: All Affected Parties
           - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
             rel: definition
-            text: Federal Reportable Incident
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
           - href: '#f020c1bb-8f8a-5ceb-b694-c50c4bb58400'
             rel: definition
             text: Initial Incident Report (IIR)
-          - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
-            rel: definition
-            text: Potential Adverse Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
           - href: '#2a869fa8-5fe4-53df-8881-089936855d71'
             rel: definition
             text: Responsibly
-          - href: '#6888d006-4bab-5c8e-9139-463f905bcc6b'
-            rel: definition
-            text: Vulnerability Response
           parts:
-          - id: ICP-CSO-IIR_smt
+          - id: ICP-CSO-IIR_smt_a
             name: statement
-            prose: Providers MUST responsibly notify all affected parties after identifying federal reportable incidents by providing an Initial Incident Report with all available required information.
+            class: class-a
+            prose: 'Providers with Class A Certifications SHOULD responsibly notify all affected parties after identifying FedRAMP Reportable Incidents by providing an Initial Incident Report with as much of the following information that is available at the time of reporting:'
+          - id: ICP-CSO-IIR_smt_b
+            name: statement
+            class: class-b
+            prose: 'Providers with Class B Certifications MUST responsibly notify all affected parties after identifying FedRAMP Reportable Incidents by providing an Initial Incident Report with as much of the following information that is available at the time of reporting:'
+          - id: ICP-CSO-IIR_smt_c
+            name: statement
+            class: class-c
+            prose: 'Providers with Class C Certifications MUST responsibly notify all affected parties after identifying FedRAMP Reportable Incidents by providing an Initial Incident Report with as much of the following information that is available at the time of reporting:'
+          - id: ICP-CSO-IIR_smt_d
+            name: statement
+            class: class-d
+            prose: 'Providers with Class D Certifications MUST responsibly notify all affected parties after identifying FedRAMP Reportable Incidents by providing an Initial Incident Report with as much of the following information that is available at the time of reporting:'
         - id: ICP-CSO-OIR
           class: frr
           title: Ongoing Incident Reports
           links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
           - href: '#7075ad02-7478-50e0-aef3-6f4fe89d1c71'
             rel: definition
             text: All Affected Parties
           - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
             rel: definition
-            text: Federal Reportable Incident
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
-          - href: '#62b6caec-08da-5e6b-b6f3-ddf39cec99c4'
-            rel: definition
-            text: Ongoing Incident Report (OIR)
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
           - href: '#2a869fa8-5fe4-53df-8881-089936855d71'
             rel: definition
             text: Responsibly
-          - href: '#52b28285-39d8-5172-b38a-0487d87289a7'
-            rel: definition
-            text: Vulnerability
           - href: '#6888d006-4bab-5c8e-9139-463f905bcc6b'
             rel: definition
             text: Vulnerability Response
           parts:
-          - id: ICP-CSO-OIR_smt
+          - id: ICP-CSO-OIR_smt_a
             name: statement
-            prose: Providers MUST responsibly notify all affected parties of ongoing activity by providing Ongoing Incident Reports as new information becomes available during incident response for federal reportable incidents.
+            class: class-a
+            prose: "Providers with Class A Certifications SHOULD responsibly notify all affected parties of ongoing activity as new information becomes available during incident response for FedRAMP Reportable Incidents, including updates (or lack of updates) to all previously reported information and as much of the the following additional information that is available:"
+          - id: ICP-CSO-OIR_smt_b
+            name: statement
+            class: class-b
+            prose: "Providers with Class B Certifications MUST responsibly notify all affected parties of ongoing activity as new information becomes available during incident response for FedRAMP Reportable Incidents, including updates (or lack of updates) to all previously reported information and as much of the the following additional information that is available:"
+          - id: ICP-CSO-OIR_smt_c
+            name: statement
+            class: class-c
+            prose: "Providers with Class C Certifications MUST responsibly notify all affected parties of ongoing activity as new information becomes available during incident response for FedRAMP Reportable Incidents, including updates (or lack of updates) to all previously reported information and as much of the the following additional information that is available:"
+          - id: ICP-CSO-OIR_smt_d
+            name: statement
+            class: class-d
+            prose: "Providers with Class D Certifications MUST responsibly notify all affected parties of ongoing activity as new information becomes available during incident response for FedRAMP Reportable Incidents, including updates (or lack of updates) to all previously reported information and as much of the the following additional information that is available:"
         - id: ICP-CSO-FIR
           class: frr
           title: Final Incident Report
@@ -1602,45 +1569,84 @@ catalog:
             rel: definition
             text: Responsibly
           parts:
-          - id: ICP-CSO-FIR_smt
+          - id: ICP-CSO-FIR_smt_a
             name: statement
-            prose: "Providers MUST responsibly notify all affected parties by providing a Final Incident Report once the incident has been resolved and recovery is complete, including final updates to all previously reported information."
-        - id: ICP-CSO-IRT
+            class: class-a
+            prose: "Providers with Class A Certifications MUST responsibly notify all affected parties by providing a Final Incident Report once the incident has been resolved and recovery is complete, including final updates to all previously reported information."
+          - id: ICP-CSO-FIR_smt_b
+            name: statement
+            class: class-b
+            prose: "Providers with Class B Certifications MUST responsibly notify all affected parties by providing a Final Incident Report once the incident has been resolved and recovery is complete, including final updates to all previously reported information."
+          - id: ICP-CSO-FIR_smt_c
+            name: statement
+            class: class-c
+            prose: "Providers with Class C Certifications MUST responsibly notify all affected parties by providing a Final Incident Report once the incident has been resolved and recovery is complete, including final updates to all previously reported information."
+          - id: ICP-CSO-FIR_smt_d
+            name: statement
+            class: class-d
+            prose: "Providers with Class D Certifications MUST responsibly notify all affected parties by providing a Final Incident Report once the incident has been resolved and recovery is complete, including final updates to all previously reported information."
+        - id: ICP-CSO-EFI
           class: frr
-          title: Incident Report Timeframes
+          title: Estimate Federal Impact
+          links:
+          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+            rel: definition
+            text: Agency
+          - href: '#79c285a3-ed00-5d12-957d-d1057122851c'
+            rel: definition
+            text: Debilitating Customer Effect
+          - href: '#cb5d94e7-f5eb-5cce-98e2-ef589441c20a'
+            rel: definition
+            text: Disruptive Customer Effect
+          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
+            rel: definition
+            text: Incident
+          - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
+            rel: definition
+            text: Likely
+          - href: '#5dd1123b-9231-5583-97f5-6aaa59fa02d5'
+            rel: definition
+            text: Minimal Customer Effect
+          - href: '#52756f25-86c9-5d75-b742-ac2a1550af00'
+            rel: definition
+            text: Narrow Customer Effect
+          - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
+            rel: definition
+            text: Potential Agency Impact
+          - href: '#f00a3c3e-7591-5ab0-ba05-c2d3c2876e86'
+            rel: definition
+            text: Promptly
+          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
+            rel: definition
+            text: Provider
+          parts:
+          - id: ICP-CSO-EFI_smt
+            name: statement
+            prose: Providers SHOULD promptly estimate the likely adverse impact of an incident on agency customers to assign a Potential Agency Impact N-rating; this step is called Incident Rating.
+          - id: ICP-CSO-EFI_note_1
+            name: guidance
+            class: note
+            prose: All incidents must be assigned a default PAIN-5 as required by ICP-CSO-DPR (Default PAIN Rating) if this step is not completed.
+        - id: ICP-CSO-AIR
+          class: frr
+          title: Automated Incident Reporting
           links:
           - href: '#7075ad02-7478-50e0-aef3-6f4fe89d1c71'
             rel: definition
             text: All Affected Parties
           - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
             rel: definition
-            text: Federal Reportable Incident
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
-          - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
-            rel: definition
-            text: Potential Adverse Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
           parts:
-          - id: ICP-CSO-IRT_smt_a
+          - id: ICP-CSO-AIR_smt
             name: statement
-            class: class-a
-            prose: "Providers of Class A offerings MUST notify all affected parties of federal reportable incidents within the maximum timeframes from evaluation or recovery shown below, based on the Potential Adverse Impact N-rating."
-          - id: ICP-CSO-IRT_smt_b
-            name: statement
-            class: class-b
-            prose: "Providers of Class B offerings MUST notify all affected parties of federal reportable incidents within the maximum timeframes from evaluation or recovery shown below, based on the Potential Adverse Impact N-rating."
-          - id: ICP-CSO-IRT_smt_c
-            name: statement
-            class: class-c
-            prose: "Providers of Class C offerings MUST notify all affected parties of federal reportable incidents within the maximum timeframes from evaluation or recovery shown below, based on the Potential Adverse Impact N-rating."
-          - id: ICP-CSO-IRT_smt_d
-            name: statement
-            class: class-d
-            prose: "Providers of Class D offerings MUST notify all affected parties of federal reportable incidents within the maximum timeframes from evaluation or recovery shown below, based on the Potential Adverse Impact N-rating."
+            prose: Providers SHOULD use automation to minimize human intervention in the process of reporting FedRAMP Reportable Incidents to all affected parties.
     - id: MAS
       class: rule-area
       title: Minimum Assessment Scope
@@ -1754,7 +1760,7 @@ catalog:
           parts:
           - id: MAS-CSO-TPR_smt
             name: statement
-            prose: "Providers MUST address the potential impact to federal customer data from third-party information resources used by the cloud service offering, ONLY IF MAS-CSO-IIR APPLIES, by documenting the following information about each applicable third-party information resource:"
+            prose: "Providers MUST address the potential impact to federal customer data from third-party information resources used by the cloud service offering, ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES, by documenting the following information about each applicable third-party information resource:"
         - id: MAS-CSO-MDI
           class: frr
           title: Metadata Inclusion
@@ -1762,6 +1768,9 @@ catalog:
           - href: '#d4b9caf0-97ab-59a0-b7e4-6b60be7b754c'
             rel: definition
             text: Federal Customer Data
+          - href: '#f649dfe2-2680-559c-b33f-b0cc6eaf766b'
+            rel: definition
+            text: Information Resource
           - href: '#f020c1bb-8f8a-5ceb-b694-c50c4bb58400'
             rel: definition
             text: Initial Incident Report (IIR)
@@ -1771,7 +1780,7 @@ catalog:
           parts:
           - id: MAS-CSO-MDI_smt
             name: statement
-            prose: Providers MUST include metadata (including metadata about federal customer data) in the Minimum Assessment Scope ONLY IF MAS-CSO-IIR APPLIES.
+            prose: Providers MUST include metadata (including metadata about federal customer data) in the Minimum Assessment Scope ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES.
         - id: MAS-CSO-SUP
           class: frr
           title: Supplemental Information
@@ -1888,7 +1897,7 @@ catalog:
           - id: MKT-CSO-AGU_note_1
             name: guidance
             class: note
-            prose: FedRAMP will not list products or services that are outside the explicit statutory scope of FedRAMP; See MKT-FRP-SOF Scope of FedRAMP.
+            prose: FedRAMP will not list products or services that are outside the explicit statutory scope of FedRAMP; See MKT-FRP-SOF (Scope of FedRAMP).
           - id: MKT-CSO-AGU_note_2
             name: guidance
             class: note
@@ -1920,6 +1929,9 @@ catalog:
           - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
             rel: definition
             text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
           parts:
           - id: MKT-IAS-OFR_smt
             name: statement
@@ -2706,19 +2718,19 @@ catalog:
           - id: UCM-CSO-UVM_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
+            prose: Providers with Class A Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
           - id: UCM-CSO-UVM_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
+            prose: Providers with Class B Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
           - id: UCM-CSO-UVM_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings SHOULD use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
+            prose: Providers with Class C Certifications SHOULD use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
           - id: UCM-CSO-UVM_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings MUST use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
+            prose: Providers with Class D Certifications MUST use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data.
         - id: UCM-CSO-CAT
           class: frr
           title: Configuration of Agency Tenants
@@ -2872,7 +2884,7 @@ catalog:
             text: Agency
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -2886,7 +2898,7 @@ catalog:
           - id: VDR-AGM-RVR_note_1
             name: guidance
             class: note
-            prose: "FedRAMP recommends that agencies only review overdue and accepted vulnerabilities Potential Adverse Impact N-rating \\> 2 unless the cloud service provider recommends mitigations or the service is included in a higher risk federal information system. Furthermore, accepted vulnerabilities generally only need to be reviewed when they are added or during an updated risk assessment due to changes in the agency's use or authorization."
+            prose: "FedRAMP recommends that agencies only review overdue and accepted vulnerabilities Potential Agency Impact N-rating \\> 2 unless the cloud service provider recommends mitigations or the service is included in a higher risk federal information system. Furthermore, accepted vulnerabilities generally only need to be reviewed when they are added or during an updated risk assessment due to changes in the agency's use or authorization."
         - id: VDR-AGM-MAP
           class: frr
           title: Maintain Agency Plans of Action and Milestones
@@ -3190,27 +3202,27 @@ catalog:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#afa76858-d8f1-5a92-a522-c3ca0e3cd735'
-            rel: definition
-            text: Catastrophic Adverse Effect
           - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
             rel: definition
             text: Cloud Service Offering
-          - href: '#6e75c49b-a1f0-5e61-9505-dda52bc5d00d'
+          - href: '#79c285a3-ed00-5d12-957d-d1057122851c'
             rel: definition
-            text: Limited Adverse Effect
-          - href: '#44aca505-21ec-5acf-a43e-009a819c136d'
+            text: Debilitating Customer Effect
+          - href: '#cb5d94e7-f5eb-5cce-98e2-ef589441c20a'
             rel: definition
-            text: Negligible Adverse Effect
+            text: Disruptive Customer Effect
+          - href: '#5dd1123b-9231-5583-97f5-6aaa59fa02d5'
+            rel: definition
+            text: Minimal Customer Effect
+          - href: '#52756f25-86c9-5d75-b742-ac2a1550af00'
+            rel: definition
+            text: Narrow Customer Effect
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
-          - href: '#158877ff-4e6a-50ce-8f01-1a5a0730ff92'
-            rel: definition
-            text: Serious Adverse Effect
           - href: '#52b28285-39d8-5172-b38a-0487d87289a7'
             rel: definition
             text: Vulnerability
@@ -3220,7 +3232,7 @@ catalog:
           parts:
           - id: VDR-EVA-EPA_smt
             name: statement
-            prose: "Providers MUST evaluate detected vulnerabilities, considering the context of the cloud service offering, to estimate the potential adverse impact of exploitation on government customers AND assign one of the following Potential Adverse Impact N-ratings (PAIN):"
+            prose: "Providers MUST evaluate detected vulnerabilities, considering the context of the cloud service offering, to estimate the potential adverse impact of exploitation on government customers AND assign one of the following Potential Agency Impact N-ratings (PAIN):"
         - id: VDR-EVA-GRV
           class: frr
           title: Group Vulnerabilities
@@ -3392,7 +3404,7 @@ catalog:
             text: Overdue Vulnerability
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -3439,7 +3451,7 @@ catalog:
             text: Likely Exploitable Vulnerability (LEV)
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -3597,19 +3609,19 @@ catalog:
           - id: VDR-TFR-MRH_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings MAY make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information MAY be updated persistently, at least once every month."
+            prose: "Providers with Class A Certifications MAY make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information MAY be updated persistently, at least once every month."
           - id: VDR-TFR-MRH_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every month."
+            prose: "Providers with Class B Certifications SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every month."
           - id: VDR-TFR-MRH_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every 14 days."
+            prose: "Providers with Class C Certifications SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every 14 days."
           - id: VDR-TFR-MRH_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every 7 days."
+            prose: "Providers with Class D Certifications SHOULD make all recent historical vulnerability detection and response activity available in a machine-readable format for automated retrieval by all necessary parties (e.g. using an API service or similar); this information SHOULD be updated persistently, at least once every 7 days."
         - id: VDR-TFR-PSD
           class: frr
           title: Persistent Sample Detection
@@ -3636,19 +3648,19 @@ catalog:
           - id: VDR-TFR-PSD_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 14 days."
+            prose: "Providers with Class A Certifications SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 14 days."
           - id: VDR-TFR-PSD_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 7 days."
+            prose: "Providers with Class B Certifications SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 7 days."
           - id: VDR-TFR-PSD_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 3 days."
+            prose: "Providers with Class C Certifications SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once every 3 days."
           - id: VDR-TFR-PSD_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once per day."
+            prose: "Providers with Class D Certifications SHOULD persistently perform vulnerability detection on representative samples of similar machine-based information resources, at least once per day."
         - id: VDR-TFR-PDD
           class: frr
           title: Persistent Drift Detection
@@ -3678,19 +3690,19 @@ catalog:
           - id: VDR-TFR-PDD_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 3 months."
+            prose: "Providers with Class A Certifications SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 3 months."
           - id: VDR-TFR-PDD_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every month."
+            prose: "Providers with Class B Certifications SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every month."
           - id: VDR-TFR-PDD_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 14 days."
+            prose: "Providers with Class C Certifications SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 14 days."
           - id: VDR-TFR-PDD_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 7 days."
+            prose: "Providers with Class D Certifications SHOULD persistently perform vulnerability detection on all information resources that are likely to drift, at least once every 7 days."
         - id: VDR-TFR-PCD
           class: frr
           title: Persistently Complete Detection
@@ -3720,19 +3732,19 @@ catalog:
           - id: VDR-TFR-PCD_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every 6 months."
+            prose: "Providers with Class A Certifications SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every 6 months."
           - id: VDR-TFR-PCD_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every 6 months."
+            prose: "Providers with Class B Certifications SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every 6 months."
           - id: VDR-TFR-PCD_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every month."
+            prose: "Providers with Class C Certifications SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every month."
           - id: VDR-TFR-PCD_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every month."
+            prose: "Providers with Class D Certifications SHOULD persistently perform vulnerability detection on all information resources that are NOT likely to drift, at least once every month."
         - id: VDR-TFR-EVU
           class: frr
           title: Evaluate Vulnerabilities Quickly
@@ -3750,29 +3762,32 @@ catalog:
           - id: VDR-TFR-EVU_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 14 days of detection.
+            prose: Providers with Class A Certifications SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 14 days of detection.
           - id: VDR-TFR-EVU_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 7 days of detection.
+            prose: Providers with Class B Certifications SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 7 days of detection.
           - id: VDR-TFR-EVU_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 5 days of detection.
+            prose: Providers with Class C Certifications SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 5 days of detection.
           - id: VDR-TFR-EVU_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 2 days of detection.
+            prose: Providers with Class D Certifications SHOULD evaluate ALL vulnerabilities as required by VDR-EVA (Evaluation) within 2 days of detection.
         - id: VDR-TFR-PVR
           class: frr
           title: Mitigation and Remediation Expectations
           links:
+          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+            rel: definition
+            text: Agency
           - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
             rel: definition
             text: Likely
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -3783,19 +3798,19 @@ catalog:
           - id: VDR-TFR-PVR_smt_a
             name: statement
             class: class-a
-            prose: "Providers of Class A offerings SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower potential adverse impact within the timeframes from evaluation shown below, factoring for the current Potential Adverse Impact N-rating, internet reachability, and likely exploitability:"
+            prose: "Providers with Class A Certifications SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower potential adverse impact within the timeframes from evaluation shown below, factoring for the current Potential Agency Impact N-rating, internet reachability, and likely exploitability."
           - id: VDR-TFR-PVR_smt_b
             name: statement
             class: class-b
-            prose: "Providers of Class B offerings SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower potential adverse impact within the timeframes from evaluation shown below, factoring for the current Potential Adverse Impact N-rating, internet reachability, and likely exploitability:"
+            prose: "Providers with Class B Certifications SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower potential adverse impact within the timeframes from evaluation shown below, factoring for the current Potential Agency Impact N-rating, internet reachability, and likely exploitability:"
           - id: VDR-TFR-PVR_smt_c
             name: statement
             class: class-c
-            prose: "Providers of Class C offerings SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower potential adverse impact N-rating within the timeframes from evaluation shown below, factoring for the current Potential Adverse Impact N-rating, internet reachability, and likely exploitability:"
+            prose: "Providers with Class C Certifications SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower Potential Agency Impact N-rating within the timeframes from evaluation shown below, factoring for the current Potential Agency Impact N-rating, internet reachability, and likely exploitability:"
           - id: VDR-TFR-PVR_smt_d
             name: statement
             class: class-d
-            prose: "Providers of Class D offerings SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower Potential Adverse Impact N-rating within the maximum timeframes from evaluation shown below, factoring for the current Potential Adverse Impact N-rating, internet reachability, and likely exploitability:"
+            prose: "Providers with Class D Certifications SHOULD partially mitigate, fully mitigate, or remediate vulnerabilities to a lower Potential Agency Impact N-rating within the maximum timeframes from evaluation shown below, factoring for the current Potential Agency Impact N-rating, internet reachability, and likely exploitability:"
         - id: VDR-TFR-RMN
           class: frr
           title: Remaining Vulnerabilities
@@ -3814,6 +3829,12 @@ catalog:
           class: frr
           title: Internet-Reachable Incidents
           links:
+          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+            rel: definition
+            text: Agency
+          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
+            rel: definition
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
@@ -3825,7 +3846,7 @@ catalog:
             text: Likely Exploitable Vulnerability (LEV)
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -3836,23 +3857,29 @@ catalog:
           - id: VDR-TFR-IRI_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MAY treat internet-reachable likely exploitable vulnerabilities where Potential Adverse Impact N-rating \> 3 as a security incident until they are partially mitigated to N3 or below.
+            prose: Providers with Class A Certifications MAY treat internet-reachable likely exploitable vulnerabilities where Potential Agency Impact N-rating \> 3 as a FedRAMP Reportable Incident until they are partially mitigated to N3 or below.
           - id: VDR-TFR-IRI_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MAY treat internet-reachable likely exploitable vulnerabilities where Potential Adverse Impact N-rating \> 3 as a security incident until they are partially mitigated to N3 or below.
+            prose: Providers with Class B Certifications MAY treat internet-reachable likely exploitable vulnerabilities where Potential Agency Impact N-rating \> 3 as a FedRAMP Reportable Incident until they are partially mitigated to N3 or below.
           - id: VDR-TFR-IRI_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings SHOULD treat internet-reachable likely exploitable vulnerabilities where Potential Adverse Impact N-rating \> 3 as a security incident until they are partially mitigated to N3 or below.
+            prose: Providers with Class C Certifications SHOULD treat internet-reachable likely exploitable vulnerabilities where Potential Agency Impact N-rating \> 3 as a FedRAMP Reportable Incident until they are partially mitigated to N3 or below.
           - id: VDR-TFR-IRI_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings SHOULD treat internet-reachable likely exploitable vulnerabilities where Potential Adverse Impact N-rating \> 3 as a security incident until they are partially mitigated to N3 or below.
+            prose: Providers with Class D Certifications SHOULD treat internet-reachable likely exploitable vulnerabilities where Potential Agency Impact N-rating \> 3 as a FedRAMP Reportable Incident until they are partially mitigated to N3 or below.
         - id: VDR-TFR-NRI
           class: frr
           title: Non-Internet-Reachable Incidents
           links:
+          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+            rel: definition
+            text: Agency
+          - href: '#e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8'
+            rel: definition
+            text: FedRAMP Reportable Incident
           - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
             rel: definition
             text: Incident
@@ -3864,7 +3891,7 @@ catalog:
             text: Likely Exploitable Vulnerability (LEV)
           - href: '#b2ca9556-2d41-52ea-8cab-99fae6578586'
             rel: definition
-            text: Potential Adverse Impact
+            text: Potential Agency Impact
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -3875,19 +3902,19 @@ catalog:
           - id: VDR-TFR-NRI_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Adverse Impact N-rating = 5 as a security incident until they are partially mitigated to N4 or below.
+            prose: Providers with Class A Certifications MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Agency Impact N-rating = 5 as a FedRAMP Reportable Incident until they are partially mitigated to N4 or below.
           - id: VDR-TFR-NRI_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Adverse Impact N-rating = 5 as a security incident until they are partially mitigated to N4 or below.
+            prose: Providers with Class B Certifications MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Agency Impact N-rating = 5 as a FedRAMP Reportable Incident until they are partially mitigated to N4 or below.
           - id: VDR-TFR-NRI_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Adverse Impact N-rating = 5 as a security incident until they are partially mitigated to N4 or below.
+            prose: Providers with Class C Certifications MAY treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Agency Impact N-rating = 5 as a FedRAMP Reportable Incident until they are partially mitigated to N4 or below.
           - id: VDR-TFR-NRI_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings SHOULD treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Adverse Impact N-rating = 5 as a security incident until they are partially mitigated to N4 or below.
+            prose: Providers with Class D Certifications SHOULD treat likely exploitable vulnerabilities that are NOT internet-reachable where Potential Agency Impact N-rating = 5 as a FedRAMP Reportable Incident until they are partially mitigated to N4 or below.
     - id: FRC
       class: rule-area
       title: FedRAMP Certification
@@ -4201,6 +4228,9 @@ catalog:
           - href: '#fe2f2a9e-d186-5b4a-a3db-a9001a13ab65'
             rel: definition
             text: Certification Data
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
           - href: '#3875c13f-0b81-593e-83db-33a642884d14'
             rel: definition
             text: Persistently
@@ -4217,19 +4247,19 @@ catalog:
           - id: FRC-CSO-IVV_smt_a
             name: statement
             class: class-a
-            prose: Providers of Class A offerings MAY persistently complete an independent verification and validation assessment at least once per year; these assessments MAY be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MAY be included in their FedRAMP Certification Data without inappropriate modification.
+            prose: Providers with Class A Certifications MAY persistently complete an independent verification and validation assessment at least once per year; these assessments MAY be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MAY be included in their FedRAMP Certification Data without inappropriate modification.
           - id: FRC-CSO-IVV_smt_b
             name: statement
             class: class-b
-            prose: Providers of Class B offerings MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
+            prose: Providers with Class B Certifications MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
           - id: FRC-CSO-IVV_smt_c
             name: statement
             class: class-c
-            prose: Providers of Class C offerings MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
+            prose: Providers with Class C Certifications MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
           - id: FRC-CSO-IVV_smt_d
             name: statement
             class: class-d
-            prose: Providers of Class D offerings MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
+            prose: Providers with Class D Certifications MUST persistently complete an independent verification and validation assessment at least once per year; these assessments MUST be performed by a FedRAMP Recognized independent assessor OR by FedRAMP directly; the results of these assessments MUST be included in their FedRAMP Certification Data without inappropriate modification.
           - id: FRC-CSO-IVV_note_1
             name: guidance
             class: note
@@ -4491,15 +4521,27 @@ catalog:
           class: frr
           title: Address FedRAMP Rules
           links:
+          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+            rel: definition
+            text: Agency
           - href: '#89604f06-a601-5735-abf2-ddf7629abad4'
             rel: definition
             text: Artifacts
+          - href: '#fe2f2a9e-d186-5b4a-a3db-a9001a13ab65'
+            rel: definition
+            text: Certification Data
           - href: '#7efa801a-7cd9-5f98-9fa8-daa9aa5f151a'
             rel: definition
             text: Certification Package
           - href: '#b0f38538-90e1-5a20-a4bb-d3c0090b924a'
             rel: definition
             text: FedRAMP Security Inbox
+          - href: '#737a82d1-3d26-5d15-89a9-5bca5a694d7d'
+            rel: definition
+            text: Incident
+          - href: '#f649dfe2-2680-559c-b33f-b0cc6eaf766b'
+            rel: definition
+            text: Information Resource
           - href: '#f020c1bb-8f8a-5ceb-b694-c50c4bb58400'
             rel: definition
             text: Initial Incident Report (IIR)
@@ -4509,10 +4551,22 @@ catalog:
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
+          - href: '#6374f5b2-4fd2-5f1b-9c5d-0cd31b0367cf'
+            rel: definition
+            text: Trust Center
+          - href: '#52b28285-39d8-5172-b38a-0487d87289a7'
+            rel: definition
+            text: Vulnerability
+          - href: '#e2956d2c-75e4-5e63-91b5-549d528e4952'
+            rel: definition
+            text: Vulnerability Detection
+          - href: '#6888d006-4bab-5c8e-9139-463f905bcc6b'
+            rel: definition
+            text: Vulnerability Response
           parts:
           - id: FRC-CLA-AFR_smt
             name: statement
-            prose: 'Providers seeking a FedRAMP Certification Class A by leveraging an alternative security framework MUST address the following FedRAMP rules and supply the appropriate artifacts or information mapping in the FedRAMP Certification Package:'
+            prose: 'Providers seeking a Class A FedRAMP Certification MUST address the following FedRAMP rules and supply the appropriate artifacts or information mapping in the FedRAMP Certification Package:'
           - id: FRC-CLA-AFR_note_1
             name: guidance
             class: note
@@ -4529,7 +4583,7 @@ catalog:
             text: Certification Package
           - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
             rel: definition
-            text: FedRAMP Recognized Assessor
+            text: FedRAMP Recognized
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -4646,6 +4700,9 @@ catalog:
           class: frr
           title: Fresh Independent Assessment
           links:
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -4803,14 +4860,14 @@ catalog:
           - id: FRC-IAX-UNP_smt
             name: statement
             prose: 'Assessors MUST verify and validate the underlying processes (both machine-based and non-machine-based) that providers use to validate Key Security Indicators; this should include at least:'
-      - id: FRC-CSL
+      - id: FRC-CSF
         class: section
         title: Rev5-Specific Provider Responsibilities
         parts:
         - name: overview
           prose: These rules apply to providers for FedRAMP Rev5 Certifications.
         controls:
-        - id: FRC-CSL-CDE
+        - id: FRC-CSF-CDE
           class: frr
           title: Class D Program Certification Exclusion
           links:
@@ -4821,14 +4878,14 @@ catalog:
             rel: definition
             text: Provider
           parts:
-          - id: FRC-CSL-CDE_smt
+          - id: FRC-CSF-CDE_smt
             name: statement
             prose: Providers seeking a FedRAMP Rev5 Class D Certification MUST use the FedRAMP Agency Certification path.
-          - id: FRC-CSL-CDE_note_1
+          - id: FRC-CSF-CDE_note_1
             name: guidance
             class: note
             prose: FedRAMP will not perform FedRAMP Rev5 Class D Program Certifications.
-        - id: FRC-CSL-PMV
+        - id: FRC-CSF-PMV
           class: frr
           title: Persistent Machine Verification and Validation
           links:
@@ -4848,23 +4905,23 @@ catalog:
             rel: definition
             text: Verification
           parts:
-          - id: FRC-CSL-PMV_smt_a
+          - id: FRC-CSF-PMV_smt_a
             name: statement
             class: class-a
             prose: Providers of FedRAMP Rev5 Class A offerings SHOULD verify and validate the status of machine-based information resources at least once every month.
-          - id: FRC-CSL-PMV_smt_b
+          - id: FRC-CSF-PMV_smt_b
             name: statement
             class: class-b
             prose: Providers of FedRAMP Rev5 Class B offerings SHOULD verify and validate the status of machine-based information resources at least once every month.
-          - id: FRC-CSL-PMV_smt_c
+          - id: FRC-CSF-PMV_smt_c
             name: statement
             class: class-c
             prose: Providers of FedRAMP Rev5 Class C offerings MUST verify and validate the status of machine-based information resources at least once every month.
-          - id: FRC-CSL-PMV_smt_d
+          - id: FRC-CSF-PMV_smt_d
             name: statement
             class: class-d
             prose: Providers of FedRAMP Rev5 Class D offerings MUST verify and validate the status of machine-based information resources at least once every month.
-        - id: FRC-CSL-RDY
+        - id: FRC-CSF-RDY
           class: frr
           title: FedRAMP Ready Conversion
           links:
@@ -4872,10 +4929,10 @@ catalog:
             rel: definition
             text: Provider
           parts:
-          - id: FRC-CSL-RDY_smt
+          - id: FRC-CSF-RDY_smt
             name: statement
             prose: "Providers with FedRAMP Rev5 Ready status MUST convert to a FedRAMP Certification before the furthest date of the expiration of their most recently yearly assessment or November 17, 2026; the legacy FedRAMP Ready status will be entirely removed on December 31, 2027."
-          - id: FRC-CSL-RDY_note_1
+          - id: FRC-CSF-RDY_note_1
             name: guidance
             class: note
             prose: Cloud services that do not wish to convert or do not meet conversion criteria will be renamed Legacy FedRAMP Ready and otherwise retired from FedRAMP Ready.
@@ -4921,7 +4978,7 @@ catalog:
           parts:
           - id: AGU-AGC-AIP_smt
             name: statement
-            prose: Agencies MUST maintain agency-wide internal policies aligned with FedRAMP standards and the principles and directives of OMB Memorandum M-24-15.
+            prose: Agencies MUST maintain agency-wide policy that aligns with the requirements in OMB Memorandum M-24-15.
         - id: AGU-AGC-NAL
           class: frr
           title: Notify FedRAMP After Authorization
@@ -4932,7 +4989,7 @@ catalog:
           parts:
           - id: AGU-AGC-NAL_smt
             name: statement
-            prose: Agencies MUST notify FedRAMP after authorizing an in-scope cloud service by supplying the agency Authorization to Operate letter to ato-letter@fedramp.gov.
+            prose: 'Agencies MUST supply FedRAMP the following information upon authorizing the use of a cloud service within the scope of FedRAMP:'
         - id: AGU-AGC-GRC
           class: frr
           title: "Governance, Risk, and Compliance Tools"
@@ -4950,17 +5007,6 @@ catalog:
           - id: AGU-AGC-GRC_smt
             name: statement
             prose: "Agencies MUST ensure that internal governance, risk, compliance, and inventory tools can produce and ingest machine-readable artifacts using formats identified by FedRAMP, including at least:"
-        - id: AGU-AGC-CCA
-          class: frr
-          title: Commercial Cloud Adoption
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          parts:
-          - id: AGU-AGC-CCA_smt
-            name: statement
-            prose: Agencies SHOULD encourage adoption of commercial cloud services without incentivizing government-specific services.
         - id: AGU-AGC-NAR
           class: frr
           title: No Additional Security Requirements
@@ -4980,7 +5026,7 @@ catalog:
           parts:
           - id: AGU-AGC-NAR_smt
             name: statement
-            prose: Agencies MUST NOT place additional security requirements on FedRAMP Certified cloud service offerings beyond those required by FedRAMP UNLESS the head of the agency or an authorized delegate determines there is a demonstrable need; this does not apply to seeking clarification or asking general questions about FedRAMP Certification Data.
+            prose: Agencies MUST NOT require additional information or materials from FedRAMP Certified cloud service offerings beyond those required by FedRAMP UNLESS the head of the agency or an authorized delegate determines there is a demonstrable need; this does not apply to seeking clarification or asking general questions about FedRAMP Certification Data.
           - id: AGU-AGC-NAR_note_1
             name: guidance
             class: note
@@ -5001,22 +5047,11 @@ catalog:
           parts:
           - id: AGU-AGC-NAI_smt
             name: statement
-            prose: Agencies MUST notify FedRAMP after requesting any additional information or materials from a FedRAMP Certified cloud service offering beyond those FedRAMP requires by sending an email to info@fedramp.gov.
+            prose: Agencies MUST notify FedRAMP after requesting any additional information or materials from a FedRAMP Certified cloud service offering beyond those FedRAMP requires.
           - id: AGU-AGC-NAI_note_1
             name: guidance
             class: note
             prose: Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a).
-        - id: AGU-AGC-LLR
-          class: frr
-          title: Lessons Learned Reporting
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          parts:
-          - id: AGU-AGC-LLR_smt
-            name: statement
-            prose: "Agencies SHOULD contribute to FedRAMP lessons-learned reporting, including sharing risk acceptance rationales, to improve government-wide reuse and transparency."
         - id: AGU-AGC-WKG
           class: frr
           title: FedRAMP Working Groups
@@ -5035,10 +5070,12 @@ catalog:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
+          - href: '#dc92eaa9-3341-5970-8bcd-1f48da7a1e1d'
+            rel: reference
           parts:
           - id: AGU-AGC-LIA_smt
             name: statement
-            prose: Agencies SHOULD assign at least 1 federal employee to be an active participant in the FedRAMP agency liaison program.
+            prose: Agencies SHOULD assign at least 1 federal employee to be an active participant in the FedRAMP Agency Liaison program.
         - id: AGU-AGC-SIN
           class: frr
           title: Shared FedRAMP Inbox
@@ -5068,38 +5105,22 @@ catalog:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          parts:
-          - id: AGU-USE-ABU_smt
-            name: statement
-            prose: Agencies MUST complete an agency authorization before using a cloud service inside a federal information system.
-        - id: AGU-USE-ERP
-          class: frr
-          title: Existing Certification Package
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
             rel: definition
-            text: Agency
-          - href: '#7efa801a-7cd9-5f98-9fa8-daa9aa5f151a'
-            rel: definition
-            text: Certification Package
+            text: Cloud Service Offering
           - href: '#b4c747be-af61-5e69-ab92-404dc73c982f'
             rel: definition
             text: FedRAMP Certified
+          - href: '#89773bae-2b54-5ca0-89a5-050abc84b5fa'
+            rel: reference
           parts:
-          - id: AGU-USE-ERP_smt
+          - id: AGU-USE-ABU_smt
             name: statement
-            prose: Agencies MUST use the existing FedRAMP Certification package to make agency authorization decisions for FedRAMP Certified cloud services.
-        - id: AGU-USE-CRC
-          class: frr
-          title: Compensating Controls and Risk Acceptance
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          parts:
-          - id: AGU-USE-CRC_smt
-            name: statement
-            prose: Agencies MAY accept compensating controls or risk-acceptance decisions in cases of control misalignment between federal and external frameworks.
+            prose: Agencies MUST complete the Authorization to Operate process for federal information systems that use FedRAMP Certified cloud service offerings.
+          - id: AGU-USE-ABU_note_1
+            name: guidance
+            class: note
+            prose: FedRAMP provides technical assistance to help agencies navigate this process.
         - id: AGU-USE-RCF
           class: frr
           title: Resolve Certification Package Conflicts
@@ -5128,20 +5149,23 @@ catalog:
           - id: AGU-USE-RSG_smt
             name: statement
             prose: Agencies MUST review the Secure Configuration Guides supplied by Providers and configure relevant security settings.
-        - id: AGU-USE-CCP
+        - id: AGU-USE-AFR
           class: frr
-          title: Collaborative Continuous Monitoring Plan
+          title: Accept FedRAMP Rules
           links:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
             rel: definition
-            text: Provider
+            text: Cloud Service Offering
+          - href: '#b4c747be-af61-5e69-ab92-404dc73c982f'
+            rel: definition
+            text: FedRAMP Certified
           parts:
-          - id: AGU-USE-CCP_smt
+          - id: AGU-USE-AFR_smt
             name: statement
-            prose: Agencies MUST develop a plan with the Provider to follow Collaborative Continuous Monitoring rules and complete ongoing authorization activities.
+            prose: Agencies MUST allow FedRAMP Certified cloud service offerings to follow FedRAMP rules.
         - id: AGU-USE-ROR
           class: frr
           title: Review Ongoing Authorization Reports
@@ -5155,7 +5179,7 @@ catalog:
           parts:
           - id: AGU-USE-ROR_smt
             name: statement
-            prose: Agencies MUST review each Ongoing Authorization Report to understand how changes to the cloud service offering may impact the risk tolerance documented in the agency Authorization to Operate for the federal information system that includes the cloud service offering in its boundary.
+            prose: Agencies SHOULD review each Ongoing Authorization Report to understand how changes to the cloud service offering may impact the risk tolerance documented in the agency Authorization to Operate for the federal information system that includes the cloud service offering in its boundary.
           - id: AGU-USE-ROR_note_1
             name: guidance
             class: note
@@ -5167,37 +5191,23 @@ catalog:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+          - href: '#fe2f2a9e-d186-5b4a-a3db-a9001a13ab65'
             rel: definition
-            text: Cloud Service Offering
+            text: Certification Data
+          - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
+            rel: definition
+            text: Likely
           - href: '#76c5d90d-5af6-540c-bdbb-a93538b08d33'
             rel: definition
             text: Quarterly Review
           parts:
           - id: AGU-USE-NFC_smt
             name: statement
-            prose: "Agencies MUST notify FedRAMP by sending an email to info@fedramp.gov if information presented in an Ongoing Authorization Report, Quarterly Review, or other ongoing authorization data causes significant concerns that may lead the agency to stop operation of the cloud service offering."
+            prose: "Agencies MUST notify FedRAMP if information presented in an Ongoing Authorization Report, Quarterly Review, or other FedRAMP Certification Data causes significant concerns for the authorizing official that would likely result in rescission of their Authorization to Operate."
           - id: AGU-USE-NFC_note_1
             name: guidance
             class: note
             prose: Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a).
-        - id: AGU-USE-ASC
-          class: frr
-          title: Assign Security Category Resources
-          links:
-          - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
-            rel: definition
-            text: Agency
-          - href: '#76c5d90d-5af6-540c-bdbb-a93538b08d33'
-            rel: definition
-            text: Quarterly Review
-          - href: '#52ef15b9-7ba6-51c2-b4cc-d9d4b72a5fe4'
-            rel: definition
-            text: Security Category
-          parts:
-          - id: AGU-USE-ASC_smt
-            name: statement
-            prose: "Agencies SHOULD consider the Security Category noted in the agency Authorization to Operate and assign appropriate information security resources for reviewing Ongoing Authorization Reports, attending Quarterly Reviews, and reviewing other ongoing authorization data."
         - id: AGU-USE-DSO
           class: frr
           title: Designate Senior Official
@@ -5214,7 +5224,7 @@ catalog:
           parts:
           - id: AGU-USE-DSO_smt
             name: statement
-            prose: Agencies SHOULD designate a senior information security official to review Ongoing Authorization Reports and represent the agency at Quarterly Reviews for cloud service offerings included in agency information systems.
+            prose: Agencies SHOULD designate a federal senior information security official to review Ongoing Authorization Reports and represent the agency at Quarterly Reviews for cloud service offerings included in agency information systems.
         - id: AGU-USE-NPC
           class: frr
           title: Notify Provider of Concerns
@@ -5222,9 +5232,12 @@ catalog:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+          - href: '#fe2f2a9e-d186-5b4a-a3db-a9001a13ab65'
             rel: definition
-            text: Cloud Service Offering
+            text: Certification Data
+          - href: '#4ec506df-45c6-5744-858f-486f946db8ca'
+            rel: definition
+            text: Likely
           - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
             rel: definition
             text: Provider
@@ -5234,27 +5247,27 @@ catalog:
           parts:
           - id: AGU-USE-NPC_smt
             name: statement
-            prose: "Agencies SHOULD formally notify the Provider if information presented in an Ongoing Authorization Report, Quarterly Review, or other ongoing authorization data causes significant concerns that may lead the agency to remove the cloud service offering from operation."
-        - id: AGU-USE-INH
+            prose: "Agencies SHOULD formally notify the Provider if information presented in an Ongoing Authorization Report, Quarterly Review, or other FedRAMP Certification Data causes significant concerns for the authorizing official that would likely result in rescission of their Authorization to Operate."
+        - id: AGU-USE-RIR
           class: frr
-          title: Review Inherited Services
+          title: Review All Information Resources
           links:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
-          - href: '#7efa801a-7cd9-5f98-9fa8-daa9aa5f151a'
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
             rel: definition
-            text: Certification Package
-          - href: '#b4c747be-af61-5e69-ab92-404dc73c982f'
-            rel: definition
-            text: FedRAMP Certified
+            text: Cloud Service Offering
           - href: '#f649dfe2-2680-559c-b33f-b0cc6eaf766b'
             rel: definition
             text: Information Resource
+          - href: '#c0e84877-7234-5728-9431-348e4f11153d'
+            rel: definition
+            text: Third-Party Information Resource
           parts:
-          - id: AGU-USE-INH_smt
+          - id: AGU-USE-RIR_smt
             name: statement
-            prose: "Agencies SHOULD review the certification packages and continuous monitoring information for third-party independent information resources, such as other cloud services, that are used by a FedRAMP Certified cloud service when available."
+            prose: Agencies SHOULD consider third-party information resources used by the cloud service offering during initial and ongoing authorization activities.
       - id: AGU-SPN
         class: section
         title: Agency Sponsored Certifications
@@ -5272,18 +5285,263 @@ catalog:
           parts:
           - id: AGU-SPN-MRC_smt
             name: statement
-            prose: Agencies MUST follow the most recent FedRAMP Consolidated Rules when initiating agency-sponsored FedRAMP Certification of in-scope cloud services.
-        - id: AGU-SPN-OAR
+            prose: Agencies MUST follow the most recent FedRAMP Consolidated Rules when initiating agency-sponsored FedRAMP Certification.
+    - id: REC
+      class: rule-area
+      title: FedRAMP Recognition of Independent Assessment Services
+      parts:
+      - name: overview
+        prose: The FedRAMP Recognition of Independent Assessment Services rules explain the requirements for assessors to obtain and maintain FedRAMP Recognition in order to support the FedRAMP Certification process.
+      groups:
+      - id: REC-FRP
+        class: section
+        title: FedRAMP Responsibilities
+        parts:
+        - name: overview
+          prose: These rules apply to FedRAMP when evaluating independent assessment services for initial or ongoing FedRAMP Recognition.
+        controls:
+        - id: REC-FRP-RAO
           class: frr
-          title: Follow Ongoing Authorization Rules
+          title: Recognized Assessors Only
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          - href: '#fe2e156a-a5d8-577d-81d9-89cef54435ab'
+            rel: definition
+            text: Validation
+          - href: '#9e6d80b3-ce64-5a62-96d0-434232e3e245'
+            rel: definition
+            text: Verification
+          parts:
+          - id: REC-FRP-RAO_smt
+            name: statement
+            prose: "FedRAMP MUST NOT accept verification, validation, or other attestations from independent assessors who are not FedRAMP Recognized."
+        - id: REC-FRP-FOC
+          class: frr
+          title: Foreign Ownership Collection
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-FRP-FOC_smt
+            name: statement
+            prose: "FedRAMP MUST maintain a process to collect foreign ownership, control, or influence declarations from FedRAMP Recognized assessors and updates to those declarations."
+        - id: REC-FRP-DRD
+          class: frr
+          title: Double Revocation Disqualification
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-FRP-DRD_smt
+            name: statement
+            prose: FedRAMP MUST NOT restore FedRAMP Recognition for an assessor after FedRAMP has revoked that assessor's FedRAMP Recognition 2 times.
+      - id: REC-IAS
+        class: section
+        title: General Independent Assessor Responsibilities
+        parts:
+        - name: overview
+          prose: These rules apply to independent assessment services seeking to obtain or maintain FedRAMP Recognition.
+        controls:
+        - id: REC-IAS-ACC
+          class: frr
+          title: A2LA Accreditation
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-IAS-ACC_smt
+            name: statement
+            prose: Assessors MUST obtain and maintain accreditation through the American Association for Laboratory Accreditation (A2LA) Cybersecurity Inspection Body Program to qualify for FedRAMP Recognition.
+          - id: REC-IAS-ACC_note_1
+            name: guidance
+            class: note
+            prose: FedRAMP will remove FedRAMP Recognition immediately after the American Association for Laboratory Accreditation notifies FedRAMP that an assessor's accreditation has lapsed.
+        - id: REC-IAS-ADA
+          class: frr
+          title: Actually Do Assessments
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-IAS-ADA_smt
+            name: statement
+            prose: "Assessors MUST complete at least 2 initial or ongoing assessments for Class B, C, or D FedRAMP Certifications every 2 years to maintain FedRAMP Recognition."
+          - id: REC-IAS-ADA_note_1
+            name: guidance
+            class: note
+            prose: "For a newly FedRAMP Recognized Assessor, this rule applies beginning on the initial date of FedRAMP Recognition if that date is later than 2026-06-01."
+        - id: REC-IAS-PSC
+          class: frr
+          title: Policy and Standards Compliance
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          - href: '#17c49172-1a62-5ec0-947a-e16041e8272c'
+            rel: reference
+          parts:
+          - id: REC-IAS-PSC_smt
+            name: statement
+            prose: Assessors MUST maintain compliance with the latest American Association for Laboratory Accreditation (A2LA) R311 - Specific Requirements - Federal Risk and Authorization Management Program to maintain FedRAMP Recognition.
+        - id: REC-IAS-ANR
+          class: frr
+          title: Annual Surveillance Assessment
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-IAS-ANR_smt
+            name: statement
+            prose: Assessors MUST achieve a favorable annual surveillance assessment by the American Association for Laboratory Accreditation (A2LA) to maintain FedRAMP Recognition.
+        - id: REC-IAS-RAS
+          class: frr
+          title: Full A2LA Reassessment
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-IAS-RAS_smt
+            name: statement
+            prose: Assessors MUST achieve a favorable full reassessment by the American Association for Laboratory Accreditation (A2LA) at least once every 2 years to maintain FedRAMP Recognition.
+        - id: REC-IAS-RAR
+          class: frr
+          title: Re-entry after Revocation
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#ad6d0493-8ebb-5bfa-9695-8d2b4542d71d'
+            rel: definition
+            text: FedRAMP Recognized
+          parts:
+          - id: REC-IAS-RAR_smt
+            name: statement
+            prose: Assessors MUST satisfy all American Association for Laboratory Accreditation (A2LA) re-entry conditions before regaining FedRAMP Recognition after revocation.
+          - id: REC-IAS-RAR_note_1
+            name: guidance
+            class: note
+            prose: A revocation may require extended time in revoked status while the assessor demonstrates acceptable performance in the A2LA Cybersecurity Inspection Body Program before seeking FedRAMP Recognition again.
+        - id: REC-IAS-SEP
+          class: frr
+          title: Advisory Separation
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+            rel: definition
+            text: Cloud Service Offering
+          parts:
+          - id: REC-IAS-SEP_smt
+            name: statement
+            prose: "Assessors MUST NOT perform an independent assessment of the same cloud service offering within 2 years after supplying advisory or consulting services for that offering, unless FedRAMP publishes a specific exception for a limited pilot or other explicitly scoped process."
+        - id: REC-IAS-RQU
+          class: frr
+          title: Roles and Qualifications
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          parts:
+          - id: REC-IAS-RQU_smt
+            name: statement
+            prose: "Assessors MUST staff FedRAMP assessments with all roles required by the American Association for Laboratory Accreditation (A2LA) R311, including personnel who meet the qualifications for each role, unless FedRAMP publishes a specific exception for a limited pilot or other explicitly scoped process."
+        - id: REC-IAS-AFI
+          class: frr
+          title: Annual Foreign Interest Reports
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          parts:
+          - id: REC-IAS-AFI_smt
+            name: statement
+            prose: "Assessors MUST report information relating to any foreign interest, foreign influence, or foreign control of the independent assessment service to FedRAMP annually."
+        - id: REC-IAS-CFI
+          class: frr
+          title: Changes in Foreign Interest
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          parts:
+          - id: REC-IAS-CFI_smt
+            name: statement
+            prose: "Assessors MUST report updated information relating to any foreign interest, foreign influence, or foreign control of the independent assessment service within 48 hours of any change in foreign ownership or control."
+        - id: REC-IAS-PST
+          class: frr
+          title: Performance Standards
           links:
           - href: '#af085874-ff9d-5a21-b18a-9c72950de0f1'
             rel: definition
             text: Agency
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          - href: '#0b54576c-b479-5a68-8d44-99525996f02b'
+            rel: definition
+            text: Cloud Service Offering
+          - href: '#17e97baa-654c-53f9-929f-81a8bb2207b7'
+            rel: definition
+            text: Provider
           parts:
-          - id: AGU-SPN-OAR_smt
+          - id: REC-IAS-PST_smt
             name: statement
-            prose: Agencies MUST follow the ongoing agency authorization rules after FedRAMP issues a FedRAMP Certification they sponsored.
+            prose: "Assessors MUST meet FedRAMP performance standards for assessor deliverables to support independent, risk-based reviews by FedRAMP and federal agencies, including at least:"
+        - id: REC-IAS-CAP
+          class: frr
+          title: Corrective Action Plan
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          parts:
+          - id: REC-IAS-CAP_smt
+            name: statement
+            prose: Assessors MUST supply a corrective action plan when FedRAMP requires one for performance standards deficiencies or organizational risks.
+        - id: REC-IAS-INV
+          class: frr
+          title: Invalid Deliverables
+          links:
+          - href: '#7419304a-2da2-569b-bff1-48eb2fa54c4e'
+            rel: definition
+            text: Assessor
+          parts:
+          - id: REC-IAS-INV_smt
+            name: statement
+            prose: "Assessors MUST treat deliverables prepared, performed, or submitted by personnel who do not meet required role qualifications as invalid for FedRAMP purposes."
   - id: KSI
     class: collection
     title: Key Security Indicators
@@ -6059,13 +6317,7 @@ catalog:
       base64:
         filename: FRD-ASR.txt
         media-type: text/plain
-        value: QW4gYXNzZXNzb3IgdGhhdCBwZXJmb3JtcyBhc3Nlc3NtZW50LCB2ZXJpZmljYXRpb24sIG9yIHZhbGlkYXRpb24gYWN0aXZpdGllcyBmb3IgYSBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5nIGluIHRoZSBjb250ZXh0IG9mIEZlZFJBTVAgQ2VydGlmaWNhdGlvbjsgRmVkUkFNUCBpcyB0aGUgZmluYWwgYXNzZXNzb3IgZm9yIEZlZFJBTVAgQ2VydGlmaWNhdGlvbiwgYnV0IEZlZFJBTVAgUmVjb2duaXplZCBpbmRlcGVuZGVudCBhc3Nlc3NtZW50IHNlcnZpY2VzIGFyZSB0eXBpY2FsbHkgYWxzbyB1dGlsaXplZC4KCk5vdGU6IEZlZFJBTVAgaGFzIHRyYW5zaXRpb25lZCBmcm9tIHVzaW5nIHRoZSBoaXN0b3JpY2FsIHRlcm0gIlRoaXJkLVBhcnR5IEFzc2Vzc21lbnQgT3JnYW5pemF0aW9uICgzUEFPKSIgdG8gYWxpZ24gd2l0aCB0aGUgZXhwbGljaXQgdGVybWlub2xvZ3kgdXNlZCBpbiB0aGUgRmVkUkFNUCBBdXRob3JpemF0aW9uIEFjdCBhbmQgdG8gYXZvaWQgdGhlIGNvbmZ1c2lvbiBjYXVzZWQgd2hlbiB0aGUgc2FtZSBvcmdhbml6YXRpb25zIHByb3ZpZGUgYm90aCBhc3Nlc3NtZW50IGFuZCBhZHZpc29yeSBzZXJ2aWNlcyB3aGlsZSBiZWluZyByZWZlcnJlZCB0byBhcyBhIDNQQU8uCgpBbHNvIGtub3duIGFzOiBhc3Nlc3NvciwgYXNzZXNzb3Jz
-    - uuid: afa76858-d8f1-5a92-a522-c3ca0e3cd735
-      title: "Definition: Catastrophic Adverse Effect"
-      base64:
-        filename: FRD-CAE.txt
-        media-type: text/plain
-        value: QSBzZXZlcmUgbmVnYXRpdmUgaW1wYWN0IG9uIGFuIG9yZ2FuaXphdGlvbiBjYXVzZWQgYnkgdGhlIGxvc3Mgb2YgY29uZmlkZW50aWFsaXR5LCBpbnRlZ3JpdHksIG9yIGF2YWlsYWJpbGl0eSBvZiBpdHMgaW5mb3JtYXRpb24uIEF0IGEgbWluaW11bSwgdGhpcyBpbmNsdWRlcyBlZmZlY3RzIHRoYXQgd291bGQgbGlrZWx5OiAoaSkgcmVzdWx0IGluIGEgc2V2ZXJlIGRlZ3JhZGF0aW9uIGluIHRoZSBhdmFpbGFiaWxpdHkgb3IgcGVyZm9ybWFuY2Ugb2Ygc2VydmljZXMgd2l0aGluIHRoZSBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5nIGZvciAyNCsgaG91cnM7IE9SIChpaSkgZGlyZWN0bHkgb3IgaW5kaXJlY3RseSByZXN1bHQgaW4gdW5hdXRob3JpemVkIGFjY2VzcywgZGlzY2xvc3VyZSwgb3IgbW9kaWZpY2F0aW9uIG9mIGEgbWFqb3JpdHkgb2YgdGhlIGZlZGVyYWwgY3VzdG9tZXIgZGF0YSBzdG9yZWQgd2l0aGluIHRoZSBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5nLgoKQWxzbyBrbm93biBhczogY2F0YXN0cm9waGljIGFkdmVyc2UgZWZmZWN0LCBjYXRhc3Ryb3BoaWMgYWR2ZXJzZSBlZmZlY3Rz
+        value: QW4gYXNzZXNzb3IgdGhhdCBwZXJmb3JtcyBhc3Nlc3NtZW50LCB2ZXJpZmljYXRpb24sIG9yIHZhbGlkYXRpb24gYWN0aXZpdGllcyBmb3IgYSBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5nIHNlZWtpbmcgdG8gb2J0YWluIG9yIG1haW50YWluIEZlZFJBTVAgQ2VydGlmaWNhdGlvbjsgRmVkUkFNUCBpcyB0aGUgZmluYWwgYXNzZXNzb3IgZm9yIEZlZFJBTVAgQ2VydGlmaWNhdGlvbiwgYnV0IEZlZFJBTVAgUmVjb2duaXplZCBpbmRlcGVuZGVudCBhc3Nlc3NtZW50IHNlcnZpY2VzIGFyZSB0eXBpY2FsbHkgYWxzbyB1dGlsaXplZC4KCk5vdGU6IEZlZFJBTVAgaGFzIHRyYW5zaXRpb25lZCBmcm9tIHVzaW5nIHRoZSBoaXN0b3JpY2FsIHRlcm0gIlRoaXJkLVBhcnR5IEFzc2Vzc21lbnQgT3JnYW5pemF0aW9uICgzUEFPKSIgdG8gYWxpZ24gd2l0aCB0aGUgZXhwbGljaXQgdGVybWlub2xvZ3kgdXNlZCBpbiB0aGUgRmVkUkFNUCBBdXRob3JpemF0aW9uIEFjdCBhbmQgdG8gYXZvaWQgdGhlIGNvbmZ1c2lvbiBjYXVzZWQgd2hlbiB0aGUgc2FtZSBvcmdhbml6YXRpb25zIHByb3ZpZGUgYm90aCBhc3Nlc3NtZW50IGFuZCBhZHZpc29yeSBzZXJ2aWNlcyB0byBkaWZmZXJlbnQgY3VzdG9tZXJzIHdoaWxlIGJlaW5nIHJlZmVycmVkIHRvIGFzIGEgM1BBTy4KCkFsc28ga25vd24gYXM6IGFzc2Vzc29yLCBhc3Nlc3NvcnM=
     - uuid: b25f5485-ceb2-5949-bf79-bd18c2357d1b
       title: "Definition: Certification Class Change"
       base64:
@@ -6095,12 +6347,24 @@ catalog:
         filename: FRD-CSO.txt
         media-type: text/plain
         value: QSBzcGVjaWZpYywgcGFja2FnZWQgY2xvdWQgY29tcHV0aW5nIHByb2R1Y3Qgb3Igc2VydmljZSBzdXBwbGllZCBieSBhIGNsb3VkIHNlcnZpY2UgcHJvdmlkZXIgZm9yIHVzZSBieSBjdXN0b21lcnMsIHRoYXQgaXMgdGhlIHN1YmplY3Qgb2YgYSBGZWRSQU1QIENlcnRpZmljYXRpb24uCgpOb3RlOiBUaGUgRmVkUkFNUCBNaW5pbXVtIEFzc2Vzc21lbnQgU2NvcGUgZGVmaW5lcyB0aGUgZnVsbCBzY29wZSBvZiB0aGUgY2xvdWQgc2VydmljZSBvZmZlcmluZyBmcm9tIHRoZSBwZXJzcGVjdGl2ZSBvZiBhIEZlZFJBTVAgQ2VydGlmaWNhdGlvbi4KCkFsc28ga25vd24gYXM6IGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcsIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmdz
+    - uuid: 79c285a3-ed00-5d12-957d-d1057122851c
+      title: "Definition: Debilitating Customer Effect"
+      base64:
+        filename: FRD-DCE.txt
+        media-type: text/plain
+        value: QW4gdW53YW50ZWQgY3VzdG9tZXIgZWZmZWN0IHRoYXQgaW50ZXJydXB0cyB1c2Ugb2YgdGhlIGNsb3VkIHNlcnZpY2UgZm9yIG1vc3QgdXNlcnMgb3IgY29tcHJvbWlzZXMgdGhlIGludGVncml0eSBvciBjb25maWRlbnRpYWxpdHkgb2YgbW9zdCBmZWRlcmFsIGN1c3RvbWVyIGRhdGEuIElmIHRoZSBhZHZlcnNlIGN1c3RvbWVyIGVmZmVjdCBpcyB1bmtub3duIHRoZW4gaXQgc2hvdWxkIGJlIHRyZWF0ZWQgYXMgaWYgaXQgaXMgZGViaWxpdGF0aW5nIHVudGlsIHByb3ZlbiBvdGhlcndpc2UuCgpBbHNvIGtub3duIGFzOiBkZWJpbGl0YXRpbmcgY3VzdG9tZXIgZWZmZWN0LCBkZWJpbGl0YXRpbmcgY3VzdG9tZXIgZWZmZWN0cw==
     - uuid: 508fc4d6-2baf-5de8-b901-b269a37c3317
       title: "Definition: Deterministic Telemetry"
       base64:
         filename: FRD-DTM.txt
         media-type: text/plain
         value: VmVyaWZpYWJsZSBkYXRhIGNvbGxlY3RlZCBkaXJlY3RseSBmcm9tIGFuIGF1dGhvcml0YXRpdmUgc291cmNlIHRoYXQgcmVwcmVzZW50cyBhIGZhY3R1YWwgYW5kIHJlcHJvZHVjaWJsZSBvYnNlcnZhdGlvbiBvZiB0aGUgYXR0cmlidXRlcyBvZiBhIHN5c3RlbSBzdWNoIGFzIHRoZSBzeXN0ZW0ncyBzdGF0ZSwgY29uZmlndXJhdGlvbiwgb3IgYmVoYXZpb3IuCgpOb3RlOiBQcm9iYWJpbGlzdGljIGluZmVyZW5jZXMsIGdlbmVyYXRpdmUgb3V0cHV0cywgb3IgcHJlZGljdGl2ZSBhc3Nlc3NtZW50cyBzdWNoIGFzIHRob3NlIHByb2R1Y2VkIHVzaW5nIGdlbmVyYXRpdmUgdHJhbnNmb3JtZXIgbW9kZWxzIChjb21tb25seSByZWZlcnJlZCB0byBhcyDigJxHZW5lcmF0aXZlIEFJ4oCdKSBkbyBub3QgY29uc3RpdHV0ZSBhIGZhY3R1YWwgcmVjb3JkIG9mIHRoZSBzeXN0ZW0gc3RhdGUgYW5kIG11c3Qgbm90IGJlIHVzZWQgdG8gZ2VuZXJhdGUgZGV0ZXJtaW5pc3RpYyB0ZWxlbWV0cnkuCgpBbHNvIGtub3duIGFzOiBkZXRlcm1pbmlzdGljIHRlbGVtZXRyeQ==
+    - uuid: cb5d94e7-f5eb-5cce-98e2-ef589441c20a
+      title: "Definition: Disruptive Customer Effect"
+      base64:
+        filename: FRD-DCF.txt
+        media-type: text/plain
+        value: QW4gdW53YW50ZWQgY3VzdG9tZXIgZWZmZWN0IHRoYXQgaW50ZXJydXB0cyB1c2Ugb2YgdGhlIGNsb3VkIHNlcnZpY2UgZm9yIG1hbnkgdXNlcnMgZm9yIGxlc3MgdGhhbiAyNCBob3Vycywgb3IgdGhhdCBjb21wcm9taXNlcyB0aGUgaW50ZWdyaXR5IG9yIGNvbmZpZGVudGlhbGl0eSBvZiBsYXJnZSBhbW91bnRzIG9yIG1hbnkgdHlwZXMgb2YgZmVkZXJhbCBjdXN0b21lciBkYXRhLgoKQWxzbyBrbm93biBhczogZGlzcnVwdGl2ZSBjdXN0b21lciBlZmZlY3QsIGRpc3J1cHRpdmUgY3VzdG9tZXIgZWZmZWN0cw==
     - uuid: 3d8b6855-ec3d-5633-a8cd-f96a0f90c3b4
       title: "Definition: Drift"
       base64:
@@ -6119,12 +6383,6 @@ catalog:
         filename: FRD-FCD.txt
         media-type: text/plain
         value: QWxsIGVsZWN0cm9uaWMgaW5mb3JtYXRpb24sIGNvbnRlbnQsIGFuZCBtYXRlcmlhbHMgdGhhdCBhbiBhZ2VuY3kgb3IgaXRzIGF1dGhvcml6ZWQgdXNlcnMgdXBsb2FkLCBzdG9yZSwgb3Igb3RoZXJ3aXNlIHN1cHBseSB0byBhIGNsb3VkIHNlcnZpY2UgZm9yIHByb2Nlc3Npbmcgb3Igc3RvcmFnZS4gVGhpcyBkb2VzIE5PVCBpbmNsdWRlIGFjY291bnQgaW5mb3JtYXRpb24sIHNlcnZpY2UgbWV0YWRhdGEsIGFuYWx5dGljcywgdGVsZW1ldHJ5LCBvciBvdGhlciBzaW1pbGFyIG1ldGFkYXRhIGdlbmVyYXRlZCBieSB0aGUgY2xvdWQgc2VydmljZSBwcm92aWRlci4KCk5vdGU6IEluIHRoZSBjb250ZXh0IG9mIEZlZFJBTVAgQ2VydGlmaWNhdGlvbiwgImZlZGVyYWwgY3VzdG9tZXIgZGF0YSIgT05MWSBldmVyIHJlZmVycyB0byBkYXRhIG93bmVkIGJ5IGZlZGVyYWwgYWdlbmN5IGN1c3RvbWVycy4gQWdyZWVtZW50cyBhbmQgY29udHJhY3RzIHdpdGggc3BlY2lmaWMgYWdlbmNpZXMgbWF5IHJlcXVpcmUgcHJvdmlkZXJzIHRvIHByb3RlY3QgYWRkaXRpb25hbCBkYXRhIG9yIGV2ZW4gdHJhbnNmZXIgb3duZXJzaGlwIG9mIHRlbGVtZXRyeSBvciB1c2FnZSBkYXRhIHRvIHRoZSBhZ2VuY3k7IGFsd2F5cyBjb25zdWx0IGEgbGF3eWVyIHRoYXQgaXMgZmFtaWxpYXIgd2l0aCBjb21wYW55IGFncmVlbWVudHMgYW5kIGNvbnRyYWN0cyB3aGVuIGRldGVybWluaW5nIHRoZSBzY29wZSBvZiBmZWRlcmFsIGN1c3RvbWVyIGRhdGEuCgpBbHNvIGtub3duIGFzOiBmZWRlcmFsIGN1c3RvbWVyIGRhdGE=
-    - uuid: e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8
-      title: "Definition: Federal Reportable Incident"
-      base64:
-        filename: FRD-FRI.txt
-        media-type: text/plain
-        value: QW4gaW5jaWRlbnQgdGhhdCBhZmZlY3RzIHRoZSBjb25maWRlbnRpYWxpdHkgb3IgaW50ZWdyaXR5IG9mIGZlZGVyYWwgY3VzdG9tZXIgZGF0YSBvciBpcyBsaWtlbHkgdG8gYWZmZWN0IHRoZSBjb25maWRlbnRpYWxpdHkgb3IgaW50ZWdyaXR5IG9mIGZlZGVyYWwgY3VzdG9tZXIgZGF0YS4KCkFsc28ga25vd24gYXM6IGZlZGVyYWwgcmVwb3J0YWJsZSBpbmNpZGVudCwgZmVkZXJhbCByZXBvcnRhYmxlIGluY2lkZW50cw==
     - uuid: b4c747be-af61-5e69-ab92-404dc73c982f
       title: "Definition: FedRAMP Certified"
       citation:
@@ -6137,11 +6395,17 @@ catalog:
         media-type: text/plain
         value: VGhlIHN0YXR1cyBvZiBhIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcgdGhhdCBoYXMgcmVjZWl2ZWQgRmVkUkFNUCBDZXJ0aWZpY2F0aW9uIGFuZCBtZWV0cyB0aGUgbGVnYWwgcmVxdWlyZW1lbnQgdG8gYmUgRmVkUkFNUCBhdXRob3JpemVkLgoKTm90ZTogRmVkUkFNUCB1c2VzICJGZWRSQU1QIENlcnRpZmllZCIgYXMgdGhlIGN1cnJlbnQgcHJvZ3JhbSB0ZXJtIGZvciBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5ncyB0aGF0IHNhdGlzZnkgdGhlIHN0YXR1dG9yeSBjb25jZXB0IG9mIEZlZFJBTVAgYXV0aG9yaXphdGlvbi4KCkFsc28ga25vd24gYXM6IEZlZFJBTVAgQ2VydGlmaWVkLCBGZWRSQU1QIGNlcnRpZmllZCwgY2VydGlmaWVkLCBGZWRSQU1QIGF1dGhvcml6ZWQsIEZlZFJBTVAgQXV0aG9yaXplZCwgYXV0aG9yaXplZA==
     - uuid: ad6d0493-8ebb-5bfa-9695-8d2b4542d71d
-      title: "Definition: FedRAMP Recognized Assessor"
+      title: "Definition: FedRAMP Recognized"
       base64:
         filename: FRD-FRA.txt
         media-type: text/plain
-        value: QW4gaW5kZXBlbmRlbnQgYXNzZXNzb3IgcmVjb2duaXplZCBieSBGZWRSQU1QIHRvIHBlcmZvcm0gYXNzZXNzbWVudCBvciB2YWxpZGF0aW9uIGFjdGl2aXRpZXMgZm9yIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmdzIGluIHRoZSBjb250ZXh0IG9mIEZlZFJBTVAgQ2VydGlmaWNhdGlvbi4KCkFsc28ga25vd24gYXM6IEZlZFJBTVAgUmVjb2duaXplZCBBc3Nlc3NvciwgRmVkUkFNUCBSZWNvZ25pemVkIEFzc2Vzc29ycywgRmVkUkFNUCByZWNvZ25pemVkIGFzc2Vzc29yLCBGZWRSQU1QIHJlY29nbml6ZWQgYXNzZXNzb3JzLCByZWNvZ25pemVkIGFzc2Vzc29yLCByZWNvZ25pemVkIGFzc2Vzc29ycw==
+        value: VGhlIHN0YXR1cyBvZiBpbmRlcGVuZGVudCBhc3Nlc3NtZW50IHNlcnZpY2VzIHRoYXQgYXJlIHJlY29nbml6ZWQgYnkgRmVkUkFNUCB0byBwZXJmb3JtIGFzc2Vzc21lbnQgYWN0aXZpdGllcyBvbiBiZWhhbGYgb2YgRmVkUkFNUCBmb3IgY2xvdWQgc2VydmljZSBvZmZlcmluZ3Mgc2Vla2luZyB0byBvYnRhaW4gb3IgbWFpbnRhaW4gRmVkUkFNUCBDZXJ0aWZpY2F0aW9uLgoKQWxzbyBrbm93biBhczogRmVkUkFNUCBSZWNvZ25pemVkLCBGZWRSQU1QIFJlY29nbml0aW9u
+    - uuid: e085900e-c5b9-5a21-a82d-d4dd8ed4cdc8
+      title: "Definition: FedRAMP Reportable Incident"
+      base64:
+        filename: FRD-FRI.txt
+        media-type: text/plain
+        value: QW4gaW5jaWRlbnQgdGhhdCBhZmZlY3RzIHRoZSBjb25maWRlbnRpYWxpdHkgb3IgaW50ZWdyaXR5IG9mIGZlZGVyYWwgY3VzdG9tZXIgZGF0YSBvciBpcyBsaWtlbHkgdG8gYWZmZWN0IHRoZSBjb25maWRlbnRpYWxpdHkgb3IgaW50ZWdyaXR5IG9mIGZlZGVyYWwgY3VzdG9tZXIgZGF0YS4KCkFsc28ga25vd24gYXM6IEZlZFJBTVAgUmVwb3J0YWJsZSBJbmNpZGVudCwgRmVkUkFNUCBSZXBvcnRhYmxlIEluY2lkZW50cw==
     - uuid: b0f38538-90e1-5a20-a4bb-d3c0090b924a
       title: "Definition: FedRAMP Security Inbox"
       base64:
@@ -6159,7 +6423,7 @@ catalog:
       base64:
         filename: FRD-FMV.txt
         media-type: text/plain
-        value: QSB2dWxuZXJhYmlsaXR5IHdoZXJlIHRoZSBsaWtlbGlob29kIG9mIGV4cGxvaXRhdGlvbiBvciBQb3RlbnRpYWwgQWR2ZXJzZSBJbXBhY3QgTi1yYXRpbmcgaGFzIGJlZW4gcmVkdWNlZCBmcm9tIHRoZSBvcmlnaW5hbCBldmFsdWF0aW9uIHVudGlsIGVpdGhlciBhcmUgbmVnbGlnaWJsZSwgYnV0IHRoZSB2dWxuZXJhYmlsaXR5IGlzIHN0aWxsIGRldGVjdGVkLgoKQWxzbyBrbm93biBhczogZnVsbHkgbWl0aWdhdGVkIHZ1bG5lcmFiaWxpdHksIGZ1bGx5IG1pdGlnYXRlZCB2dWxuZXJhYmlsaXRpZXM=
+        value: QSB2dWxuZXJhYmlsaXR5IHdoZXJlIHRoZSBsaWtlbGlob29kIG9mIGV4cGxvaXRhdGlvbiBvciBQb3RlbnRpYWwgQWdlbmN5IEltcGFjdCBOLXJhdGluZyBoYXMgYmVlbiByZWR1Y2VkIGZyb20gdGhlIG9yaWdpbmFsIGV2YWx1YXRpb24gdW50aWwgZWl0aGVyIGFyZSBuZWdsaWdpYmxlLCBidXQgdGhlIHZ1bG5lcmFiaWxpdHkgaXMgc3RpbGwgZGV0ZWN0ZWQuCgpBbHNvIGtub3duIGFzOiBmdWxseSBtaXRpZ2F0ZWQgdnVsbmVyYWJpbGl0eSwgZnVsbHkgbWl0aWdhdGVkIHZ1bG5lcmFiaWxpdGllcw==
     - uuid: 12b44e4f-3715-5d53-8716-eb61c80e0c82
       title: "Definition: Handle"
       base64:
@@ -6171,12 +6435,12 @@ catalog:
       citation:
         text: 44 USC § 3552 (b)(2)
         links:
-        - href: https://www.govinfo.gov/app/details/USCODE-2023-title44/USCODE-2023-title44-chap35-subchapII-sec3552
+        - href: https://www.govinfo.gov/app/details/USCODE-2024-title44/USCODE-2024-title44-chap35-subchapII-sec3552
           rel: source
       base64:
         filename: FRD-INT.txt
         media-type: text/plain
-        value: SGFzIHRoZSBtZWFuaW5nIGdpdmVuIGluIDQ0IFVTQyDCpyAzNTUyIChiKSgyKSBhcHBsaWVkIHRvIGZlZGVyYWwgY3VzdG9tZXIgZGF0YSwgd2hpY2ggaXMgImFuIG9jY3VycmVuY2UgdGhhdCAoQSkgYWN0dWFsbHkgb3IgaW1taW5lbnRseSBqZW9wYXJkaXplcywgd2l0aG91dCBsYXdmdWwgYXV0aG9yaXR5LCB0aGUgaW50ZWdyaXR5LCBjb25maWRlbnRpYWxpdHksIG9yIGF2YWlsYWJpbGl0eSBvZiBbZmVkZXJhbCBjdXN0b21lciBkYXRhXTsgb3IgKEIpIGNvbnN0aXR1dGVzIGEgdmlvbGF0aW9uIG9yIGltbWluZW50IHRocmVhdCBvZiB2aW9sYXRpb24gb2YgbGF3LCBzZWN1cml0eSBwb2xpY2llcywgc2VjdXJpdHkgcHJvY2VkdXJlcywgb3IgYWNjZXB0YWJsZSB1c2UgcG9saWNpZXMgW3JlbGF0ZWQgdG8gZmVkZXJhbCBjdXN0b21lciBkYXRhXS4iCgpBbHNvIGtub3duIGFzOiBpbmNpZGVudCwgaW5jaWRlbnRz
+        value: SGFzIHRoZSBtZWFuaW5nIGdpdmVuIGluIDQ0IFVTQyDCpyAzNTUyIChiKSgyKSB3aGljaCBpcyAiYW4gb2NjdXJyZW5jZSB0aGF0IChBKSBhY3R1YWxseSBvciBpbW1pbmVudGx5IGplb3BhcmRpemVzLCB3aXRob3V0IGxhd2Z1bCBhdXRob3JpdHksIHRoZSBpbnRlZ3JpdHksIGNvbmZpZGVudGlhbGl0eSwgb3IgYXZhaWxhYmlsaXR5IG9mIGluZm9ybWF0aW9uIG9yIGFuIGluZm9ybWF0aW9uIHN5c3RlbTsgb3IgKEIpIGNvbnN0aXR1dGVzIGEgdmlvbGF0aW9uIG9yIGltbWluZW50IHRocmVhdCBvZiB2aW9sYXRpb24gb2YgbGF3LCBzZWN1cml0eSBwb2xpY2llcywgc2VjdXJpdHkgcHJvY2VkdXJlcywgb3IgYWNjZXB0YWJsZSB1c2UgcG9saWNpZXMuIgoKQWxzbyBrbm93biBhczogaW5jaWRlbnQsIGluY2lkZW50cw==
     - uuid: f649dfe2-2680-559c-b33f-b0cc6eaf766b
       title: "Definition: Information Resource"
       citation:
@@ -6235,12 +6499,6 @@ catalog:
         filename: FRD-LEV.txt
         media-type: text/plain
         value: QSB2dWxuZXJhYmlsaXR5IHRoYXQgaXMgbm90IGZ1bGx5IG1pdGlnYXRlZCBBTkQgaXMgcmVhY2hhYmxlIGJ5IGEgbGlrZWx5IHRocmVhdCBhY3RvcjsgQU5EIGEgbGlrZWx5IHRocmVhdCBhY3RvciB3aXRoIGtub3dsZWRnZSBvZiB0aGUgdnVsbmVyYWJpbGl0eSB3b3VsZCBsaWtlbHkgZ2FpbiB1bmF1dGhvcml6ZWQgYWNjZXNzLCBjYXVzZSBoYXJtLCBkaXNydXB0IG9wZXJhdGlvbnMsIG9yIG90aGVyd2lzZSBoYXZlIGFuIHVuZGVzaXJlZCBhZHZlcnNlIGltcGFjdCB3aXRoaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcgYnkgZXhwbG9pdGluZyB0aGUgdnVsbmVyYWJpbGl0eS4KCk5vdGU6IEF0IHRoZSBhYnNvbHV0ZSBtaW5pbXVtLCBhbnkgdnVsbmVyYWJpbGl0eSB0aGF0IGFuIGF1dG9tYXRlZCB1bmF1dGhlbnRpY2F0ZWQgc3lzdGVtIGNhbiBleHBsb2l0IG92ZXIgdGhlIGludGVybmV0IGlzIGEgbGlrZWx5IGV4cGxvaXRhYmxlIHZ1bG5lcmFiaWxpdHkuCgpOb3RlOiBUaGUgb3Bwb3NpdGUgb2YgdGhpcyBpcyBhIE5vdCBMaWtlbHkgRXhwbG9pdGFibGUgVnVsbmVyYWJpbGl0eSAoTkxFVikuCgpBbHNvIGtub3duIGFzOiBsaWtlbHkgZXhwbG9pdGFibGUgdnVsbmVyYWJpbGl0eSwgbGlrZWx5IGV4cGxvaXRhYmxlIHZ1bG5lcmFiaWxpdGllcywgTEVWLCBMRVZzLCBOTEVWLCBOTEVWcw==
-    - uuid: 6e75c49b-a1f0-5e61-9505-dda52bc5d00d
-      title: "Definition: Limited Adverse Effect"
-      base64:
-        filename: FRD-LAE.txt
-        media-type: text/plain
-        value: QSBtaW5vciBuZWdhdGl2ZSBpbXBhY3Qgb24gYW4gb3JnYW5pemF0aW9uIGNhdXNlZCBieSB0aGUgbG9zcyBvZiBjb25maWRlbnRpYWxpdHksIGludGVncml0eSwgb3IgYXZhaWxhYmlsaXR5IG9mIGl0cyBpbmZvcm1hdGlvbi4gQXQgYSBtaW5pbXVtLCB0aGlzIGluY2x1ZGVzIGVmZmVjdHMgdGhhdCB3b3VsZCBsaWtlbHk6IChpKSByZXN1bHQgaW4gZGVncmFkYXRpb24gb2YgdGhlIGF2YWlsYWJpbGl0eSBvciBwZXJmb3JtYW5jZSBvZiBzZXJ2aWNlcyB3aXRoaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcgZm9yIGEgbWlub3JpdHkgb2YgcmVsZXZhbnQgdXNlcnM7IE9SIChpaSkgZGlyZWN0bHkgb3IgaW5kaXJlY3RseSByZXN1bHQgaW4gdW5hdXRob3JpemVkIGFjY2VzcywgZGlzY2xvc3VyZSwgb3IgbW9kaWZpY2F0aW9uIG9mIGEgc21hbGwgYW1vdW50IG9mIHRoZSBmZWRlcmFsIGN1c3RvbWVyIGRhdGEgc3RvcmVkIHdpdGhpbiB0aGUgY2xvdWQgc2VydmljZSBvZmZlcmluZyBieSBvbmx5IGEgZmV3IHJlbGV2YW50IHVzZXJzLgoKQWxzbyBrbm93biBhczogbGltaXRlZCBhZHZlcnNlIGVmZmVjdCwgbGltaXRlZCBhZHZlcnNlIGVmZmVjdHM=
     - uuid: 8efe8ffe-563c-5f30-ad73-5aa2edd18b56
       title: "Definition: Machine-Based (Information Resources)"
       base64:
@@ -6264,12 +6522,18 @@ catalog:
         filename: FRD-MRD.txt
         media-type: text/plain
         value: SGFzIHRoZSBtZWFuaW5nIGZyb20gNDQgVS5TLiBDb2RlIMKnIDM1MDIgKDE4KSB3aGljaCBpcyAidGhlIHRlcm0gIm1hY2hpbmUtcmVhZGFibGUiLCB3aGVuIHVzZWQgd2l0aCByZXNwZWN0IHRvIGRhdGEsIG1lYW5zIGRhdGEgaW4gYSBmb3JtYXQgdGhhdCBjYW4gYmUgZWFzaWx5IHByb2Nlc3NlZCBieSBhIGNvbXB1dGVyIHdpdGhvdXQgaHVtYW4gaW50ZXJ2ZW50aW9uIHdoaWxlIGVuc3VyaW5nIG5vIHNlbWFudGljIG1lYW5pbmcgaXMgbG9zdCIKCkFsc28ga25vd24gYXM6IG1hY2hpbmUtcmVhZGFibGU=
-    - uuid: 44aca505-21ec-5acf-a43e-009a819c136d
-      title: "Definition: Negligible Adverse Effect"
+    - uuid: 5dd1123b-9231-5583-97f5-6aaa59fa02d5
+      title: "Definition: Minimal Customer Effect"
       base64:
-        filename: FRD-NAE.txt
+        filename: FRD-MCE.txt
         media-type: text/plain
-        value: QSBzbWFsbCBuZWdhdGl2ZSBpbXBhY3Qgb24gYW4gb3JnYW5pemF0aW9uIGNhdXNlZCBieSB0aGUgbG9zcyBvZiBjb25maWRlbnRpYWxpdHksIGludGVncml0eSwgb3IgYXZhaWxhYmlsaXR5IG9mIGl0cyBpbmZvcm1hdGlvbi4gQXQgYSBtaW5pbXVtLCB0aGlzIGluY2x1ZGVzIGVmZmVjdHMgdGhhdCB3b3VsZCBsaWtlbHk6IChpKSByZXN1bHQgaW4gbWlub3IgaW5jb252ZW5pZW5jZSB3aGVuIGFjY2Vzc2luZyBvciB1c2luZyBzZXJ2aWNlcyB3aXRoaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmc7IE9SIChpaSkgcmVzdWx0IGluIGRlZ3JhZGF0aW9uIG9mIHRoZSBhdmFpbGFiaWxpdHkgb3IgcGVyZm9ybWFuY2Ugb2Ygc2VydmljZXMgd2l0aGluIHRoZSBjbG91ZCBzZXJ2aWNlIG9mZmVyaW5nIGZvciBvbmx5IGEgZmV3IHJlbGV2YW50IHVzZXJzLgoKQWxzbyBrbm93biBhczogbmVnbGlnaWJsZSBhZHZlcnNlIGVmZmVjdCwgbmVnbGlnaWJsZSBhZHZlcnNlIGVmZmVjdHM=
+        value: QW4gdW53YW50ZWQgY3VzdG9tZXIgZWZmZWN0IHRoYXQgaXMgb25seSBub3RpY2VhYmxlIGJ5IHNvbWUgdXNlcnMuIFRoaXMgaW5jbHVkZXMgbWlub3IgaW5jb252ZW5pZW5jZXMgc3VjaCBhcyByZWR1Y2VkIHBlcmZvcm1hbmNlLgoKQWxzbyBrbm93biBhczogbWluaW1hbCBjdXN0b21lciBlZmZlY3QsIG1pbmltYWwgY3VzdG9tZXIgZWZmZWN0cw==
+    - uuid: 52756f25-86c9-5d75-b742-ac2a1550af00
+      title: "Definition: Narrow Customer Effect"
+      base64:
+        filename: FRD-NCE.txt
+        media-type: text/plain
+        value: QW4gdW53YW50ZWQgY3VzdG9tZXIgZWZmZWN0IHRoYXQgaW50ZXJydXB0cyB1c2Ugb2YgdGhlIGNsb3VkIHNlcnZpY2UgZm9yIHNvbWUgdXNlcnMgZm9yIGxlc3MgdGhhbiAxMiBob3Vycywgb3IgdGhhdCBjb21wcm9taXNlcyB0aGUgaW50ZWdyaXR5IG9yIGNvbmZpZGVudGlhbGl0eSBvZiBhbiBleHRyZW1lbHkgbGltaXRlZCBhbW91bnQgYW5kIHR5cGUgb2YgZmVkZXJhbCBjdXN0b21lciBkYXRhLgoKQWxzbyBrbm93biBhczogbmFycm93IGN1c3RvbWVyIGVmZmVjdCwgbmFycm93IGN1c3RvbWVyIGVmZmVjdHM=
     - uuid: 0296a3ca-b388-5207-b6b3-3c4ebe86d4f0
       title: "Definition: Ongoing Certification"
       base64:
@@ -6299,7 +6563,7 @@ catalog:
       base64:
         filename: FRD-PMV.txt
         media-type: text/plain
-        value: QSB2dWxuZXJhYmlsaXR5IHdoZXJlIHRoZSBsaWtlbGlob29kIG9yIFBvdGVudGlhbCBBZHZlcnNlIEltcGFjdCBOLXJhdGluZyBoYXMgYmVlbiByZWR1Y2VkIGZyb20gdGhlIG9yaWdpbmFsIGV2YWx1YXRpb24gYnV0IHRoZSByaXNrIG9mIGV4cGxvaXRhdGlvbiBzdGlsbCBleGlzdHMgYW5kIHRoZSB2dWxuZXJhYmlsaXR5IGlzIHN0aWxsIGRldGVjdGVkLgoKQWxzbyBrbm93biBhczogcGFydGlhbGx5IG1pdGlnYXRlZCB2dWxuZXJhYmlsaXR5LCBwYXJ0aWFsbHkgbWl0aWdhdGVkIHZ1bG5lcmFiaWxpdGllcw==
+        value: QSB2dWxuZXJhYmlsaXR5IHdoZXJlIHRoZSBsaWtlbGlob29kIG9yIFBvdGVudGlhbCBBZ2VuY3kgSW1wYWN0IE4tcmF0aW5nIGhhcyBiZWVuIHJlZHVjZWQgZnJvbSB0aGUgb3JpZ2luYWwgZXZhbHVhdGlvbiBidXQgdGhlIHJpc2sgb2YgZXhwbG9pdGF0aW9uIHN0aWxsIGV4aXN0cyBhbmQgdGhlIHZ1bG5lcmFiaWxpdHkgaXMgc3RpbGwgZGV0ZWN0ZWQuCgpBbHNvIGtub3duIGFzOiBwYXJ0aWFsbHkgbWl0aWdhdGVkIHZ1bG5lcmFiaWxpdHksIHBhcnRpYWxseSBtaXRpZ2F0ZWQgdnVsbmVyYWJpbGl0aWVz
     - uuid: 98937d97-4941-5f5e-ac2a-1740a4890657
       title: "Definition: Persistent FedRAMP Assessment"
       base64:
@@ -6313,11 +6577,11 @@ catalog:
         media-type: text/plain
         value: T2NjdXJyaW5nIGluIGEgZmlybSwgc3RlYWR5IHdheSB0aGF0IGlzIHJlcGVhdGVkIG92ZXIgYSBsb25nIHBlcmlvZCBvZiB0aW1lIGluIHNwaXRlIG9mIG9ic3RhY2xlcyBvciBkaWZmaWN1bHRpZXMuIFBlcnNpc3RlbnQgYWN0aXZpdGllcyBtYXkgdmFyeSBiZXR3ZWVuIGFjdG9ycywgbWF5IG9jY3VyIGlycmVndWxhcmx5LCBhbmQgbWF5IGluY2x1ZGUgaW50ZXJydXB0aW9ucyBvciB3YWl0aW5nIHBlcmlvZHMgYmV0d2VlbiBjeWNsZXMuIFRoZXNlIGF0dHJpYnV0ZXMgb2YgcGVyc2lzdGVudCBhY3Rpdml0aWVzIHNob3VsZCBiZSBpbnRlbnRpb25hbCwgdW5kZXJzdG9vZCwgYW5kIGRvY3VtZW50ZWQ7IHRoZSBzdGF0dXMgb2YgcGVyc2lzdGVudCBhY3Rpdml0aWVzIHdpbGwgYWx3YXlzIGJlIGtub3duLgoKTm90ZTogVGhlIHVzZSBvZiBwZXJzaXN0ZW50bHkgaW5kaWNhdGVzIGEgcHJvY2VzcyB0aGF0IG1heSBub3QgYWx3YXlzIG9jY3VyIGNvbnRpbnVvdXNseSAod2l0aG91dCBpbnRlcnJ1cHRpb24gb3IgZ2Fwcykgb3IgcmVndWxhcmx5IChvbiBhIGNvbnNpc3RlbnQsIHByZWRpY3RhYmxlIGJhc2lzKSBidXQgd2lsbCByZXBlYXQgZnJlcXVlbnRseSBpbiBjeWNsZXMuIEl0IGFsaWducyBnZW5lcmFsbHkgd2l0aCBoaXN0b3JpY2FsIG1pc3VzZSBvZiAiY29udGludW91cyIgaW4gZmVkZXJhbCBpbmZvcm1hdGlvbiBzZWN1cml0eSBwb2xpY2llcy4KCkFsc28ga25vd24gYXM6IHBlcnNpc3RlbnRseSwgcGVyc2lzdGVudA==
     - uuid: b2ca9556-2d41-52ea-8cab-99fae6578586
-      title: "Definition: Potential Adverse Impact"
+      title: "Definition: Potential Agency Impact"
       base64:
         filename: FRD-PAI.txt
         media-type: text/plain
-        value: VGhlIGVzdGltYXRlZCBjdW11bGF0aXZlIGVmZmVjdCBvZiB1bmF1dGhvcml6ZWQgYWNjZXNzLCBkaXNydXB0aW9uLCBoYXJtLCBvciBvdGhlciBhZHZlcnNlIGltcGFjdCB0byB0aGUgVW5pdGVkIFN0YXRlcyBmZWRlcmFsIGdvdmVybm1lbnQgdGhhdCBpcyBsaWtlbHkgdG8gcmVzdWx0IGZyb20gZWl0aGVyIGEgc2VjdXJpdHkgaW5jaWRlbnQgb3IgdGhlIGV4cGxvaXRhdGlvbiBvZiBhIHZ1bG5lcmFiaWxpdHkgaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmc7IGFzIGVzdGltYXRlZCBmb2xsb3dpbmcgYXBwcm9wcmlhdGUgRmVkUkFNUCBydWxlcyB0byBjYWxjdWxhdGUgdGhlIFBvdGVudGlhbCBBZHZlcnNlIEltcGFjdCBOLXJhdGluZyAoUEFJTikuCgpBbHNvIGtub3duIGFzOiBwb3RlbnRpYWwgYWR2ZXJzZSBpbXBhY3QsIHBvdGVudGlhbCBhZHZlcnNlIGltcGFjdHMsIFBBSU4sIFBvdGVudGlhbCBBZHZlcnNlIEltcGFjdCBOLXJhdGluZw==
+        value: VGhlIGVzdGltYXRlZCBjdW11bGF0aXZlIGVmZmVjdCBvZiB1bmF1dGhvcml6ZWQgYWNjZXNzLCBkaXNydXB0aW9uLCBoYXJtLCBvciBvdGhlciBhZHZlcnNlIGltcGFjdHMgdG8gYWxsIGFnZW5jaWVzIHVzaW5nIHRoZSBjbG91ZCBzZXJ2aWNlIHRoYXQgYXJlIGxpa2VseSB0byByZXN1bHQgZnJvbSBzZWN1cml0eSBpbmNpZGVudHMgb3IgdGhlIGV4cGxvaXRhdGlvbiBvZiB2dWxuZXJhYmlsaXRpZXMgaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmc7IGFzIGVzdGltYXRlZCBmb2xsb3dpbmcgYXBwcm9wcmlhdGUgRmVkUkFNUCBydWxlcyB0byBjYWxjdWxhdGUgdGhlIFBvdGVudGlhbCBBZ2VuY3kgSW1wYWN0IE4tcmF0aW5nIChQQUlOKS4KCkFsc28ga25vd24gYXM6IHBvdGVudGlhbCBhZ2VuY3kgaW1wYWN0LCBwb3RlbnRpYWwgYWdlbmN5IGltcGFjdHMsIFBBSU4sIFBvdGVudGlhbCBBZ2VuY3kgSW1wYWN0IE4tcmF0aW5n
     - uuid: e579c731-4bdb-5f45-9734-acc1bec2b9b3
       title: "Definition: Privileged Account"
       base64:
@@ -6377,12 +6641,6 @@ catalog:
         filename: FRD-SCT.txt
         media-type: text/plain
         value: SGFzIHRoZSBtZWFuaW5nIGZyb20gTklTVCBGSVBTIDE5OSwgd2hpY2ggaXMgIlRoZSBjaGFyYWN0ZXJpemF0aW9uIG9mIGluZm9ybWF0aW9uIG9yIGFuIGluZm9ybWF0aW9uIHN5c3RlbSBiYXNlZCBvbiBhbiBhc3Nlc3NtZW50IG9mIHRoZSBwb3RlbnRpYWwgaW1wYWN0IHRoYXQgYSBsb3NzIG9mIGNvbmZpZGVudGlhbGl0eSwgaW50ZWdyaXR5LCBvciBhdmFpbGFiaWxpdHkgb2Ygc3VjaCBpbmZvcm1hdGlvbiBvciBpbmZvcm1hdGlvbiBzeXN0ZW0gd291bGQgaGF2ZSBvbiBvcmdhbml6YXRpb25hbCBvcGVyYXRpb25zLCBvcmdhbml6YXRpb25hbCBhc3NldHMsIG9yIGluZGl2aWR1YWxzLiIgU2VjdXJpdHkgY2F0ZWdvcmllcyBhcmUgb2Z0ZW4gcmVmZXJyZWQgdG8gYXMgImltcGFjdCBsZXZlbHMiIGFuZCBpbmNsdWRlIExvdywgTW9kZXJhdGUsIGFuZCBIaWdoLgoKQWxzbyBrbm93biBhczogc2VjdXJpdHkgY2F0ZWdvcnksIHNlY3VyaXR5IGNhdGVnb3JpZXMsIGltcGFjdCBsZXZlbCwgaW1wYWN0IGxldmVscw==
-    - uuid: 158877ff-4e6a-50ce-8f01-1a5a0730ff92
-      title: "Definition: Serious Adverse Effect"
-      base64:
-        filename: FRD-SAE.txt
-        media-type: text/plain
-        value: QSBzaWduaWZpY2FudCBuZWdhdGl2ZSBpbXBhY3Qgb24gYW4gb3JnYW5pemF0aW9uIGNhdXNlZCBieSB0aGUgbG9zcyBvZiBjb25maWRlbnRpYWxpdHksIGludGVncml0eSwgb3IgYXZhaWxhYmlsaXR5IG9mIGl0cyBpbmZvcm1hdGlvbi4gQXQgYSBtaW5pbXVtLCB0aGlzIGluY2x1ZGVzIGVmZmVjdHMgdGhhdCB3b3VsZCBsaWtlbHk6IChpKSByZXN1bHQgaW4gaW50ZXJtaXR0ZW50IG9yIG9uZ29pbmcgZGVncmFkYXRpb24gaW4gdGhlIGF2YWlsYWJpbGl0eSBvciBwZXJmb3JtYW5jZSBvZiBzZXJ2aWNlcyB3aXRoaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcsIGNhdXNpbmcgdW5wcmVkaWN0YWJsZSBpbnRlcnJ1cHRpb25zIHRvIG9wZXJhdGlvbnMgZm9yIDEyKyBob3VyczsgT1IgKGlpKSBkaXJlY3RseSBvciBpbmRpcmVjdGx5IHJlc3VsdCBpbiB1bmF1dGhvcml6ZWQgYWNjZXNzLCBkaXNjbG9zdXJlLCBvciBtb2RpZmljYXRpb24gb2YgYSBtaW5vcml0eSBvZiB0aGUgZmVkZXJhbCBjdXN0b21lciBkYXRhIHN0b3JlZCB3aXRoaW4gdGhlIGNsb3VkIHNlcnZpY2Ugb2ZmZXJpbmcuCgpBbHNvIGtub3duIGFzOiBzZXJpb3VzIGFkdmVyc2UgZWZmZWN0LCBzZXJpb3VzIGFkdmVyc2UgZWZmZWN0cw==
     - uuid: 446d14b1-5559-5b04-9763-6e38459d8a4d
       title: "Definition: Significant Change"
       citation:
@@ -6463,11 +6721,6 @@ catalog:
         filename: FRD-VLR.txt
         media-type: text/plain
         value: VGhlIHN5c3RlbWF0aWMgcHJvY2VzcyBvZiB0cmFja2luZywgZXZhbHVhdGluZywgbWl0aWdhdGluZywgbW9uaXRvcmluZywgcmVtZWRpYXRpbmcsIGFzc2Vzc2luZyBleHBsb2l0YXRpb24sIHJlcG9ydGluZywgYW5kIG90aGVyd2lzZSBtYW5hZ2luZyBkZXRlY3RlZCB2dWxuZXJhYmlsaXRpZXMuCgpOb3RlOiBUaGlzIGRlZmluaXRpb24gYXBwbGllcyB0byBvdGhlciBmb3JtcyBzdWNoIGFzICJyZXNwb25kIHRvIHZ1bG5lcmFiaWxpdGllcyIgb3Igc2ltcGx5ICJyZXNwb25zZSIgLyAicmVzcG9uZGVkIiB1c2VkIGluIEZlZFJBTVAgbWF0ZXJpYWxzLgoKQWxzbyBrbm93biBhczogdnVsbmVyYWJpbGl0eSByZXNwb25zZSwgcmVzcG9uZCB0byB2dWxuZXJhYmlsaXRpZXMsIHJlc3BvbmQsIHJlc3BvbnNlLCByZXNwb25kZWQ=
-    - uuid: 3c623a28-172d-5321-88d8-480005a18fe4
-      title: Cybersecurity and Infrastructure Security Agency Federal Incident Notification Guidelines
-      rlinks:
-      - href: https://www.cisa.gov/federal-incident-notification-guidelines
-        media-type: text/html
     - uuid: afb90136-283b-59d6-b8f3-953a3b84367b
       title: Scope of FedRAMP
       rlinks:
@@ -6492,4 +6745,19 @@ catalog:
       title: FedRAMP Certification Application Form
       rlinks:
       - href: https://fedramp.gov/forms
+        media-type: text/html
+    - uuid: dc92eaa9-3341-5970-8bcd-1f48da7a1e1d
+      title: Agency Liaison Program
+      rlinks:
+      - href: https://www.fedramp.gov/preview/2026/agencies/support/liaisons
+        media-type: text/html
+    - uuid: 89773bae-2b54-5ca0-89a5-050abc84b5fa
+      title: Using a FedRAMP Certified Cloud Service Offering
+      rlinks:
+      - href: https://fedramp.gov/preview/2026/agencies/use
+        media-type: text/html
+    - uuid: 17c49172-1a62-5ec0-947a-e16041e8272c
+      title: A2LA Public Documents
+      rlinks:
+      - href: https://portal.a2la.org/documents/
         media-type: text/html

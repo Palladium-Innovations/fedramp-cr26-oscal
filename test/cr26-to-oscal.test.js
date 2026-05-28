@@ -118,6 +118,32 @@ test("creates a harmonized FedRAMP CR26 XML catalog with CR26 groups and referen
   assert.match(catalog.xml, /<control class="ksi" id="KSI-IAM-AAM">/);
 });
 
+test("supports current CR26 all scope and subset metadata", async () => {
+  const config = await loadConfig();
+  const rules = await fixture();
+  const ruleSet = rules.FRR.VDR;
+
+  ruleSet.data.all = ruleSet.data.both;
+  delete ruleSet.data.both;
+  ruleSet.info.subsets = ruleSet.info.labels;
+  delete ruleSet.info.labels;
+
+  const [catalog] = createCatalogOutputs(rules, config);
+  const profiles = createProfileOutputs(rules, config);
+  const [mapping] = createMappingOutputs(rules, config);
+  const profile20x = profiles.find((output) => output.profile.id === "20x");
+  const importBody = profile20x.xml.match(/<import href="#([^"]+)">\n([\s\S]*?)\n  <\/import>/)[2];
+  const includedIds = [...importBody.matchAll(/<with-id>([^<]+)<\/with-id>/g)].map((match) => match[1]);
+
+  assert.match(
+    catalog.xml,
+    /<group class="section" id="VDR-CSO">\n      <title>General Provider Responsibilities<\/title>/
+  );
+  assert.match(catalog.xml, /<control class="frr" id="VDR-CSO-DET">/);
+  assert.ok(includedIds.includes("VDR-CSO-DET"));
+  assert.match(mapping.xml, /<source type="control" id-ref="VDR-CSO-DET"\/>/);
+});
+
 test("creates FedRAMP 20x and Rev5 profile shells from the harmonized catalog", async () => {
   const config = await loadConfig();
   const outputs = createProfileOutputs(await fixture(), config);
