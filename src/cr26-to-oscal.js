@@ -574,12 +574,12 @@ function controlLinks(item, context) {
   return `\n${links.map(linkXml).join("\n")}`;
 }
 
-function partXml({ id, name, className, paragraphs }) {
+function partXml({ id, name, className, paragraphs }, indent = "      ") {
   const classAttribute = className ? ` class="${escapeXml(className)}"` : "";
 
-  return `      <part id="${escapeXml(id)}" name="${escapeXml(name)}"${classAttribute}>
-${paragraphs.map((paragraph) => `        <p>${escapeXml(paragraph)}</p>`).join("\n")}
-      </part>`;
+  return `${indent}<part id="${escapeXml(id)}" name="${escapeXml(name)}"${classAttribute}>
+${paragraphs.map((paragraph) => `${indent}  <p>${escapeXml(paragraph)}</p>`).join("\n")}
+${indent}</part>`;
 }
 
 function statementParts(controlId, item) {
@@ -621,14 +621,56 @@ function noteParts(controlId, item) {
   }));
 }
 
+function artifactValues(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (Array.isArray(value?.all_classes)) {
+    return value.all_classes;
+  }
+
+  return [];
+}
+
+function artifactScopeParts(controlId, artifacts, { classKey } = {}) {
+  const parts = [];
+
+  for (const [scope, values] of Object.entries(artifacts ?? {})) {
+    for (const [index, artifact] of artifactValues(values).entries()) {
+      const idParts = [controlId, "artifact", classKey, scope, index + 1].filter(Boolean);
+      const classParts = ["artifact", classKey ? `class-${classKey}` : undefined, `scope-${scope}`].filter(Boolean);
+
+      parts.push({
+        id: idParts.join("_"),
+        name: "guidance",
+        className: classParts.join("-"),
+        paragraphs: [artifact]
+      });
+    }
+  }
+
+  return parts;
+}
+
+function artifactParts(controlId, item) {
+  const parts = [...artifactScopeParts(controlId, item.artifacts)];
+
+  for (const [classKey, variant] of Object.entries(item.varies_by_class ?? {})) {
+    parts.push(...artifactScopeParts(controlId, variant.artifacts, { classKey }));
+  }
+
+  return parts;
+}
+
 function controlPartsXml(controlId, item) {
-  const parts = [...statementParts(controlId, item), ...noteParts(controlId, item)];
+  const parts = [...statementParts(controlId, item), ...noteParts(controlId, item), ...artifactParts(controlId, item)];
 
   if (parts.length === 0) {
     return "";
   }
 
-  return `\n${parts.map(partXml).join("\n")}`;
+  return `\n${parts.map((part) => partXml(part)).join("\n")}`;
 }
 
 function controlXml(id, item, className, context) {
@@ -645,6 +687,28 @@ function groupPartXml(name, value, indent = "    ") {
   return `\n${indent}<part name="${escapeXml(name)}">
 ${indent}  <p>${escapeXml(value)}</p>
 ${indent}</part>`;
+}
+
+function defaultArtifactPartsXml(rules, kind, indent = "  ") {
+  const artifacts = rules.info?.default_artifacts?.[kind] ?? [];
+
+  if (artifacts.length === 0) {
+    return "";
+  }
+
+  return `\n${artifacts
+    .map((artifact, index) =>
+      partXml(
+        {
+          id: `${kind}_default_artifact_${index + 1}`,
+          name: "instruction",
+          className: "default-artifact",
+          paragraphs: [artifact]
+        },
+        indent
+      )
+    )
+    .join("\n")}`;
 }
 
 function frrControlsByLabel(ruleSet, catalog) {
@@ -683,13 +747,14 @@ function frrGroupXml(rules, catalog, context) {
   const ruleSetGroups = Object.entries(rules.FRR ?? {}).map(([key, ruleSet]) =>
     frrRuleSetGroupXml(key, ruleSet, catalog, context)
   );
+  const defaultArtifacts = defaultArtifactPartsXml(rules, "FRR");
 
   if (ruleSetGroups.length === 0) {
     return "";
   }
 
   return `<group class="collection" id="FRR">
-  <title>FedRAMP Requirements and Recommendations</title>
+  <title>FedRAMP Requirements and Recommendations</title>${defaultArtifacts}
 ${ruleSetGroups.join("\n")}
 </group>`;
 }
@@ -705,13 +770,14 @@ ${controls.join("\n")}
 
 function ksiGroupXml(rules, context) {
   const themeGroups = Object.entries(rules.KSI ?? {}).map(([key, theme]) => ksiThemeGroupXml(key, theme, context));
+  const defaultArtifacts = defaultArtifactPartsXml(rules, "KSI");
 
   if (themeGroups.length === 0) {
     return "";
   }
 
   return `<group class="collection" id="KSI">
-  <title>Key Security Indicators</title>
+  <title>Key Security Indicators</title>${defaultArtifacts}
 ${themeGroups.join("\n")}
 </group>`;
 }

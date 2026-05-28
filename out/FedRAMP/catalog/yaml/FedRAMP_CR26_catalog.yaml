@@ -53,6 +53,19 @@ catalog:
   - id: FRR
     class: collection
     title: FedRAMP Requirements and Recommendations
+    parts:
+    - id: FRR_default_artifact_1
+      name: instruction
+      class: default-artifact
+      prose: "Explanation of how the rule is followed, or an explanation of the reason and resulting risk to customers for not following the rule."
+    - id: FRR_default_artifact_2
+      name: instruction
+      class: default-artifact
+      prose: "Verification that the implementation is appropriate for the rule, or that the reason for not implementing is accepted."
+    - id: FRR_default_artifact_3
+      name: instruction
+      class: default-artifact
+      prose: "Validation that the implementation is in place and working as intended, or that the reason for not implementing is valid."
     groups:
     - id: CDS
       class: rule-area
@@ -101,6 +114,14 @@ catalog:
             name: guidance
             class: note
             prose: "Generally, this information should be available on a public webpage."
+          - id: CDS-CSO-PUB_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: URL to the human-readable data.
+          - id: CDS-CSO-PUB_artifact_all_2
+            name: guidance
+            class: artifact-scope-all
+            prose: URL to the machine-readable data.
         - id: CDS-CSO-SVC
           class: frr
           title: Service List
@@ -121,6 +142,14 @@ catalog:
           - id: CDS-CSO-SVC_smt
             name: statement
             prose: Providers MUST publicly share a detailed list of specific services and their security categories that are included in the cloud service offering using clear feature or service names that align with standard public marketing materials; this list MUST be complete enough for a potential customer to determine which services are and are not included in the FedRAMP Minimum Assessment Scope without requesting access to underlying FedRAMP Certification Data.
+          - id: CDS-CSO-SVC_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: URL to the human-readable data.
+          - id: CDS-CSO-SVC_artifact_all_2
+            name: guidance
+            class: artifact-scope-all
+            prose: URL to the machine-readable data (if applicable).
         - id: CDS-CSO-PAR
           class: frr
           title: Public Availability Reporting
@@ -249,6 +278,10 @@ catalog:
             name: guidance
             class: note
             prose: "Consolidating changes quarterly means that the historical status at the end of each quarter or at the time of the Ongoing Authorization Report or Quarterly Review is sufficient, instead of maintaining separate versions with every single change that took place throughout the quarter."
+          - id: CDS-CSO-HAD_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: Explanation of how to access this information.
         - id: CDS-CSO-PSM
           class: frr
           title: Per-Service Certification Materials
@@ -284,6 +317,22 @@ catalog:
             name: guidance
             class: note
             prose: Providers are encouraged to provide a single comprehensive set of materials for all shared aspects of the service offering and only provide separate materials for unique aspects of each service to minimize the burden on providers and agencies.
+          - id: CDS-CSO-PSM_artifact_a_all_1
+            name: guidance
+            class: artifact-class-a-scope-all
+            prose: "Explanation of the supplied materials, including how to access and use them."
+          - id: CDS-CSO-PSM_artifact_b_all_1
+            name: guidance
+            class: artifact-class-b-scope-all
+            prose: "Explanation of the supplied materials, including how to access and use them."
+          - id: CDS-CSO-PSM_artifact_c_all_1
+            name: guidance
+            class: artifact-class-c-scope-all
+            prose: "Explanation of the supplied materials, including how to access and use them."
+          - id: CDS-CSO-PSM_artifact_d_all_1
+            name: guidance
+            class: artifact-class-d-scope-all
+            prose: "Explanation of the supplied materials, including how to access and use them."
         - id: CDS-CSO-RPS
           class: frr
           title: Responsible Public Sharing
@@ -307,6 +356,10 @@ catalog:
           - id: CDS-CSO-RPS_smt
             name: statement
             prose: Providers MAY responsibly share some or all of the information in a FedRAMP Certification Package publicly or with other parties if the provider determines doing so will NOT likely have an adverse effect on the cloud service offering.
+          - id: CDS-CSO-RPS_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: Explanation of if and how this information is shared with other parties.
       - id: CDS-TRC
         class: section
         title: FedRAMP-Compatible Trust Centers
@@ -349,6 +402,10 @@ catalog:
           - id: CDS-TRC-PAC_smt
             name: statement
             prose: "Trust centers MUST provide documented programmatic access to all FedRAMP Certification Data, including programmatic access to human-readable materials."
+          - id: CDS-TRC-PAC_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: URL to the documentation for programmatic access.
         - id: CDS-TRC-AAI
           class: frr
           title: Agency Access Inventory
@@ -366,6 +423,10 @@ catalog:
           - id: CDS-TRC-AAI_smt
             name: statement
             prose: Trust centers MUST maintain an inventory and history of federal agency users or systems with access to FedRAMP Certification Data and MUST make this information available to FedRAMP upon request.
+          - id: CDS-TRC-AAI_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: Explanation of how FedRAMP can obtain this information.
         - id: CDS-TRC-ACL
           class: frr
           title: Access Logging
@@ -380,6 +441,10 @@ catalog:
           - id: CDS-TRC-ACL_smt
             name: statement
             prose: "Trust centers MUST log access to FedRAMP Certification Data and store summaries of access for at least six months; such information, as it pertains to specific parties, SHOULD be made available upon request by those parties."
+          - id: CDS-TRC-ACL_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: Explanation of how the appropriate parties can obtain this log information.
         - id: CDS-TRC-HMR
           class: frr
           title: Human and Machine-Readable
@@ -414,6 +479,10 @@ catalog:
           - id: CDS-TRC-SSM_smt
             name: statement
             prose: Trust centers SHOULD include features that encourage all necessary parties to provision and manage access to FedRAMP Certification Data for their users and services directly.
+          - id: CDS-TRC-SSM_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: URL or explanation how to access documentation of these features and capabilities.
       - id: CDS-UTC
         class: section
         title: Using a Trust Center
@@ -441,6 +510,10 @@ catalog:
           - id: CDS-UTC-PGD_smt
             name: statement
             prose: Providers MUST publicly provide plain-language policies and guidance for all necessary parties that explains how they can obtain and manage access to FedRAMP Certification Data stored in the trust center.
+          - id: CDS-UTC-PGD_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: "URL or explanation of the supplied materials, including how to access and use them."
         - id: CDS-UTC-AGA
           class: frr
           title: Agency Access
@@ -458,6 +531,14 @@ catalog:
           - id: CDS-UTC-AGA_smt
             name: statement
             prose: Providers SHOULD share the FedRAMP Certification package with agencies upon request.
+          - id: CDS-UTC-AGA_artifact_all_1
+            name: guidance
+            class: artifact-scope-all
+            prose: URL or explanation of how to request these materials.
+          - id: CDS-UTC-AGA_artifact_all_2
+            name: guidance
+            class: artifact-scope-all
+            prose: Explanation of how the provider decides whether or not to share these materials or other related policies.
         - id: CDS-UTC-AAD
           class: frr
           title: Agency Access Denial
@@ -5545,6 +5626,27 @@ catalog:
   - id: KSI
     class: collection
     title: Key Security Indicators
+    parts:
+    - id: KSI_default_artifact_1
+      name: instruction
+      class: default-artifact
+      prose: "Explanation of measures (and their objectives) that demonstrate the Key Security Indicator, or an explanation of the reason and resulting risk to customers for not having measures available for that Key Security Indicator."
+    - id: KSI_default_artifact_2
+      name: instruction
+      class: default-artifact
+      prose: Explanation of the cycle for any measures that are implemented persistently (if applicable).
+    - id: KSI_default_artifact_3
+      name: instruction
+      class: default-artifact
+      prose: "Verification that the measures demonstrate the Key Security Indicator, or that the reason for not having them is accepted."
+    - id: KSI_default_artifact_4
+      name: instruction
+      class: default-artifact
+      prose: "Verification that the automation in place is accurate and sufficient to demonstrate appropriate measures for the Key Security Indicator, or that automation is not necessary for each measure."
+    - id: KSI_default_artifact_5
+      name: instruction
+      class: default-artifact
+      prose: "Validation that the measures are accurately produced and are in place and working as intended, or that the reason for not having them is valid."
     groups:
     - id: KSI-CMT
       class: indicator-theme

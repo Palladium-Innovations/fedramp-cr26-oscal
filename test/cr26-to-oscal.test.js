@@ -144,6 +144,60 @@ test("supports current CR26 all scope and subset metadata", async () => {
   assert.match(mapping.xml, /<source type="control" id-ref="VDR-CSO-DET"\/>/);
 });
 
+test("models default and control-specific artifact expectations", async () => {
+  const config = await loadConfig();
+  const rules = await fixture();
+  const vulnerabilityDetection = rules.FRR.VDR.data.both.CSO["VDR-CSO-DET"];
+  const ksi = rules.KSI.IAM.indicators["KSI-IAM-AAM"];
+
+  rules.info.default_artifacts = {
+    FRR: ["Default rule explanation."],
+    KSI: ["Default KSI verification."]
+  };
+  vulnerabilityDetection.artifacts = {
+    all: ["URL to vulnerability detection evidence."],
+    rev5: ["Rev5 vulnerability detection assessment evidence."]
+  };
+  vulnerabilityDetection.varies_by_class = {
+    b: {
+      statement: "Class B providers MUST detect vulnerabilities daily.",
+      artifacts: {
+        all: ["Class B vulnerability cadence evidence."]
+      }
+    }
+  };
+  ksi.artifacts = {
+    all: ["Evidence of automated account lifecycle management."]
+  };
+
+  const [catalog] = createCatalogOutputs(rules, config);
+
+  assert.match(
+    catalog.xml,
+    /<part id="FRR_default_artifact_1" name="instruction" class="default-artifact">\n    <p>Default rule explanation\.<\/p>\n  <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="KSI_default_artifact_1" name="instruction" class="default-artifact">\n    <p>Default KSI verification\.<\/p>\n  <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_all_1" name="guidance" class="artifact-scope-all">\n        <p>URL to vulnerability detection evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_rev5_1" name="guidance" class="artifact-scope-rev5">\n        <p>Rev5 vulnerability detection assessment evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_b_all_1" name="guidance" class="artifact-class-b-scope-all">\n        <p>Class B vulnerability cadence evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="KSI-IAM-AAM_artifact_all_1" name="guidance" class="artifact-scope-all">\n        <p>Evidence of automated account lifecycle management\.<\/p>\n      <\/part>/
+  );
+});
+
 test("creates FedRAMP 20x and Rev5 profile shells from the harmonized catalog", async () => {
   const config = await loadConfig();
   const outputs = createProfileOutputs(await fixture(), config);
