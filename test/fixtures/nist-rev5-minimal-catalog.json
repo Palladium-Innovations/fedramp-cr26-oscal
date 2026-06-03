@@ -1,0 +1,64 @@
+{
+  "catalog": {
+    "uuid": "11111111-1111-4111-8111-111111111111",
+    "metadata": {
+      "title": "NIST SP 800-53 Rev5 Minimal Fixture",
+      "last-modified": "2026-05-04T00:00:00.00000-00:00",
+      "version": "fixture",
+      "oscal-version": "1.2.1"
+    },
+    "groups": [
+      {
+        "id": "ac",
+        "title": "Access Control",
+        "controls": [
+          {
+            "id": "ac-2",
+            "title": "Account Management",
+            "controls": [
+              {
+                "id": "ac-2.2",
+                "title": "Automated Temporary and Emergency Account Management",
+                "parts": [
+                  {
+                    "id": "ac-2.2_smt",
+                    "name": "statement",
+                    "prose": "Automatically remove or disable temporary and emergency accounts."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ra",
+        "title": "Risk Assessment",
+        "controls": [
+          {
+            "id": "ra-5",
+            "title": "Vulnerability Monitoring and Scanning",
+            "parts": [
+              {
+                "id": "ra-5_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "ra-5_smt.a",
+                    "name": "item",
+                    "prose": "Monitor and scan for vulnerabilities."
+                  },
+                  {
+                    "id": "ra-5_smt.b",
+                    "name": "item",
+                    "prose": "Remediate legitimate vulnerabilities."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

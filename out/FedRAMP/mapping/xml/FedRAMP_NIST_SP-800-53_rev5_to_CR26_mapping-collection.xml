@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model schematypens="http://www.w3.org/2001/XMLSchema" type="application/xml" href="https://github.com/usnistgov/OSCAL/releases/download/v1.2.1/oscal_complete_schema.xsd"?><mapping-collection xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="e0fa1f56-577c-5fbc-83fb-010f8f7e45f7">
+  <metadata>
+    <title>NIST SP 800-53 Rev5 to FedRAMP CR26 - Unofficial OSCAL Mapping Collection</title>
+    <last-modified>2026-05-05T00:00:00.00000-00:00</last-modified>
+    <version>0.2.0</version>
+    <oscal-version>1.2.1</oscal-version>
+    <role id="creator">
+      <title>Unofficial OSCAL Mapping Creator</title>
+    </role>
+    <role id="publisher">
+      <title>Unofficial OSCAL Mapping Publisher</title>
+    </role>
+    <role id="contact">
+      <title>Project Contact</title>
+    </role>
+    <party type="organization" uuid="5edbc8e7-891d-539b-af7a-eb443cf98a4a">
+      <name>Palladium Innovations, LLC</name>
+      <email-address>oscal@go-palladium.com</email-address>
+      <address>
+        <addr-line>341 Angela Lane</addr-line>
+        <city>Mary Esther</city>
+        <state>FL</state>
+        <postal-code>32569</postal-code>
+      </address>
+    </party>
+    <responsible-party role-id="creator">
+      <party-uuid>5edbc8e7-891d-539b-af7a-eb443cf98a4a</party-uuid>
+    </responsible-party>
+    <responsible-party role-id="publisher">
+      <party-uuid>5edbc8e7-891d-539b-af7a-eb443cf98a4a</party-uuid>
+    </responsible-party>
+    <responsible-party role-id="contact">
+      <party-uuid>5edbc8e7-891d-539b-af7a-eb443cf98a4a</party-uuid>
+    </responsible-party>
+  </metadata>
+  <provenance method="automation" matching-rationale="semantic" status="draft">
+    <mapping-description>
+      <p>Initial machine-derived control- and statement-level mapping from NIST SP 800-53 Rev5 to FedRAMP CR26 rules and KSIs using CR26 source control references and the NIST OSCAL catalog statement structure. Relationships require human review.</p>
+    </mapping-description>
+  </provenance>
+  <mapping uuid="c7e1db7b-6497-5032-a89f-337377b5b228" method="automation" matching-rationale="semantic" status="draft">
+    <source-resource type="catalog" href="https://raw.githubusercontent.com/usnistgov/oscal-content/v1.4.0/src/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml"/>
+    <target-resource type="catalog" href="../../catalog/xml/FedRAMP_CR26_catalog.xml"/>
+    <map uuid="2f702934-9287-507b-9e2b-fa86749aebe5">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-3"/>
+      <source type="control" id-ref="ac-4"/>
+      <source type="control" id-ref="au-2"/>
+      <source type="control" id-ref="au-3"/>
+      <source type="control" id-ref="au-6"/>
+      <source type="control" id-ref="ca-2"/>
+      <source type="control" id-ref="ir-4"/>
+      <source type="control" id-ref="ra-5"/>
+      <source type="control" id-ref="sc-8"/>
+      <target type="control" id-ref="FRC-CSO-CDS"/>
+    </map>
+    <map uuid="7e64a3b7-f9f2-51f1-b42d-b1551891a1d7">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-1"/>
+      <source type="control" id-ref="ac-21"/>
+      <source type="control" id-ref="at-1"/>
+      <source type="control" id-ref="au-1"/>
+      <source type="control" id-ref="ca-1"/>
+      <source type="control" id-ref="cm-1"/>
+      <source type="control" id-ref="cp-1"/>
+      <source type="control" id-ref="cp-2.1"/>
+      <source type="control" id-ref="cp-2.8"/>
+      <source type="control" id-ref="cp-4.1"/>
+      <source type="control" id-ref="ia-1"/>
+      <source type="control" id-ref="ir-1"/>
+      <source type="control" id-ref="ma-1"/>
+      <source type="control" id-ref="mp-1"/>
+      <source type="control" id-ref="pe-1"/>
+      <source type="control" id-ref="pl-1"/>
+      <source type="control" id-ref="pl-2"/>
+      <source type="control" id-ref="pl-4"/>
+      <source type="control" id-ref="pl-4.1"/>
+      <source type="control" id-ref="ps-1"/>
+      <source type="control" id-ref="ra-1"/>
+      <source type="control" id-ref="ra-9"/>
+      <source type="control" id-ref="sa-1"/>
+      <source type="control" id-ref="sc-1"/>
+      <source type="control" id-ref="si-1"/>
+      <source type="control" id-ref="sr-1"/>
+      <source type="control" id-ref="sr-2"/>
+      <source type="control" id-ref="sr-3"/>
+      <source type="control" id-ref="sr-11"/>
+      <target type="control" id-ref="FRC-CSO-MAS"/>
+    </map>
+    <map uuid="89f1dae7-9895-5753-a982-2c4f8797370b">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ca-7.4"/>
+      <source type="control" id-ref="cm-3.4"/>
+      <source type="control" id-ref="cm-4"/>
+      <source type="control" id-ref="cm-7.1"/>
+      <source type="control" id-ref="au-5"/>
+      <source type="control" id-ref="ca-5"/>
+      <source type="control" id-ref="ca-7"/>
+      <source type="control" id-ref="ra-5"/>
+      <source type="control" id-ref="ra-5.2"/>
+      <source type="control" id-ref="sa-22"/>
+      <source type="control" id-ref="si-2"/>
+      <source type="control" id-ref="si-2.2"/>
+      <source type="control" id-ref="si-3"/>
+      <source type="control" id-ref="si-5"/>
+      <source type="control" id-ref="si-7.7"/>
+      <source type="control" id-ref="si-10"/>
+      <source type="control" id-ref="si-11"/>
+      <target type="control" id-ref="FRC-CSO-SCN"/>
+    </map>
+    <map uuid="fc95b9a1-0ea6-59e7-945f-5a85c01d2dcb">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ca-2"/>
+      <source type="control" id-ref="ca-7"/>
+      <source type="control" id-ref="ca-7.6"/>
+      <source type="control" id-ref="ir-1"/>
+      <source type="control" id-ref="ir-4"/>
+      <source type="control" id-ref="ir-4.1"/>
+      <source type="control" id-ref="ir-5"/>
+      <source type="control" id-ref="ir-5.1"/>
+      <source type="control" id-ref="ir-6"/>
+      <source type="control" id-ref="ir-6.1"/>
+      <source type="control" id-ref="ir-6.2"/>
+      <source type="control" id-ref="pm-3"/>
+      <source type="control" id-ref="pm-5"/>
+      <source type="control" id-ref="pm-31"/>
+      <source type="control" id-ref="ra-2"/>
+      <source type="control" id-ref="ra-2.1"/>
+      <source type="control" id-ref="ra-3"/>
+      <source type="control" id-ref="ra-3.3"/>
+      <source type="control" id-ref="ra-5"/>
+      <source type="control" id-ref="ra-5.2"/>
+      <source type="control" id-ref="ra-5.3"/>
+      <source type="control" id-ref="ra-5.4"/>
+      <source type="control" id-ref="ra-5.5"/>
+      <source type="control" id-ref="ra-5.6"/>
+      <source type="control" id-ref="ra-5.7"/>
+      <source type="control" id-ref="ra-5.11"/>
+      <source type="control" id-ref="ra-9"/>
+      <source type="control" id-ref="ra-10"/>
+      <source type="control" id-ref="si-2"/>
+      <source type="control" id-ref="si-2.1"/>
+      <source type="control" id-ref="si-2.2"/>
+      <source type="control" id-ref="si-2.4"/>
+      <source type="control" id-ref="si-2.5"/>
+      <source type="control" id-ref="si-3"/>
+      <source type="control" id-ref="si-3.1"/>
+      <source type="control" id-ref="si-3.2"/>
+      <source type="control" id-ref="si-4"/>
+      <source type="control" id-ref="si-4.2"/>
+      <source type="control" id-ref="si-4.3"/>
+      <source type="control" id-ref="si-4.7"/>
+      <source type="control" id-ref="ca-7.4"/>
+      <source type="control" id-ref="ra-7"/>
+      <target type="control" id-ref="FRC-CSO-VDR"/>
+    </map>
+    <map uuid="c4421165-86e1-5bcd-b670-c69f6e7d6c5f">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cp-3"/>
+      <source type="control" id-ref="ir-2"/>
+      <source type="control" id-ref="ps-6"/>
+      <source type="control" id-ref="at-2"/>
+      <source type="control" id-ref="at-2.2"/>
+      <source type="control" id-ref="at-2.3"/>
+      <source type="control" id-ref="at-3.5"/>
+      <source type="control" id-ref="at-4"/>
+      <source type="control" id-ref="ir-2.3"/>
+      <source type="control" id-ref="at-3"/>
+      <source type="control" id-ref="sr-11.1"/>
+      <target type="control" id-ref="KSI-CED-RAT"/>
+    </map>
+    <map uuid="1894fb99-3ad8-58bf-9e3e-61e5785a486c">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="au-2"/>
+      <source type="control" id-ref="cm-3"/>
+      <source type="control" id-ref="cm-3.2"/>
+      <source type="control" id-ref="cm-4.2"/>
+      <source type="control" id-ref="cm-6"/>
+      <source type="control" id-ref="cm-8.3"/>
+      <source type="control" id-ref="ma-2"/>
+      <target type="control" id-ref="KSI-CMT-LMC"/>
+    </map>
+    <map uuid="06aec856-3af9-506a-9800-f45655469cb6">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-2"/>
+      <source type="control" id-ref="cm-3"/>
+      <source type="control" id-ref="cm-5"/>
+      <source type="control" id-ref="cm-6"/>
+      <source type="control" id-ref="cm-7"/>
+      <source type="control" id-ref="cm-8.1"/>
+      <source type="control" id-ref="si-3"/>
+      <target type="control" id-ref="KSI-CMT-RMV"/>
+    </map>
+    <map uuid="a7905e1f-3bc6-5787-9243-27d2301dcec5">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-3"/>
+      <source type="control" id-ref="cm-3.2"/>
+      <source type="control" id-ref="cm-3.4"/>
+      <source type="control" id-ref="cm-5"/>
+      <source type="control" id-ref="cm-7.1"/>
+      <source type="control" id-ref="cm-9"/>
+      <target type="control" id-ref="KSI-CMT-RVP"/>
+    </map>
+    <map uuid="2337a67b-cf81-50f7-9f65-90bc8942cfb2">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-3"/>
+      <source type="control" id-ref="cm-3.2"/>
+      <source type="control" id-ref="cm-4.2"/>
+      <source type="control" id-ref="si-2"/>
+      <target type="control" id-ref="KSI-CMT-VTD"/>
+    </map>
+    <map uuid="7015a09d-4cc3-5c83-a582-67505df27e16">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-2"/>
+      <source type="control" id-ref="si-3"/>
+      <target type="control" id-ref="KSI-CNA-DFP"/>
+    </map>
+    <map uuid="5f3087aa-c4d5-5d6e-8829-73c76a3371d1">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ca-2.1"/>
+      <source type="control" id-ref="ca-7.1"/>
+      <target type="control" id-ref="KSI-CNA-EIS"/>
+    </map>
+    <map uuid="bbf40316-5c9d-54a3-8ce9-14b0cebeed6e">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-17.3"/>
+      <source type="control" id-ref="cm-2"/>
+      <source type="control" id-ref="pl-10"/>
+      <target type="control" id-ref="KSI-CNA-IBP"/>
+    </map>
+    <map uuid="59c4e68e-4706-53a1-a03d-f34c7bbdb00d">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-17.3"/>
+      <source type="control" id-ref="ac-18.1"/>
+      <source type="control" id-ref="ac-18.3"/>
+      <source type="control" id-ref="ac-20.1"/>
+      <source type="control" id-ref="ca-9"/>
+      <source type="control" id-ref="sc-7.3"/>
+      <source type="control" id-ref="sc-7.4"/>
+      <source type="control" id-ref="sc-7.5"/>
+      <source type="control" id-ref="sc-7.8"/>
+      <source type="control" id-ref="sc-8"/>
+      <source type="control" id-ref="sc-10"/>
+      <source type="control" id-ref="si-10"/>
+      <source type="control" id-ref="si-11"/>
+      <source type="control" id-ref="si-16"/>
+      <target type="control" id-ref="KSI-CNA-MAT"/>
+    </map>
+    <map uuid="e19509eb-4cac-56dd-bdd9-43d796de48d5">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-17.3"/>
+      <source type="control" id-ref="ca-9"/>
+      <source type="control" id-ref="cm-7.1"/>
+      <source type="control" id-ref="sc-7.5"/>
+      <source type="control" id-ref="si-8"/>
+      <target type="control" id-ref="KSI-CNA-RNT"/>
+    </map>
+    <map uuid="f582e187-0ac7-5986-a797-0389516832f1">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="sc-5"/>
+      <source type="control" id-ref="si-8"/>
+      <source type="control" id-ref="si-8.2"/>
+      <target type="control" id-ref="KSI-CNA-RVP"/>
+    </map>
+    <map uuid="75c5f0cb-f517-5666-95d2-3019e2bad457">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-12"/>
+      <source type="control" id-ref="ac-17.3"/>
+      <source type="control" id-ref="ca-9"/>
+      <source type="control" id-ref="sc-4"/>
+      <source type="control" id-ref="sc-7"/>
+      <source type="control" id-ref="sc-7.7"/>
+      <source type="control" id-ref="sc-8"/>
+      <source type="control" id-ref="sc-10"/>
+      <target type="control" id-ref="KSI-CNA-ULN"/>
+    </map>
+    <map uuid="bcd076c5-5302-5da3-85a5-feb33c17827a">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2.2"/>
+      <source type="control" id-ref="ac-2.3"/>
+      <source type="control" id-ref="ac-2.13"/>
+      <source type="control" id-ref="ac-6.7"/>
+      <source type="control" id-ref="ia-4.4"/>
+      <source type="control" id-ref="ia-12"/>
+      <source type="control" id-ref="ia-12.2"/>
+      <source type="control" id-ref="ia-12.3"/>
+      <source type="control" id-ref="ia-12.5"/>
+      <target type="control" id-ref="KSI-IAM-AAM"/>
+    </map>
+    <map uuid="41198640-2c8e-580c-91d0-11222dd49dc3">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-3"/>
+      <source type="control" id-ref="ia-5.1"/>
+      <source type="control" id-ref="ia-5.2"/>
+      <source type="control" id-ref="ia-5.6"/>
+      <source type="control" id-ref="ia-6"/>
+      <source type="control" id-ref="ac-2"/>
+      <source type="control" id-ref="ia-2"/>
+      <source type="control" id-ref="ia-2.1"/>
+      <source type="control" id-ref="ia-2.2"/>
+      <source type="control" id-ref="ia-2.8"/>
+      <source type="control" id-ref="ia-5"/>
+      <source type="control" id-ref="ia-8"/>
+      <source type="control" id-ref="sc-23"/>
+      <target type="control" id-ref="KSI-IAM-APM"/>
+    </map>
+    <map uuid="52b0e75d-b627-5204-8746-bc63b0c0f758">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2.5"/>
+      <source type="control" id-ref="ac-2.6"/>
+      <source type="control" id-ref="ac-3"/>
+      <source type="control" id-ref="ac-4"/>
+      <source type="control" id-ref="ac-6"/>
+      <source type="control" id-ref="ac-12"/>
+      <source type="control" id-ref="ac-14"/>
+      <source type="control" id-ref="ac-17"/>
+      <source type="control" id-ref="ac-17.1"/>
+      <source type="control" id-ref="ac-17.2"/>
+      <source type="control" id-ref="ac-17.3"/>
+      <source type="control" id-ref="ac-20"/>
+      <source type="control" id-ref="ac-20.1"/>
+      <source type="control" id-ref="cm-2.7"/>
+      <source type="control" id-ref="cm-9"/>
+      <source type="control" id-ref="ia-2"/>
+      <source type="control" id-ref="ia-3"/>
+      <source type="control" id-ref="ia-4"/>
+      <source type="control" id-ref="ia-4.4"/>
+      <source type="control" id-ref="ia-5.2"/>
+      <source type="control" id-ref="ia-5.6"/>
+      <source type="control" id-ref="ia-11"/>
+      <source type="control" id-ref="ps-2"/>
+      <source type="control" id-ref="ps-3"/>
+      <source type="control" id-ref="ps-4"/>
+      <source type="control" id-ref="ps-5"/>
+      <source type="control" id-ref="ps-6"/>
+      <source type="control" id-ref="sc-4"/>
+      <source type="control" id-ref="sc-20"/>
+      <source type="control" id-ref="sc-21"/>
+      <source type="control" id-ref="sc-22"/>
+      <source type="control" id-ref="sc-23"/>
+      <source type="control" id-ref="sc-39"/>
+      <source type="control" id-ref="si-3"/>
+      <target type="control" id-ref="KSI-IAM-ELP"/>
+    </map>
+    <map uuid="e2277dfa-d399-5e34-aa38-6430f894aafb">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2"/>
+      <source type="control" id-ref="ac-2.1"/>
+      <source type="control" id-ref="ac-2.2"/>
+      <source type="control" id-ref="ac-2.3"/>
+      <source type="control" id-ref="ac-2.4"/>
+      <source type="control" id-ref="ac-2.6"/>
+      <source type="control" id-ref="ac-3"/>
+      <source type="control" id-ref="ac-4"/>
+      <source type="control" id-ref="ac-5"/>
+      <source type="control" id-ref="ac-6"/>
+      <source type="control" id-ref="ac-6.1"/>
+      <source type="control" id-ref="ac-6.2"/>
+      <source type="control" id-ref="ac-6.5"/>
+      <source type="control" id-ref="ac-6.7"/>
+      <source type="control" id-ref="ac-6.9"/>
+      <source type="control" id-ref="ac-6.10"/>
+      <source type="control" id-ref="ac-7"/>
+      <source type="control" id-ref="ac-20.1"/>
+      <source type="control" id-ref="ac-17"/>
+      <source type="control" id-ref="au-9.4"/>
+      <source type="control" id-ref="cm-5"/>
+      <source type="control" id-ref="cm-7"/>
+      <source type="control" id-ref="cm-7.2"/>
+      <source type="control" id-ref="cm-7.5"/>
+      <source type="control" id-ref="cm-9"/>
+      <source type="control" id-ref="ia-4"/>
+      <source type="control" id-ref="ia-4.4"/>
+      <source type="control" id-ref="ia-7"/>
+      <source type="control" id-ref="ps-2"/>
+      <source type="control" id-ref="ps-3"/>
+      <source type="control" id-ref="ps-4"/>
+      <source type="control" id-ref="ps-5"/>
+      <source type="control" id-ref="ps-6"/>
+      <source type="control" id-ref="ps-9"/>
+      <source type="control" id-ref="ra-5.5"/>
+      <source type="control" id-ref="sc-2"/>
+      <source type="control" id-ref="sc-23"/>
+      <source type="control" id-ref="sc-39"/>
+      <target type="control" id-ref="KSI-IAM-JIT"/>
+    </map>
+    <map uuid="47cfc021-a9e9-5490-b5b6-58cb6e96be92">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2"/>
+      <source type="control" id-ref="ac-2.2"/>
+      <source type="control" id-ref="ac-4"/>
+      <source type="control" id-ref="ac-6.5"/>
+      <source type="control" id-ref="ia-3"/>
+      <source type="control" id-ref="ia-5.2"/>
+      <source type="control" id-ref="ra-5.5"/>
+      <target type="control" id-ref="KSI-IAM-SNU"/>
+    </map>
+    <map uuid="b061bfc5-a090-50a5-a760-42c15bc02a2a">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2"/>
+      <source type="control" id-ref="ac-2.1"/>
+      <source type="control" id-ref="ac-2.3"/>
+      <source type="control" id-ref="ac-2.13"/>
+      <source type="control" id-ref="ac-7"/>
+      <source type="control" id-ref="ps-4"/>
+      <source type="control" id-ref="ps-8"/>
+      <target type="control" id-ref="KSI-IAM-SUS"/>
+    </map>
+    <map uuid="a4da0e8e-7437-59bb-a157-9ca0e55c4453">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ir-3"/>
+      <source type="control" id-ref="ir-4"/>
+      <source type="control" id-ref="ir-4.1"/>
+      <source type="control" id-ref="ir-8"/>
+      <target type="control" id-ref="KSI-INR-AAR"/>
+    </map>
+    <map uuid="c17b6740-26d6-5b3a-bb1b-9fa2ec7beab4">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ir-4"/>
+      <source type="control" id-ref="ir-4.1"/>
+      <source type="control" id-ref="ir-6"/>
+      <source type="control" id-ref="ir-6.1"/>
+      <source type="control" id-ref="ir-6.3"/>
+      <source type="control" id-ref="ir-7"/>
+      <source type="control" id-ref="ir-7.1"/>
+      <source type="control" id-ref="ir-8"/>
+      <source type="control" id-ref="ir-8.1"/>
+      <source type="control" id-ref="si-4.5"/>
+      <target type="control" id-ref="KSI-INR-RIR"/>
+    </map>
+    <map uuid="36fe823b-06ea-554c-aac0-deb7c4970ff2">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ir-3"/>
+      <source type="control" id-ref="ir-4"/>
+      <source type="control" id-ref="ir-4.1"/>
+      <source type="control" id-ref="ir-5"/>
+      <source type="control" id-ref="ir-8"/>
+      <target type="control" id-ref="KSI-INR-RPI"/>
+    </map>
+    <map uuid="9a213723-234f-5ae9-8d88-d058a3882051">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="si-11"/>
+      <target type="control" id-ref="KSI-MLA-ALA"/>
+    </map>
+    <map uuid="5778d57a-639a-5173-8102-29a30a9e1637">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ca-7"/>
+      <source type="control" id-ref="cm-2"/>
+      <source type="control" id-ref="cm-6"/>
+      <source type="control" id-ref="si-7.7"/>
+      <target type="control" id-ref="KSI-MLA-EVC"/>
+    </map>
+    <map uuid="ae48cc0a-16a5-5101-95fe-753f16c01b08">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2.4"/>
+      <source type="control" id-ref="ac-6.9"/>
+      <source type="control" id-ref="ac-17.1"/>
+      <source type="control" id-ref="ac-20.1"/>
+      <source type="control" id-ref="au-2"/>
+      <source type="control" id-ref="au-7.1"/>
+      <source type="control" id-ref="au-12"/>
+      <source type="control" id-ref="si-4.4"/>
+      <source type="control" id-ref="si-4.5"/>
+      <source type="control" id-ref="si-7.7"/>
+      <target type="control" id-ref="KSI-MLA-LET"/>
+    </map>
+    <map uuid="4cbc9e15-25fd-5d86-9ebf-1401ba9651e7">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-17.1"/>
+      <source type="control" id-ref="ac-20.1"/>
+      <source type="control" id-ref="au-2"/>
+      <source type="control" id-ref="au-3"/>
+      <source type="control" id-ref="au-3.1"/>
+      <source type="control" id-ref="au-4"/>
+      <source type="control" id-ref="au-5"/>
+      <source type="control" id-ref="au-6.1"/>
+      <source type="control" id-ref="au-6.3"/>
+      <source type="control" id-ref="au-7"/>
+      <source type="control" id-ref="au-7.1"/>
+      <source type="control" id-ref="au-8"/>
+      <source type="control" id-ref="au-9"/>
+      <source type="control" id-ref="au-11"/>
+      <source type="control" id-ref="ir-4.1"/>
+      <source type="control" id-ref="si-4.2"/>
+      <source type="control" id-ref="si-4.4"/>
+      <source type="control" id-ref="si-7.7"/>
+      <target type="control" id-ref="KSI-MLA-OSM"/>
+    </map>
+    <map uuid="21e6c531-2c8a-5392-a10a-e1e37cb31024">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2.4"/>
+      <source type="control" id-ref="ac-6.9"/>
+      <source type="control" id-ref="au-2"/>
+      <source type="control" id-ref="au-6"/>
+      <source type="control" id-ref="au-6.1"/>
+      <source type="control" id-ref="si-4"/>
+      <source type="control" id-ref="si-4.4"/>
+      <target type="control" id-ref="KSI-MLA-RVL"/>
+    </map>
+    <map uuid="6a8a2ded-2319-5767-83ae-9a705a2acb58">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-2.2"/>
+      <source type="control" id-ref="cm-7.5"/>
+      <source type="control" id-ref="cm-8"/>
+      <source type="control" id-ref="cm-8.1"/>
+      <source type="control" id-ref="cm-12"/>
+      <source type="control" id-ref="cm-12.1"/>
+      <source type="control" id-ref="cp-2.8"/>
+      <target type="control" id-ref="KSI-PIY-GIV"/>
+    </map>
+    <map uuid="2f2ad379-7ecd-5e07-85a0-8d1c12ab2118">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-5"/>
+      <source type="control" id-ref="ca-2"/>
+      <source type="control" id-ref="cp-2.1"/>
+      <source type="control" id-ref="cp-4.1"/>
+      <source type="control" id-ref="ir-3.2"/>
+      <source type="control" id-ref="pm-3"/>
+      <source type="control" id-ref="sa-2"/>
+      <source type="control" id-ref="sa-3"/>
+      <source type="control" id-ref="sr-2.1"/>
+      <target type="control" id-ref="KSI-PIY-RIS"/>
+    </map>
+    <map uuid="c1c01629-0141-5b30-b452-06247c7424bb">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-5"/>
+      <source type="control" id-ref="au-3.3"/>
+      <source type="control" id-ref="cm-3.4"/>
+      <source type="control" id-ref="pl-8"/>
+      <source type="control" id-ref="pm-7"/>
+      <source type="control" id-ref="sa-3"/>
+      <source type="control" id-ref="sa-8"/>
+      <source type="control" id-ref="sc-4"/>
+      <source type="control" id-ref="sc-18"/>
+      <source type="control" id-ref="si-10"/>
+      <source type="control" id-ref="si-11"/>
+      <source type="control" id-ref="si-16"/>
+      <target type="control" id-ref="KSI-PIY-RSD"/>
+    </map>
+    <map uuid="6f41a187-b6de-50a5-84a4-bb32777c887a">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ra-5.11"/>
+      <target type="control" id-ref="KSI-PIY-RVD"/>
+    </map>
+    <map uuid="52854fe3-d63a-570b-aa42-760e68bd220f">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-2.3"/>
+      <source type="control" id-ref="cp-6"/>
+      <source type="control" id-ref="cp-9"/>
+      <source type="control" id-ref="cp-10"/>
+      <source type="control" id-ref="cp-10.2"/>
+      <source type="control" id-ref="si-12"/>
+      <target type="control" id-ref="KSI-RPL-ABO"/>
+    </map>
+    <map uuid="6638df2e-3e1b-5a9a-8cd3-091923d09639">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cp-2"/>
+      <source type="control" id-ref="cp-2.1"/>
+      <source type="control" id-ref="cp-2.3"/>
+      <source type="control" id-ref="cp-4.1"/>
+      <source type="control" id-ref="cp-6"/>
+      <source type="control" id-ref="cp-6.1"/>
+      <source type="control" id-ref="cp-6.3"/>
+      <source type="control" id-ref="cp-7"/>
+      <source type="control" id-ref="cp-7.1"/>
+      <source type="control" id-ref="cp-7.2"/>
+      <source type="control" id-ref="cp-7.3"/>
+      <source type="control" id-ref="cp-8"/>
+      <source type="control" id-ref="cp-8.1"/>
+      <source type="control" id-ref="cp-8.2"/>
+      <source type="control" id-ref="cp-10"/>
+      <source type="control" id-ref="cp-10.2"/>
+      <target type="control" id-ref="KSI-RPL-ARP"/>
+    </map>
+    <map uuid="b52f30cc-9fe8-5d1d-a27b-5cd67f346875">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cp-2.3"/>
+      <source type="control" id-ref="cp-10"/>
+      <target type="control" id-ref="KSI-RPL-RRO"/>
+    </map>
+    <map uuid="9321adc5-ae77-5127-a28f-e421abb34ae8">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cp-2.1"/>
+      <source type="control" id-ref="cp-2.3"/>
+      <source type="control" id-ref="cp-4"/>
+      <source type="control" id-ref="cp-4.1"/>
+      <source type="control" id-ref="cp-6"/>
+      <source type="control" id-ref="cp-6.1"/>
+      <source type="control" id-ref="cp-9.1"/>
+      <source type="control" id-ref="cp-10"/>
+      <source type="control" id-ref="ir-3"/>
+      <source type="control" id-ref="ir-3.2"/>
+      <target type="control" id-ref="KSI-RPL-TRC"/>
+    </map>
+    <map uuid="1b26e40c-854a-54bd-82fe-2360055d609e">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-20"/>
+      <source type="control" id-ref="ra-3.1"/>
+      <source type="control" id-ref="sa-9"/>
+      <source type="control" id-ref="sa-10"/>
+      <source type="control" id-ref="sa-11"/>
+      <source type="control" id-ref="sa-15.3"/>
+      <source type="control" id-ref="sa-22"/>
+      <source type="control" id-ref="si-7.1"/>
+      <source type="control" id-ref="sr-5"/>
+      <source type="control" id-ref="sr-6"/>
+      <source type="control" id-ref="ca-7.4"/>
+      <source type="control" id-ref="sc-18"/>
+      <target type="control" id-ref="KSI-SCR-MIT"/>
+    </map>
+    <map uuid="462b4efd-d154-5dfa-a365-1c0eaf9dff3e">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-20"/>
+      <source type="control" id-ref="ca-3"/>
+      <source type="control" id-ref="ir-6.3"/>
+      <source type="control" id-ref="ps-7"/>
+      <source type="control" id-ref="ra-5"/>
+      <source type="control" id-ref="sa-9"/>
+      <source type="control" id-ref="si-5"/>
+      <source type="control" id-ref="sr-5"/>
+      <source type="control" id-ref="sr-6"/>
+      <source type="control" id-ref="sr-8"/>
+      <target type="control" id-ref="KSI-SCR-MON"/>
+    </map>
+    <map uuid="85dc2321-225f-5324-90a3-11f536970ca0">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-2.4"/>
+      <source type="control" id-ref="cm-2"/>
+      <source type="control" id-ref="cm-2.2"/>
+      <source type="control" id-ref="cm-2.3"/>
+      <source type="control" id-ref="cm-6"/>
+      <source type="control" id-ref="cm-7.1"/>
+      <source type="control" id-ref="pl-9"/>
+      <source type="control" id-ref="pl-10"/>
+      <source type="control" id-ref="sa-5"/>
+      <source type="control" id-ref="si-5"/>
+      <source type="control" id-ref="sr-10"/>
+      <target type="control" id-ref="KSI-SVC-ACM"/>
+    </map>
+    <map uuid="752bd7cf-a520-52be-96d4-edbfa10e2cb5">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-17.2"/>
+      <source type="control" id-ref="ia-5.2"/>
+      <source type="control" id-ref="ia-5.6"/>
+      <source type="control" id-ref="sc-12"/>
+      <source type="control" id-ref="sc-17"/>
+      <target type="control" id-ref="KSI-SVC-ASM"/>
+    </map>
+    <map uuid="afa449e7-967f-5201-8bdd-adbb69f10a99">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-7.1"/>
+      <source type="control" id-ref="cm-12.1"/>
+      <source type="control" id-ref="ma-2"/>
+      <source type="control" id-ref="pl-8"/>
+      <source type="control" id-ref="sc-7"/>
+      <source type="control" id-ref="sc-39"/>
+      <source type="control" id-ref="si-2.2"/>
+      <source type="control" id-ref="si-4"/>
+      <source type="control" id-ref="sr-10"/>
+      <target type="control" id-ref="KSI-SVC-EIS"/>
+    </map>
+    <map uuid="b127adce-c99e-5721-86b1-f0dde9bfb1a2">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="sc-4"/>
+      <target type="control" id-ref="KSI-SVC-PRR"/>
+    </map>
+    <map uuid="3a0e0e7c-489c-584d-961a-d4c710e7dd2b">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="si-12.3"/>
+      <source type="control" id-ref="si-18.4"/>
+      <target type="control" id-ref="KSI-SVC-RUD"/>
+    </map>
+    <map uuid="5d1410de-b41e-5b25-86d6-d4dd09c3d180">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="ac-1"/>
+      <source type="control" id-ref="ac-17.2"/>
+      <source type="control" id-ref="cp-9.8"/>
+      <source type="control" id-ref="sc-8"/>
+      <source type="control" id-ref="sc-8.1"/>
+      <source type="control" id-ref="sc-13"/>
+      <source type="control" id-ref="sc-20"/>
+      <source type="control" id-ref="sc-21"/>
+      <source type="control" id-ref="sc-22"/>
+      <source type="control" id-ref="sc-23"/>
+      <target type="control" id-ref="KSI-SVC-SNT"/>
+    </map>
+    <map uuid="924979f2-005e-52d6-a619-1f9ff373a7df">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="sc-23"/>
+      <source type="control" id-ref="si-7.1"/>
+      <target type="control" id-ref="KSI-SVC-VCM"/>
+    </map>
+    <map uuid="f78e5ac6-d410-5462-855b-79fd0947c580">
+      <relationship>superset-of</relationship>
+      <source type="control" id-ref="cm-2.2"/>
+      <source type="control" id-ref="cm-8.3"/>
+      <source type="control" id-ref="sc-13"/>
+      <source type="control" id-ref="sc-23"/>
+      <source type="control" id-ref="si-7"/>
+      <source type="control" id-ref="si-7.1"/>
+      <source type="control" id-ref="sr-10"/>
+      <target type="control" id-ref="KSI-SVC-VRI"/>
+    </map>
+    <map uuid="4e7e793d-82bf-5dfc-98bb-e4805fe81015">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-3_smt"/>
+      <source type="statement" id-ref="ac-4_smt"/>
+      <source type="statement" id-ref="au-2_smt.a"/>
+      <source type="statement" id-ref="au-2_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.c"/>
+      <source type="statement" id-ref="au-2_smt.d"/>
+      <source type="statement" id-ref="au-2_smt.e"/>
+      <source type="statement" id-ref="au-3_smt.a"/>
+      <source type="statement" id-ref="au-3_smt.b"/>
+      <source type="statement" id-ref="au-3_smt.c"/>
+      <source type="statement" id-ref="au-3_smt.d"/>
+      <source type="statement" id-ref="au-3_smt.e"/>
+      <source type="statement" id-ref="au-3_smt.f"/>
+      <source type="statement" id-ref="au-6_smt.a"/>
+      <source type="statement" id-ref="au-6_smt.b"/>
+      <source type="statement" id-ref="au-6_smt.c"/>
+      <source type="statement" id-ref="ca-2_smt.a"/>
+      <source type="statement" id-ref="ca-2_smt.b.1"/>
+      <source type="statement" id-ref="ca-2_smt.b.2"/>
+      <source type="statement" id-ref="ca-2_smt.b.3"/>
+      <source type="statement" id-ref="ca-2_smt.c"/>
+      <source type="statement" id-ref="ca-2_smt.d"/>
+      <source type="statement" id-ref="ca-2_smt.e"/>
+      <source type="statement" id-ref="ca-2_smt.f"/>
+      <source type="statement" id-ref="ir-4_smt.a"/>
+      <source type="statement" id-ref="ir-4_smt.b"/>
+      <source type="statement" id-ref="ir-4_smt.c"/>
+      <source type="statement" id-ref="ir-4_smt.d"/>
+      <source type="statement" id-ref="ra-5_smt.a"/>
+      <source type="statement" id-ref="ra-5_smt.b.1"/>
+      <source type="statement" id-ref="ra-5_smt.b.2"/>
+      <source type="statement" id-ref="ra-5_smt.b.3"/>
+      <source type="statement" id-ref="ra-5_smt.c"/>
+      <source type="statement" id-ref="ra-5_smt.d"/>
+      <source type="statement" id-ref="ra-5_smt.e"/>
+      <source type="statement" id-ref="ra-5_smt.f"/>
+      <source type="statement" id-ref="sc-8_smt"/>
+      <target type="statement" id-ref="FRC-CSO-CDS_smt"/>
+    </map>
+    <map uuid="d072adea-8e42-5f20-a578-8893487cd701">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ac-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ac-1_smt.a.2"/>
+      <source type="statement" id-ref="ac-1_smt.b"/>
+      <source type="statement" id-ref="ac-1_smt.c.1"/>
+      <source type="statement" id-ref="ac-1_smt.c.2"/>
+      <source type="statement" id-ref="ac-21_smt.a"/>
+      <source type="statement" id-ref="ac-21_smt.b"/>
+      <source type="statement" id-ref="at-1_smt.a.1.a"/>
+      <source type="statement" id-ref="at-1_smt.a.1.b"/>
+      <source type="statement" id-ref="at-1_smt.a.2"/>
+      <source type="statement" id-ref="at-1_smt.b"/>
+      <source type="statement" id-ref="at-1_smt.c.1"/>
+      <source type="statement" id-ref="at-1_smt.c.2"/>
+      <source type="statement" id-ref="au-1_smt.a.1.a"/>
+      <source type="statement" id-ref="au-1_smt.a.1.b"/>
+      <source type="statement" id-ref="au-1_smt.a.2"/>
+      <source type="statement" id-ref="au-1_smt.b"/>
+      <source type="statement" id-ref="au-1_smt.c.1"/>
+      <source type="statement" id-ref="au-1_smt.c.2"/>
+      <source type="statement" id-ref="ca-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ca-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ca-1_smt.a.2"/>
+      <source type="statement" id-ref="ca-1_smt.b"/>
+      <source type="statement" id-ref="ca-1_smt.c.1"/>
+      <source type="statement" id-ref="ca-1_smt.c.2"/>
+      <source type="statement" id-ref="cm-1_smt.a.1.a"/>
+      <source type="statement" id-ref="cm-1_smt.a.1.b"/>
+      <source type="statement" id-ref="cm-1_smt.a.2"/>
+      <source type="statement" id-ref="cm-1_smt.b"/>
+      <source type="statement" id-ref="cm-1_smt.c.1"/>
+      <source type="statement" id-ref="cm-1_smt.c.2"/>
+      <source type="statement" id-ref="cp-1_smt.a.1.a"/>
+      <source type="statement" id-ref="cp-1_smt.a.1.b"/>
+      <source type="statement" id-ref="cp-1_smt.a.2"/>
+      <source type="statement" id-ref="cp-1_smt.b"/>
+      <source type="statement" id-ref="cp-1_smt.c.1"/>
+      <source type="statement" id-ref="cp-1_smt.c.2"/>
+      <source type="statement" id-ref="cp-2.1_smt"/>
+      <source type="statement" id-ref="cp-2.8_smt"/>
+      <source type="statement" id-ref="cp-4.1_smt"/>
+      <source type="statement" id-ref="ia-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ia-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ia-1_smt.a.2"/>
+      <source type="statement" id-ref="ia-1_smt.b"/>
+      <source type="statement" id-ref="ia-1_smt.c.1"/>
+      <source type="statement" id-ref="ia-1_smt.c.2"/>
+      <source type="statement" id-ref="ir-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ir-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ir-1_smt.a.2"/>
+      <source type="statement" id-ref="ir-1_smt.b"/>
+      <source type="statement" id-ref="ir-1_smt.c.1"/>
+      <source type="statement" id-ref="ir-1_smt.c.2"/>
+      <source type="statement" id-ref="ma-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ma-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ma-1_smt.a.2"/>
+      <source type="statement" id-ref="ma-1_smt.b"/>
+      <source type="statement" id-ref="ma-1_smt.c.1"/>
+      <source type="statement" id-ref="ma-1_smt.c.2"/>
+      <source type="statement" id-ref="mp-1_smt.a.1.a"/>
+      <source type="statement" id-ref="mp-1_smt.a.1.b"/>
+      <source type="statement" id-ref="mp-1_smt.a.2"/>
+      <source type="statement" id-ref="mp-1_smt.b"/>
+      <source type="statement" id-ref="mp-1_smt.c.1"/>
+      <source type="statement" id-ref="mp-1_smt.c.2"/>
+      <source type="statement" id-ref="pe-1_smt.a.1.a"/>
+      <source type="statement" id-ref="pe-1_smt.a.1.b"/>
+      <source type="statement" id-ref="pe-1_smt.a.2"/>
+      <source type="statement" id-ref="pe-1_smt.b"/>
+      <source type="statement" id-ref="pe-1_smt.c.1"/>
+      <source type="statement" id-ref="pe-1_smt.c.2"/>
+      <source type="statement" id-ref="pl-1_smt.a.1.a"/>
+      <source type="statement" id-ref="pl-1_smt.a.1.b"/>
+      <source type="statement" id-ref="pl-1_smt.a.2"/>
+      <source type="statement" id-ref="pl-1_smt.b"/>
+      <source type="statement" id-ref="pl-1_smt.c.1"/>
+      <source type="statement" id-ref="pl-1_smt.c.2"/>
+      <source type="statement" id-ref="pl-2_smt.a.1"/>
+      <source type="statement" id-ref="pl-2_smt.a.2"/>
+      <source type="statement" id-ref="pl-2_smt.a.3"/>
+      <source type="statement" id-ref="pl-2_smt.a.4"/>
+      <source type="statement" id-ref="pl-2_smt.a.5"/>
+      <source type="statement" id-ref="pl-2_smt.a.6"/>
+      <source type="statement" id-ref="pl-2_smt.a.7"/>
+      <source type="statement" id-ref="pl-2_smt.a.8"/>
+      <source type="statement" id-ref="pl-2_smt.a.9"/>
+      <source type="statement" id-ref="pl-2_smt.a.10"/>
+      <source type="statement" id-ref="pl-2_smt.a.11"/>
+      <source type="statement" id-ref="pl-2_smt.a.12"/>
+      <source type="statement" id-ref="pl-2_smt.a.13"/>
+      <source type="statement" id-ref="pl-2_smt.a.14"/>
+      <source type="statement" id-ref="pl-2_smt.a.15"/>
+      <source type="statement" id-ref="pl-2_smt.b"/>
+      <source type="statement" id-ref="pl-2_smt.c"/>
+      <source type="statement" id-ref="pl-2_smt.d"/>
+      <source type="statement" id-ref="pl-2_smt.e"/>
+      <source type="statement" id-ref="pl-4_smt.a"/>
+      <source type="statement" id-ref="pl-4_smt.b"/>
+      <source type="statement" id-ref="pl-4_smt.c"/>
+      <source type="statement" id-ref="pl-4_smt.d"/>
+      <source type="statement" id-ref="pl-4.1_smt.a"/>
+      <source type="statement" id-ref="pl-4.1_smt.b"/>
+      <source type="statement" id-ref="pl-4.1_smt.c"/>
+      <source type="statement" id-ref="ps-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ps-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ps-1_smt.a.2"/>
+      <source type="statement" id-ref="ps-1_smt.b"/>
+      <source type="statement" id-ref="ps-1_smt.c.1"/>
+      <source type="statement" id-ref="ps-1_smt.c.2"/>
+      <source type="statement" id-ref="ra-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ra-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ra-1_smt.a.2"/>
+      <source type="statement" id-ref="ra-1_smt.b"/>
+      <source type="statement" id-ref="ra-1_smt.c.1"/>
+      <source type="statement" id-ref="ra-1_smt.c.2"/>
+      <source type="statement" id-ref="ra-9_smt"/>
+      <source type="statement" id-ref="sa-1_smt.a.1.a"/>
+      <source type="statement" id-ref="sa-1_smt.a.1.b"/>
+      <source type="statement" id-ref="sa-1_smt.a.2"/>
+      <source type="statement" id-ref="sa-1_smt.b"/>
+      <source type="statement" id-ref="sa-1_smt.c.1"/>
+      <source type="statement" id-ref="sa-1_smt.c.2"/>
+      <source type="statement" id-ref="sc-1_smt.a.1.a"/>
+      <source type="statement" id-ref="sc-1_smt.a.1.b"/>
+      <source type="statement" id-ref="sc-1_smt.a.2"/>
+      <source type="statement" id-ref="sc-1_smt.b"/>
+      <source type="statement" id-ref="sc-1_smt.c.1"/>
+      <source type="statement" id-ref="sc-1_smt.c.2"/>
+      <source type="statement" id-ref="si-1_smt.a.1.a"/>
+      <source type="statement" id-ref="si-1_smt.a.1.b"/>
+      <source type="statement" id-ref="si-1_smt.a.2"/>
+      <source type="statement" id-ref="si-1_smt.b"/>
+      <source type="statement" id-ref="si-1_smt.c.1"/>
+      <source type="statement" id-ref="si-1_smt.c.2"/>
+      <source type="statement" id-ref="sr-1_smt.a.1.a"/>
+      <source type="statement" id-ref="sr-1_smt.a.1.b"/>
+      <source type="statement" id-ref="sr-1_smt.a.2"/>
+      <source type="statement" id-ref="sr-1_smt.b"/>
+      <source type="statement" id-ref="sr-1_smt.c.1"/>
+      <source type="statement" id-ref="sr-1_smt.c.2"/>
+      <source type="statement" id-ref="sr-2_smt.a"/>
+      <source type="statement" id-ref="sr-2_smt.b"/>
+      <source type="statement" id-ref="sr-2_smt.c"/>
+      <source type="statement" id-ref="sr-3_smt.a"/>
+      <source type="statement" id-ref="sr-3_smt.b"/>
+      <source type="statement" id-ref="sr-3_smt.c"/>
+      <source type="statement" id-ref="sr-11_smt.a"/>
+      <source type="statement" id-ref="sr-11_smt.b"/>
+      <target type="statement" id-ref="FRC-CSO-MAS_smt"/>
+    </map>
+    <map uuid="370ba7ed-5b8c-50e0-ac0a-3bce43a6f973">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ca-7.4_smt.a"/>
+      <source type="statement" id-ref="ca-7.4_smt.b"/>
+      <source type="statement" id-ref="ca-7.4_smt.c"/>
+      <source type="statement" id-ref="cm-3.4_smt"/>
+      <source type="statement" id-ref="cm-4_smt"/>
+      <source type="statement" id-ref="cm-7.1_smt.a"/>
+      <source type="statement" id-ref="cm-7.1_smt.b"/>
+      <source type="statement" id-ref="au-5_smt.a"/>
+      <source type="statement" id-ref="au-5_smt.b"/>
+      <source type="statement" id-ref="ca-5_smt.a"/>
+      <source type="statement" id-ref="ca-5_smt.b"/>
+      <source type="statement" id-ref="ca-7_smt.a"/>
+      <source type="statement" id-ref="ca-7_smt.b"/>
+      <source type="statement" id-ref="ca-7_smt.c"/>
+      <source type="statement" id-ref="ca-7_smt.d"/>
+      <source type="statement" id-ref="ca-7_smt.e"/>
+      <source type="statement" id-ref="ca-7_smt.f"/>
+      <source type="statement" id-ref="ca-7_smt.g"/>
+      <source type="statement" id-ref="ra-5_smt.a"/>
+      <source type="statement" id-ref="ra-5_smt.b.1"/>
+      <source type="statement" id-ref="ra-5_smt.b.2"/>
+      <source type="statement" id-ref="ra-5_smt.b.3"/>
+      <source type="statement" id-ref="ra-5_smt.c"/>
+      <source type="statement" id-ref="ra-5_smt.d"/>
+      <source type="statement" id-ref="ra-5_smt.e"/>
+      <source type="statement" id-ref="ra-5_smt.f"/>
+      <source type="statement" id-ref="ra-5.2_smt"/>
+      <source type="statement" id-ref="sa-22_smt.a"/>
+      <source type="statement" id-ref="sa-22_smt.b"/>
+      <source type="statement" id-ref="si-2_smt.a"/>
+      <source type="statement" id-ref="si-2_smt.b"/>
+      <source type="statement" id-ref="si-2_smt.c"/>
+      <source type="statement" id-ref="si-2_smt.d"/>
+      <source type="statement" id-ref="si-2.2_smt"/>
+      <source type="statement" id-ref="si-3_smt.a"/>
+      <source type="statement" id-ref="si-3_smt.b"/>
+      <source type="statement" id-ref="si-3_smt.c.1"/>
+      <source type="statement" id-ref="si-3_smt.c.2"/>
+      <source type="statement" id-ref="si-3_smt.d"/>
+      <source type="statement" id-ref="si-5_smt.a"/>
+      <source type="statement" id-ref="si-5_smt.b"/>
+      <source type="statement" id-ref="si-5_smt.c"/>
+      <source type="statement" id-ref="si-5_smt.d"/>
+      <source type="statement" id-ref="si-7.7_smt"/>
+      <source type="statement" id-ref="si-10_smt"/>
+      <source type="statement" id-ref="si-11_smt.a"/>
+      <source type="statement" id-ref="si-11_smt.b"/>
+      <target type="statement" id-ref="FRC-CSO-SCN_smt"/>
+    </map>
+    <map uuid="614714d1-bcae-5425-9d5f-cb4d175fc47d">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ca-2_smt.a"/>
+      <source type="statement" id-ref="ca-2_smt.b.1"/>
+      <source type="statement" id-ref="ca-2_smt.b.2"/>
+      <source type="statement" id-ref="ca-2_smt.b.3"/>
+      <source type="statement" id-ref="ca-2_smt.c"/>
+      <source type="statement" id-ref="ca-2_smt.d"/>
+      <source type="statement" id-ref="ca-2_smt.e"/>
+      <source type="statement" id-ref="ca-2_smt.f"/>
+      <source type="statement" id-ref="ca-7_smt.a"/>
+      <source type="statement" id-ref="ca-7_smt.b"/>
+      <source type="statement" id-ref="ca-7_smt.c"/>
+      <source type="statement" id-ref="ca-7_smt.d"/>
+      <source type="statement" id-ref="ca-7_smt.e"/>
+      <source type="statement" id-ref="ca-7_smt.f"/>
+      <source type="statement" id-ref="ca-7_smt.g"/>
+      <source type="statement" id-ref="ca-7.6_smt"/>
+      <source type="statement" id-ref="ir-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ir-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ir-1_smt.a.2"/>
+      <source type="statement" id-ref="ir-1_smt.b"/>
+      <source type="statement" id-ref="ir-1_smt.c.1"/>
+      <source type="statement" id-ref="ir-1_smt.c.2"/>
+      <source type="statement" id-ref="ir-4_smt.a"/>
+      <source type="statement" id-ref="ir-4_smt.b"/>
+      <source type="statement" id-ref="ir-4_smt.c"/>
+      <source type="statement" id-ref="ir-4_smt.d"/>
+      <source type="statement" id-ref="ir-4.1_smt"/>
+      <source type="statement" id-ref="ir-5_smt"/>
+      <source type="statement" id-ref="ir-5.1_smt"/>
+      <source type="statement" id-ref="ir-6_smt.a"/>
+      <source type="statement" id-ref="ir-6_smt.b"/>
+      <source type="statement" id-ref="ir-6.1_smt"/>
+      <source type="statement" id-ref="ir-6.2_smt"/>
+      <source type="statement" id-ref="pm-3_smt.a"/>
+      <source type="statement" id-ref="pm-3_smt.b"/>
+      <source type="statement" id-ref="pm-3_smt.c"/>
+      <source type="statement" id-ref="pm-5_smt"/>
+      <source type="statement" id-ref="pm-31_smt.a"/>
+      <source type="statement" id-ref="pm-31_smt.b"/>
+      <source type="statement" id-ref="pm-31_smt.c"/>
+      <source type="statement" id-ref="pm-31_smt.d"/>
+      <source type="statement" id-ref="pm-31_smt.e"/>
+      <source type="statement" id-ref="pm-31_smt.f"/>
+      <source type="statement" id-ref="ra-2_smt.a"/>
+      <source type="statement" id-ref="ra-2_smt.b"/>
+      <source type="statement" id-ref="ra-2_smt.c"/>
+      <source type="statement" id-ref="ra-2.1_smt"/>
+      <source type="statement" id-ref="ra-3_smt.a.1"/>
+      <source type="statement" id-ref="ra-3_smt.a.2"/>
+      <source type="statement" id-ref="ra-3_smt.a.3"/>
+      <source type="statement" id-ref="ra-3_smt.b"/>
+      <source type="statement" id-ref="ra-3_smt.c"/>
+      <source type="statement" id-ref="ra-3_smt.d"/>
+      <source type="statement" id-ref="ra-3_smt.e"/>
+      <source type="statement" id-ref="ra-3_smt.f"/>
+      <source type="statement" id-ref="ra-3.3_smt"/>
+      <source type="statement" id-ref="ra-5_smt.a"/>
+      <source type="statement" id-ref="ra-5_smt.b.1"/>
+      <source type="statement" id-ref="ra-5_smt.b.2"/>
+      <source type="statement" id-ref="ra-5_smt.b.3"/>
+      <source type="statement" id-ref="ra-5_smt.c"/>
+      <source type="statement" id-ref="ra-5_smt.d"/>
+      <source type="statement" id-ref="ra-5_smt.e"/>
+      <source type="statement" id-ref="ra-5_smt.f"/>
+      <source type="statement" id-ref="ra-5.2_smt"/>
+      <source type="statement" id-ref="ra-5.3_smt"/>
+      <source type="statement" id-ref="ra-5.4_smt"/>
+      <source type="statement" id-ref="ra-5.5_smt"/>
+      <source type="statement" id-ref="ra-5.6_smt"/>
+      <source type="statement" id-ref="ra-5.11_smt"/>
+      <source type="statement" id-ref="ra-9_smt"/>
+      <source type="statement" id-ref="ra-10_smt.a.1"/>
+      <source type="statement" id-ref="ra-10_smt.a.2"/>
+      <source type="statement" id-ref="ra-10_smt.b"/>
+      <source type="statement" id-ref="si-2_smt.a"/>
+      <source type="statement" id-ref="si-2_smt.b"/>
+      <source type="statement" id-ref="si-2_smt.c"/>
+      <source type="statement" id-ref="si-2_smt.d"/>
+      <source type="statement" id-ref="si-2.2_smt"/>
+      <source type="statement" id-ref="si-2.4_smt"/>
+      <source type="statement" id-ref="si-2.5_smt"/>
+      <source type="statement" id-ref="si-3_smt.a"/>
+      <source type="statement" id-ref="si-3_smt.b"/>
+      <source type="statement" id-ref="si-3_smt.c.1"/>
+      <source type="statement" id-ref="si-3_smt.c.2"/>
+      <source type="statement" id-ref="si-3_smt.d"/>
+      <source type="statement" id-ref="si-4_smt.a.1"/>
+      <source type="statement" id-ref="si-4_smt.a.2"/>
+      <source type="statement" id-ref="si-4_smt.b"/>
+      <source type="statement" id-ref="si-4_smt.c.1"/>
+      <source type="statement" id-ref="si-4_smt.c.2"/>
+      <source type="statement" id-ref="si-4_smt.d"/>
+      <source type="statement" id-ref="si-4_smt.e"/>
+      <source type="statement" id-ref="si-4_smt.f"/>
+      <source type="statement" id-ref="si-4_smt.g"/>
+      <source type="statement" id-ref="si-4.2_smt"/>
+      <source type="statement" id-ref="si-4.3_smt"/>
+      <source type="statement" id-ref="si-4.7_smt.a"/>
+      <source type="statement" id-ref="si-4.7_smt.b"/>
+      <source type="statement" id-ref="ca-7.4_smt.a"/>
+      <source type="statement" id-ref="ca-7.4_smt.b"/>
+      <source type="statement" id-ref="ca-7.4_smt.c"/>
+      <source type="statement" id-ref="ra-7_smt"/>
+      <target type="statement" id-ref="FRC-CSO-VDR_smt"/>
+    </map>
+    <map uuid="e8506eb9-714a-5e13-b5b6-535b825b7b54">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cp-3_smt.a.1"/>
+      <source type="statement" id-ref="cp-3_smt.a.2"/>
+      <source type="statement" id-ref="cp-3_smt.a.3"/>
+      <source type="statement" id-ref="cp-3_smt.b"/>
+      <source type="statement" id-ref="ir-2_smt.a.1"/>
+      <source type="statement" id-ref="ir-2_smt.a.2"/>
+      <source type="statement" id-ref="ir-2_smt.a.3"/>
+      <source type="statement" id-ref="ir-2_smt.b"/>
+      <source type="statement" id-ref="ps-6_smt.a"/>
+      <source type="statement" id-ref="ps-6_smt.b"/>
+      <source type="statement" id-ref="ps-6_smt.c.1"/>
+      <source type="statement" id-ref="ps-6_smt.c.2"/>
+      <source type="statement" id-ref="at-2_smt.a.1"/>
+      <source type="statement" id-ref="at-2_smt.a.2"/>
+      <source type="statement" id-ref="at-2_smt.b"/>
+      <source type="statement" id-ref="at-2_smt.c"/>
+      <source type="statement" id-ref="at-2_smt.d"/>
+      <source type="statement" id-ref="at-2.2_smt"/>
+      <source type="statement" id-ref="at-2.3_smt"/>
+      <source type="statement" id-ref="at-3.5_smt"/>
+      <source type="statement" id-ref="at-4_smt.a"/>
+      <source type="statement" id-ref="at-4_smt.b"/>
+      <source type="statement" id-ref="ir-2.3_smt"/>
+      <source type="statement" id-ref="at-3_smt.a.1"/>
+      <source type="statement" id-ref="at-3_smt.a.2"/>
+      <source type="statement" id-ref="at-3_smt.b"/>
+      <source type="statement" id-ref="at-3_smt.c"/>
+      <source type="statement" id-ref="sr-11.1_smt"/>
+      <target type="statement" id-ref="KSI-CED-RAT_smt"/>
+    </map>
+    <map uuid="849c3d48-88f1-5cc1-9319-aabda2885ddd">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="au-2_smt.a"/>
+      <source type="statement" id-ref="au-2_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.c"/>
+      <source type="statement" id-ref="au-2_smt.d"/>
+      <source type="statement" id-ref="au-2_smt.e"/>
+      <source type="statement" id-ref="cm-3_smt.a"/>
+      <source type="statement" id-ref="cm-3_smt.b"/>
+      <source type="statement" id-ref="cm-3_smt.c"/>
+      <source type="statement" id-ref="cm-3_smt.d"/>
+      <source type="statement" id-ref="cm-3_smt.e"/>
+      <source type="statement" id-ref="cm-3_smt.f"/>
+      <source type="statement" id-ref="cm-3_smt.g"/>
+      <source type="statement" id-ref="cm-3.2_smt"/>
+      <source type="statement" id-ref="cm-4.2_smt"/>
+      <source type="statement" id-ref="cm-6_smt.a"/>
+      <source type="statement" id-ref="cm-6_smt.b"/>
+      <source type="statement" id-ref="cm-6_smt.c"/>
+      <source type="statement" id-ref="cm-6_smt.d"/>
+      <source type="statement" id-ref="cm-8.3_smt.a"/>
+      <source type="statement" id-ref="cm-8.3_smt.b"/>
+      <source type="statement" id-ref="ma-2_smt.a"/>
+      <source type="statement" id-ref="ma-2_smt.b"/>
+      <source type="statement" id-ref="ma-2_smt.c"/>
+      <source type="statement" id-ref="ma-2_smt.d"/>
+      <source type="statement" id-ref="ma-2_smt.e"/>
+      <source type="statement" id-ref="ma-2_smt.f"/>
+      <target type="statement" id-ref="KSI-CMT-LMC_smt"/>
+    </map>
+    <map uuid="d7b35f90-4a00-59d5-83d5-dda4033049e0">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-2_smt.a"/>
+      <source type="statement" id-ref="cm-2_smt.b.1"/>
+      <source type="statement" id-ref="cm-2_smt.b.2"/>
+      <source type="statement" id-ref="cm-2_smt.b.3"/>
+      <source type="statement" id-ref="cm-3_smt.a"/>
+      <source type="statement" id-ref="cm-3_smt.b"/>
+      <source type="statement" id-ref="cm-3_smt.c"/>
+      <source type="statement" id-ref="cm-3_smt.d"/>
+      <source type="statement" id-ref="cm-3_smt.e"/>
+      <source type="statement" id-ref="cm-3_smt.f"/>
+      <source type="statement" id-ref="cm-3_smt.g"/>
+      <source type="statement" id-ref="cm-5_smt"/>
+      <source type="statement" id-ref="cm-6_smt.a"/>
+      <source type="statement" id-ref="cm-6_smt.b"/>
+      <source type="statement" id-ref="cm-6_smt.c"/>
+      <source type="statement" id-ref="cm-6_smt.d"/>
+      <source type="statement" id-ref="cm-7_smt.a"/>
+      <source type="statement" id-ref="cm-7_smt.b"/>
+      <source type="statement" id-ref="cm-8.1_smt"/>
+      <source type="statement" id-ref="si-3_smt.a"/>
+      <source type="statement" id-ref="si-3_smt.b"/>
+      <source type="statement" id-ref="si-3_smt.c.1"/>
+      <source type="statement" id-ref="si-3_smt.c.2"/>
+      <source type="statement" id-ref="si-3_smt.d"/>
+      <target type="statement" id-ref="KSI-CMT-RMV_smt"/>
+    </map>
+    <map uuid="6ee76acc-1ecf-5656-80ba-2fb1471fad01">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-3_smt.a"/>
+      <source type="statement" id-ref="cm-3_smt.b"/>
+      <source type="statement" id-ref="cm-3_smt.c"/>
+      <source type="statement" id-ref="cm-3_smt.d"/>
+      <source type="statement" id-ref="cm-3_smt.e"/>
+      <source type="statement" id-ref="cm-3_smt.f"/>
+      <source type="statement" id-ref="cm-3_smt.g"/>
+      <source type="statement" id-ref="cm-3.2_smt"/>
+      <source type="statement" id-ref="cm-3.4_smt"/>
+      <source type="statement" id-ref="cm-5_smt"/>
+      <source type="statement" id-ref="cm-7.1_smt.a"/>
+      <source type="statement" id-ref="cm-7.1_smt.b"/>
+      <source type="statement" id-ref="cm-9_smt.a"/>
+      <source type="statement" id-ref="cm-9_smt.b"/>
+      <source type="statement" id-ref="cm-9_smt.c"/>
+      <source type="statement" id-ref="cm-9_smt.d"/>
+      <source type="statement" id-ref="cm-9_smt.e"/>
+      <target type="statement" id-ref="KSI-CMT-RVP_smt"/>
+    </map>
+    <map uuid="91ec8d1a-c7f8-526a-8f18-08f04767647a">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-3_smt.a"/>
+      <source type="statement" id-ref="cm-3_smt.b"/>
+      <source type="statement" id-ref="cm-3_smt.c"/>
+      <source type="statement" id-ref="cm-3_smt.d"/>
+      <source type="statement" id-ref="cm-3_smt.e"/>
+      <source type="statement" id-ref="cm-3_smt.f"/>
+      <source type="statement" id-ref="cm-3_smt.g"/>
+      <source type="statement" id-ref="cm-3.2_smt"/>
+      <source type="statement" id-ref="cm-4.2_smt"/>
+      <source type="statement" id-ref="si-2_smt.a"/>
+      <source type="statement" id-ref="si-2_smt.b"/>
+      <source type="statement" id-ref="si-2_smt.c"/>
+      <source type="statement" id-ref="si-2_smt.d"/>
+      <target type="statement" id-ref="KSI-CMT-VTD_smt"/>
+    </map>
+    <map uuid="28fbea00-383f-54ed-b06c-35d4c7c92bec">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-2_smt.a"/>
+      <source type="statement" id-ref="cm-2_smt.b.1"/>
+      <source type="statement" id-ref="cm-2_smt.b.2"/>
+      <source type="statement" id-ref="cm-2_smt.b.3"/>
+      <source type="statement" id-ref="si-3_smt.a"/>
+      <source type="statement" id-ref="si-3_smt.b"/>
+      <source type="statement" id-ref="si-3_smt.c.1"/>
+      <source type="statement" id-ref="si-3_smt.c.2"/>
+      <source type="statement" id-ref="si-3_smt.d"/>
+      <target type="statement" id-ref="KSI-CNA-DFP_smt"/>
+    </map>
+    <map uuid="19177f1d-3b52-56e5-8f24-7dc6a96b3405">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-17.3_smt"/>
+      <source type="statement" id-ref="cm-2_smt.a"/>
+      <source type="statement" id-ref="cm-2_smt.b.1"/>
+      <source type="statement" id-ref="cm-2_smt.b.2"/>
+      <source type="statement" id-ref="cm-2_smt.b.3"/>
+      <source type="statement" id-ref="pl-10_smt"/>
+      <target type="statement" id-ref="KSI-CNA-IBP_smt"/>
+    </map>
+    <map uuid="e409049d-28fa-5ec7-ae92-3c7a5d3bf5e3">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-17.3_smt"/>
+      <source type="statement" id-ref="ac-18.1_smt"/>
+      <source type="statement" id-ref="ac-18.3_smt"/>
+      <source type="statement" id-ref="ac-20.1_smt.a"/>
+      <source type="statement" id-ref="ac-20.1_smt.b"/>
+      <source type="statement" id-ref="ca-9_smt.a"/>
+      <source type="statement" id-ref="ca-9_smt.b"/>
+      <source type="statement" id-ref="ca-9_smt.c"/>
+      <source type="statement" id-ref="ca-9_smt.d"/>
+      <source type="statement" id-ref="sc-7.3_smt"/>
+      <source type="statement" id-ref="sc-7.4_smt.a"/>
+      <source type="statement" id-ref="sc-7.4_smt.b"/>
+      <source type="statement" id-ref="sc-7.4_smt.c"/>
+      <source type="statement" id-ref="sc-7.4_smt.d"/>
+      <source type="statement" id-ref="sc-7.4_smt.e"/>
+      <source type="statement" id-ref="sc-7.4_smt.f"/>
+      <source type="statement" id-ref="sc-7.4_smt.g"/>
+      <source type="statement" id-ref="sc-7.4_smt.h"/>
+      <source type="statement" id-ref="sc-7.5_smt"/>
+      <source type="statement" id-ref="sc-7.8_smt"/>
+      <source type="statement" id-ref="sc-8_smt"/>
+      <source type="statement" id-ref="sc-10_smt"/>
+      <source type="statement" id-ref="si-10_smt"/>
+      <source type="statement" id-ref="si-11_smt.a"/>
+      <source type="statement" id-ref="si-11_smt.b"/>
+      <source type="statement" id-ref="si-16_smt"/>
+      <target type="statement" id-ref="KSI-CNA-MAT_smt"/>
+    </map>
+    <map uuid="c6a31736-1ca7-5895-91bf-5b0a3546337e">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-17.3_smt"/>
+      <source type="statement" id-ref="ca-9_smt.a"/>
+      <source type="statement" id-ref="ca-9_smt.b"/>
+      <source type="statement" id-ref="ca-9_smt.c"/>
+      <source type="statement" id-ref="ca-9_smt.d"/>
+      <source type="statement" id-ref="cm-7.1_smt.a"/>
+      <source type="statement" id-ref="cm-7.1_smt.b"/>
+      <source type="statement" id-ref="sc-7.5_smt"/>
+      <source type="statement" id-ref="si-8_smt.a"/>
+      <source type="statement" id-ref="si-8_smt.b"/>
+      <target type="statement" id-ref="KSI-CNA-RNT_smt"/>
+    </map>
+    <map uuid="ed90d18d-5d5e-5d23-be88-0664f4664564">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="sc-5_smt.a"/>
+      <source type="statement" id-ref="sc-5_smt.b"/>
+      <source type="statement" id-ref="si-8_smt.a"/>
+      <source type="statement" id-ref="si-8_smt.b"/>
+      <source type="statement" id-ref="si-8.2_smt"/>
+      <target type="statement" id-ref="KSI-CNA-RVP_smt"/>
+    </map>
+    <map uuid="99328da7-c6c8-58c0-b3c2-27c7d053ebc1">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-12_smt"/>
+      <source type="statement" id-ref="ac-17.3_smt"/>
+      <source type="statement" id-ref="ca-9_smt.a"/>
+      <source type="statement" id-ref="ca-9_smt.b"/>
+      <source type="statement" id-ref="ca-9_smt.c"/>
+      <source type="statement" id-ref="ca-9_smt.d"/>
+      <source type="statement" id-ref="sc-4_smt"/>
+      <source type="statement" id-ref="sc-7_smt.a"/>
+      <source type="statement" id-ref="sc-7_smt.b"/>
+      <source type="statement" id-ref="sc-7_smt.c"/>
+      <source type="statement" id-ref="sc-7.7_smt"/>
+      <source type="statement" id-ref="sc-8_smt"/>
+      <source type="statement" id-ref="sc-10_smt"/>
+      <target type="statement" id-ref="KSI-CNA-ULN_smt"/>
+    </map>
+    <map uuid="26485d5e-e387-5327-a3e1-49607feae17d">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2.2_smt"/>
+      <source type="statement" id-ref="ac-2.3_smt.a"/>
+      <source type="statement" id-ref="ac-2.3_smt.b"/>
+      <source type="statement" id-ref="ac-2.3_smt.c"/>
+      <source type="statement" id-ref="ac-2.3_smt.d"/>
+      <source type="statement" id-ref="ac-2.13_smt"/>
+      <source type="statement" id-ref="ac-6.7_smt.a"/>
+      <source type="statement" id-ref="ac-6.7_smt.b"/>
+      <source type="statement" id-ref="ia-4.4_smt"/>
+      <source type="statement" id-ref="ia-12_smt.a"/>
+      <source type="statement" id-ref="ia-12_smt.b"/>
+      <source type="statement" id-ref="ia-12_smt.c"/>
+      <source type="statement" id-ref="ia-12.2_smt"/>
+      <source type="statement" id-ref="ia-12.3_smt"/>
+      <source type="statement" id-ref="ia-12.5_smt"/>
+      <target type="statement" id-ref="KSI-IAM-AAM_smt"/>
+    </map>
+    <map uuid="ff540a13-d067-5284-89c5-debdcb1bf540">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-3_smt"/>
+      <source type="statement" id-ref="ia-5.1_smt.a"/>
+      <source type="statement" id-ref="ia-5.1_smt.b"/>
+      <source type="statement" id-ref="ia-5.1_smt.c"/>
+      <source type="statement" id-ref="ia-5.1_smt.d"/>
+      <source type="statement" id-ref="ia-5.1_smt.e"/>
+      <source type="statement" id-ref="ia-5.1_smt.f"/>
+      <source type="statement" id-ref="ia-5.1_smt.g"/>
+      <source type="statement" id-ref="ia-5.1_smt.h"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.2"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.2"/>
+      <source type="statement" id-ref="ia-5.6_smt"/>
+      <source type="statement" id-ref="ia-6_smt"/>
+      <source type="statement" id-ref="ac-2_smt.a"/>
+      <source type="statement" id-ref="ac-2_smt.b"/>
+      <source type="statement" id-ref="ac-2_smt.c"/>
+      <source type="statement" id-ref="ac-2_smt.d.1"/>
+      <source type="statement" id-ref="ac-2_smt.d.2"/>
+      <source type="statement" id-ref="ac-2_smt.d.3"/>
+      <source type="statement" id-ref="ac-2_smt.e"/>
+      <source type="statement" id-ref="ac-2_smt.f"/>
+      <source type="statement" id-ref="ac-2_smt.g"/>
+      <source type="statement" id-ref="ac-2_smt.h.1"/>
+      <source type="statement" id-ref="ac-2_smt.h.2"/>
+      <source type="statement" id-ref="ac-2_smt.h.3"/>
+      <source type="statement" id-ref="ac-2_smt.i.1"/>
+      <source type="statement" id-ref="ac-2_smt.i.2"/>
+      <source type="statement" id-ref="ac-2_smt.i.3"/>
+      <source type="statement" id-ref="ac-2_smt.j"/>
+      <source type="statement" id-ref="ac-2_smt.k"/>
+      <source type="statement" id-ref="ac-2_smt.l"/>
+      <source type="statement" id-ref="ia-2_smt"/>
+      <source type="statement" id-ref="ia-2.1_smt"/>
+      <source type="statement" id-ref="ia-2.2_smt"/>
+      <source type="statement" id-ref="ia-2.8_smt"/>
+      <source type="statement" id-ref="ia-5_smt.a"/>
+      <source type="statement" id-ref="ia-5_smt.b"/>
+      <source type="statement" id-ref="ia-5_smt.c"/>
+      <source type="statement" id-ref="ia-5_smt.d"/>
+      <source type="statement" id-ref="ia-5_smt.e"/>
+      <source type="statement" id-ref="ia-5_smt.f"/>
+      <source type="statement" id-ref="ia-5_smt.g"/>
+      <source type="statement" id-ref="ia-5_smt.h"/>
+      <source type="statement" id-ref="ia-5_smt.i"/>
+      <source type="statement" id-ref="ia-8_smt"/>
+      <source type="statement" id-ref="sc-23_smt"/>
+      <target type="statement" id-ref="KSI-IAM-APM_smt"/>
+    </map>
+    <map uuid="7826ad7c-376c-522e-8c9c-07aac34a2bf7">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2.5_smt"/>
+      <source type="statement" id-ref="ac-2.6_smt"/>
+      <source type="statement" id-ref="ac-3_smt"/>
+      <source type="statement" id-ref="ac-4_smt"/>
+      <source type="statement" id-ref="ac-6_smt"/>
+      <source type="statement" id-ref="ac-12_smt"/>
+      <source type="statement" id-ref="ac-14_smt.a"/>
+      <source type="statement" id-ref="ac-14_smt.b"/>
+      <source type="statement" id-ref="ac-17_smt.a"/>
+      <source type="statement" id-ref="ac-17_smt.b"/>
+      <source type="statement" id-ref="ac-17.1_smt"/>
+      <source type="statement" id-ref="ac-17.2_smt"/>
+      <source type="statement" id-ref="ac-17.3_smt"/>
+      <source type="statement" id-ref="ac-20_smt.a.1"/>
+      <source type="statement" id-ref="ac-20_smt.a.2"/>
+      <source type="statement" id-ref="ac-20_smt.b"/>
+      <source type="statement" id-ref="ac-20.1_smt.a"/>
+      <source type="statement" id-ref="ac-20.1_smt.b"/>
+      <source type="statement" id-ref="cm-2.7_smt.a"/>
+      <source type="statement" id-ref="cm-2.7_smt.b"/>
+      <source type="statement" id-ref="cm-9_smt.a"/>
+      <source type="statement" id-ref="cm-9_smt.b"/>
+      <source type="statement" id-ref="cm-9_smt.c"/>
+      <source type="statement" id-ref="cm-9_smt.d"/>
+      <source type="statement" id-ref="cm-9_smt.e"/>
+      <source type="statement" id-ref="ia-2_smt"/>
+      <source type="statement" id-ref="ia-3_smt"/>
+      <source type="statement" id-ref="ia-4_smt.a"/>
+      <source type="statement" id-ref="ia-4_smt.b"/>
+      <source type="statement" id-ref="ia-4_smt.c"/>
+      <source type="statement" id-ref="ia-4_smt.d"/>
+      <source type="statement" id-ref="ia-4.4_smt"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.2"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.2"/>
+      <source type="statement" id-ref="ia-5.6_smt"/>
+      <source type="statement" id-ref="ia-11_smt"/>
+      <source type="statement" id-ref="ps-2_smt.a"/>
+      <source type="statement" id-ref="ps-2_smt.b"/>
+      <source type="statement" id-ref="ps-2_smt.c"/>
+      <source type="statement" id-ref="ps-3_smt.a"/>
+      <source type="statement" id-ref="ps-3_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.a"/>
+      <source type="statement" id-ref="ps-4_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.c"/>
+      <source type="statement" id-ref="ps-4_smt.d"/>
+      <source type="statement" id-ref="ps-4_smt.e"/>
+      <source type="statement" id-ref="ps-5_smt.a"/>
+      <source type="statement" id-ref="ps-5_smt.b"/>
+      <source type="statement" id-ref="ps-5_smt.c"/>
+      <source type="statement" id-ref="ps-5_smt.d"/>
+      <source type="statement" id-ref="ps-6_smt.a"/>
+      <source type="statement" id-ref="ps-6_smt.b"/>
+      <source type="statement" id-ref="ps-6_smt.c.1"/>
+      <source type="statement" id-ref="ps-6_smt.c.2"/>
+      <source type="statement" id-ref="sc-4_smt"/>
+      <source type="statement" id-ref="sc-20_smt.a"/>
+      <source type="statement" id-ref="sc-20_smt.b"/>
+      <source type="statement" id-ref="sc-21_smt"/>
+      <source type="statement" id-ref="sc-22_smt"/>
+      <source type="statement" id-ref="sc-23_smt"/>
+      <source type="statement" id-ref="sc-39_smt"/>
+      <source type="statement" id-ref="si-3_smt.a"/>
+      <source type="statement" id-ref="si-3_smt.b"/>
+      <source type="statement" id-ref="si-3_smt.c.1"/>
+      <source type="statement" id-ref="si-3_smt.c.2"/>
+      <source type="statement" id-ref="si-3_smt.d"/>
+      <target type="statement" id-ref="KSI-IAM-ELP_smt"/>
+    </map>
+    <map uuid="1ab498ff-0cc7-5dad-9f0c-a03f576f691a">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2_smt.a"/>
+      <source type="statement" id-ref="ac-2_smt.b"/>
+      <source type="statement" id-ref="ac-2_smt.c"/>
+      <source type="statement" id-ref="ac-2_smt.d.1"/>
+      <source type="statement" id-ref="ac-2_smt.d.2"/>
+      <source type="statement" id-ref="ac-2_smt.d.3"/>
+      <source type="statement" id-ref="ac-2_smt.e"/>
+      <source type="statement" id-ref="ac-2_smt.f"/>
+      <source type="statement" id-ref="ac-2_smt.g"/>
+      <source type="statement" id-ref="ac-2_smt.h.1"/>
+      <source type="statement" id-ref="ac-2_smt.h.2"/>
+      <source type="statement" id-ref="ac-2_smt.h.3"/>
+      <source type="statement" id-ref="ac-2_smt.i.1"/>
+      <source type="statement" id-ref="ac-2_smt.i.2"/>
+      <source type="statement" id-ref="ac-2_smt.i.3"/>
+      <source type="statement" id-ref="ac-2_smt.j"/>
+      <source type="statement" id-ref="ac-2_smt.k"/>
+      <source type="statement" id-ref="ac-2_smt.l"/>
+      <source type="statement" id-ref="ac-2.1_smt"/>
+      <source type="statement" id-ref="ac-2.2_smt"/>
+      <source type="statement" id-ref="ac-2.3_smt.a"/>
+      <source type="statement" id-ref="ac-2.3_smt.b"/>
+      <source type="statement" id-ref="ac-2.3_smt.c"/>
+      <source type="statement" id-ref="ac-2.3_smt.d"/>
+      <source type="statement" id-ref="ac-2.4_smt"/>
+      <source type="statement" id-ref="ac-2.6_smt"/>
+      <source type="statement" id-ref="ac-3_smt"/>
+      <source type="statement" id-ref="ac-4_smt"/>
+      <source type="statement" id-ref="ac-5_smt.a"/>
+      <source type="statement" id-ref="ac-5_smt.b"/>
+      <source type="statement" id-ref="ac-6_smt"/>
+      <source type="statement" id-ref="ac-6.1_smt.a"/>
+      <source type="statement" id-ref="ac-6.1_smt.b"/>
+      <source type="statement" id-ref="ac-6.2_smt"/>
+      <source type="statement" id-ref="ac-6.5_smt"/>
+      <source type="statement" id-ref="ac-6.7_smt.a"/>
+      <source type="statement" id-ref="ac-6.7_smt.b"/>
+      <source type="statement" id-ref="ac-6.9_smt"/>
+      <source type="statement" id-ref="ac-6.10_smt"/>
+      <source type="statement" id-ref="ac-7_smt.a"/>
+      <source type="statement" id-ref="ac-7_smt.b"/>
+      <source type="statement" id-ref="ac-20.1_smt.a"/>
+      <source type="statement" id-ref="ac-20.1_smt.b"/>
+      <source type="statement" id-ref="ac-17_smt.a"/>
+      <source type="statement" id-ref="ac-17_smt.b"/>
+      <source type="statement" id-ref="au-9.4_smt"/>
+      <source type="statement" id-ref="cm-5_smt"/>
+      <source type="statement" id-ref="cm-7_smt.a"/>
+      <source type="statement" id-ref="cm-7_smt.b"/>
+      <source type="statement" id-ref="cm-7.2_smt"/>
+      <source type="statement" id-ref="cm-7.5_smt.a"/>
+      <source type="statement" id-ref="cm-7.5_smt.b"/>
+      <source type="statement" id-ref="cm-7.5_smt.c"/>
+      <source type="statement" id-ref="cm-9_smt.a"/>
+      <source type="statement" id-ref="cm-9_smt.b"/>
+      <source type="statement" id-ref="cm-9_smt.c"/>
+      <source type="statement" id-ref="cm-9_smt.d"/>
+      <source type="statement" id-ref="cm-9_smt.e"/>
+      <source type="statement" id-ref="ia-4_smt.a"/>
+      <source type="statement" id-ref="ia-4_smt.b"/>
+      <source type="statement" id-ref="ia-4_smt.c"/>
+      <source type="statement" id-ref="ia-4_smt.d"/>
+      <source type="statement" id-ref="ia-4.4_smt"/>
+      <source type="statement" id-ref="ia-7_smt"/>
+      <source type="statement" id-ref="ps-2_smt.a"/>
+      <source type="statement" id-ref="ps-2_smt.b"/>
+      <source type="statement" id-ref="ps-2_smt.c"/>
+      <source type="statement" id-ref="ps-3_smt.a"/>
+      <source type="statement" id-ref="ps-3_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.a"/>
+      <source type="statement" id-ref="ps-4_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.c"/>
+      <source type="statement" id-ref="ps-4_smt.d"/>
+      <source type="statement" id-ref="ps-4_smt.e"/>
+      <source type="statement" id-ref="ps-5_smt.a"/>
+      <source type="statement" id-ref="ps-5_smt.b"/>
+      <source type="statement" id-ref="ps-5_smt.c"/>
+      <source type="statement" id-ref="ps-5_smt.d"/>
+      <source type="statement" id-ref="ps-6_smt.a"/>
+      <source type="statement" id-ref="ps-6_smt.b"/>
+      <source type="statement" id-ref="ps-6_smt.c.1"/>
+      <source type="statement" id-ref="ps-6_smt.c.2"/>
+      <source type="statement" id-ref="ps-9_smt"/>
+      <source type="statement" id-ref="ra-5.5_smt"/>
+      <source type="statement" id-ref="sc-2_smt"/>
+      <source type="statement" id-ref="sc-23_smt"/>
+      <source type="statement" id-ref="sc-39_smt"/>
+      <target type="statement" id-ref="KSI-IAM-JIT_smt"/>
+    </map>
+    <map uuid="4561e44b-6515-5a88-8535-827cbe658ea1">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2_smt.a"/>
+      <source type="statement" id-ref="ac-2_smt.b"/>
+      <source type="statement" id-ref="ac-2_smt.c"/>
+      <source type="statement" id-ref="ac-2_smt.d.1"/>
+      <source type="statement" id-ref="ac-2_smt.d.2"/>
+      <source type="statement" id-ref="ac-2_smt.d.3"/>
+      <source type="statement" id-ref="ac-2_smt.e"/>
+      <source type="statement" id-ref="ac-2_smt.f"/>
+      <source type="statement" id-ref="ac-2_smt.g"/>
+      <source type="statement" id-ref="ac-2_smt.h.1"/>
+      <source type="statement" id-ref="ac-2_smt.h.2"/>
+      <source type="statement" id-ref="ac-2_smt.h.3"/>
+      <source type="statement" id-ref="ac-2_smt.i.1"/>
+      <source type="statement" id-ref="ac-2_smt.i.2"/>
+      <source type="statement" id-ref="ac-2_smt.i.3"/>
+      <source type="statement" id-ref="ac-2_smt.j"/>
+      <source type="statement" id-ref="ac-2_smt.k"/>
+      <source type="statement" id-ref="ac-2_smt.l"/>
+      <source type="statement" id-ref="ac-2.2_smt"/>
+      <source type="statement" id-ref="ac-4_smt"/>
+      <source type="statement" id-ref="ac-6.5_smt"/>
+      <source type="statement" id-ref="ia-3_smt"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.2"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.2"/>
+      <source type="statement" id-ref="ra-5.5_smt"/>
+      <target type="statement" id-ref="KSI-IAM-SNU_smt"/>
+    </map>
+    <map uuid="c410e9ef-74c7-50d9-8da3-228ff447e188">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2_smt.a"/>
+      <source type="statement" id-ref="ac-2_smt.b"/>
+      <source type="statement" id-ref="ac-2_smt.c"/>
+      <source type="statement" id-ref="ac-2_smt.d.1"/>
+      <source type="statement" id-ref="ac-2_smt.d.2"/>
+      <source type="statement" id-ref="ac-2_smt.d.3"/>
+      <source type="statement" id-ref="ac-2_smt.e"/>
+      <source type="statement" id-ref="ac-2_smt.f"/>
+      <source type="statement" id-ref="ac-2_smt.g"/>
+      <source type="statement" id-ref="ac-2_smt.h.1"/>
+      <source type="statement" id-ref="ac-2_smt.h.2"/>
+      <source type="statement" id-ref="ac-2_smt.h.3"/>
+      <source type="statement" id-ref="ac-2_smt.i.1"/>
+      <source type="statement" id-ref="ac-2_smt.i.2"/>
+      <source type="statement" id-ref="ac-2_smt.i.3"/>
+      <source type="statement" id-ref="ac-2_smt.j"/>
+      <source type="statement" id-ref="ac-2_smt.k"/>
+      <source type="statement" id-ref="ac-2_smt.l"/>
+      <source type="statement" id-ref="ac-2.1_smt"/>
+      <source type="statement" id-ref="ac-2.3_smt.a"/>
+      <source type="statement" id-ref="ac-2.3_smt.b"/>
+      <source type="statement" id-ref="ac-2.3_smt.c"/>
+      <source type="statement" id-ref="ac-2.3_smt.d"/>
+      <source type="statement" id-ref="ac-2.13_smt"/>
+      <source type="statement" id-ref="ac-7_smt.a"/>
+      <source type="statement" id-ref="ac-7_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.a"/>
+      <source type="statement" id-ref="ps-4_smt.b"/>
+      <source type="statement" id-ref="ps-4_smt.c"/>
+      <source type="statement" id-ref="ps-4_smt.d"/>
+      <source type="statement" id-ref="ps-4_smt.e"/>
+      <source type="statement" id-ref="ps-8_smt.a"/>
+      <source type="statement" id-ref="ps-8_smt.b"/>
+      <target type="statement" id-ref="KSI-IAM-SUS_smt"/>
+    </map>
+    <map uuid="7b50d9a8-d45f-5c11-b8fd-57d8c0c49580">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ir-3_smt"/>
+      <source type="statement" id-ref="ir-4_smt.a"/>
+      <source type="statement" id-ref="ir-4_smt.b"/>
+      <source type="statement" id-ref="ir-4_smt.c"/>
+      <source type="statement" id-ref="ir-4_smt.d"/>
+      <source type="statement" id-ref="ir-4.1_smt"/>
+      <source type="statement" id-ref="ir-8_smt.a.1"/>
+      <source type="statement" id-ref="ir-8_smt.a.2"/>
+      <source type="statement" id-ref="ir-8_smt.a.3"/>
+      <source type="statement" id-ref="ir-8_smt.a.4"/>
+      <source type="statement" id-ref="ir-8_smt.a.5"/>
+      <source type="statement" id-ref="ir-8_smt.a.6"/>
+      <source type="statement" id-ref="ir-8_smt.a.7"/>
+      <source type="statement" id-ref="ir-8_smt.a.8"/>
+      <source type="statement" id-ref="ir-8_smt.a.9"/>
+      <source type="statement" id-ref="ir-8_smt.a.10"/>
+      <source type="statement" id-ref="ir-8_smt.b"/>
+      <source type="statement" id-ref="ir-8_smt.c"/>
+      <source type="statement" id-ref="ir-8_smt.d"/>
+      <source type="statement" id-ref="ir-8_smt.e"/>
+      <target type="statement" id-ref="KSI-INR-AAR_smt"/>
+    </map>
+    <map uuid="a228a68a-b35e-5a84-887f-730dae8c6102">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ir-4_smt.a"/>
+      <source type="statement" id-ref="ir-4_smt.b"/>
+      <source type="statement" id-ref="ir-4_smt.c"/>
+      <source type="statement" id-ref="ir-4_smt.d"/>
+      <source type="statement" id-ref="ir-4.1_smt"/>
+      <source type="statement" id-ref="ir-6_smt.a"/>
+      <source type="statement" id-ref="ir-6_smt.b"/>
+      <source type="statement" id-ref="ir-6.1_smt"/>
+      <source type="statement" id-ref="ir-6.3_smt"/>
+      <source type="statement" id-ref="ir-7_smt"/>
+      <source type="statement" id-ref="ir-7.1_smt"/>
+      <source type="statement" id-ref="ir-8_smt.a.1"/>
+      <source type="statement" id-ref="ir-8_smt.a.2"/>
+      <source type="statement" id-ref="ir-8_smt.a.3"/>
+      <source type="statement" id-ref="ir-8_smt.a.4"/>
+      <source type="statement" id-ref="ir-8_smt.a.5"/>
+      <source type="statement" id-ref="ir-8_smt.a.6"/>
+      <source type="statement" id-ref="ir-8_smt.a.7"/>
+      <source type="statement" id-ref="ir-8_smt.a.8"/>
+      <source type="statement" id-ref="ir-8_smt.a.9"/>
+      <source type="statement" id-ref="ir-8_smt.a.10"/>
+      <source type="statement" id-ref="ir-8_smt.b"/>
+      <source type="statement" id-ref="ir-8_smt.c"/>
+      <source type="statement" id-ref="ir-8_smt.d"/>
+      <source type="statement" id-ref="ir-8_smt.e"/>
+      <source type="statement" id-ref="ir-8.1_smt.a"/>
+      <source type="statement" id-ref="ir-8.1_smt.b"/>
+      <source type="statement" id-ref="ir-8.1_smt.c"/>
+      <source type="statement" id-ref="si-4.5_smt"/>
+      <target type="statement" id-ref="KSI-INR-RIR_smt"/>
+    </map>
+    <map uuid="7dc11f68-c327-558f-9e2a-5f4bf2aefd82">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ir-3_smt"/>
+      <source type="statement" id-ref="ir-4_smt.a"/>
+      <source type="statement" id-ref="ir-4_smt.b"/>
+      <source type="statement" id-ref="ir-4_smt.c"/>
+      <source type="statement" id-ref="ir-4_smt.d"/>
+      <source type="statement" id-ref="ir-4.1_smt"/>
+      <source type="statement" id-ref="ir-5_smt"/>
+      <source type="statement" id-ref="ir-8_smt.a.1"/>
+      <source type="statement" id-ref="ir-8_smt.a.2"/>
+      <source type="statement" id-ref="ir-8_smt.a.3"/>
+      <source type="statement" id-ref="ir-8_smt.a.4"/>
+      <source type="statement" id-ref="ir-8_smt.a.5"/>
+      <source type="statement" id-ref="ir-8_smt.a.6"/>
+      <source type="statement" id-ref="ir-8_smt.a.7"/>
+      <source type="statement" id-ref="ir-8_smt.a.8"/>
+      <source type="statement" id-ref="ir-8_smt.a.9"/>
+      <source type="statement" id-ref="ir-8_smt.a.10"/>
+      <source type="statement" id-ref="ir-8_smt.b"/>
+      <source type="statement" id-ref="ir-8_smt.c"/>
+      <source type="statement" id-ref="ir-8_smt.d"/>
+      <source type="statement" id-ref="ir-8_smt.e"/>
+      <target type="statement" id-ref="KSI-INR-RPI_smt"/>
+    </map>
+    <map uuid="5a533525-2076-5993-8c38-de66309eb2fb">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ca-7_smt.a"/>
+      <source type="statement" id-ref="ca-7_smt.b"/>
+      <source type="statement" id-ref="ca-7_smt.c"/>
+      <source type="statement" id-ref="ca-7_smt.d"/>
+      <source type="statement" id-ref="ca-7_smt.e"/>
+      <source type="statement" id-ref="ca-7_smt.f"/>
+      <source type="statement" id-ref="ca-7_smt.g"/>
+      <source type="statement" id-ref="cm-2_smt.a"/>
+      <source type="statement" id-ref="cm-2_smt.b.1"/>
+      <source type="statement" id-ref="cm-2_smt.b.2"/>
+      <source type="statement" id-ref="cm-2_smt.b.3"/>
+      <source type="statement" id-ref="cm-6_smt.a"/>
+      <source type="statement" id-ref="cm-6_smt.b"/>
+      <source type="statement" id-ref="cm-6_smt.c"/>
+      <source type="statement" id-ref="cm-6_smt.d"/>
+      <source type="statement" id-ref="si-7.7_smt"/>
+      <target type="statement" id-ref="KSI-MLA-EVC_smt"/>
+    </map>
+    <map uuid="e2152859-2125-5f1f-b8dc-0f456bc514d3">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2.4_smt"/>
+      <source type="statement" id-ref="ac-6.9_smt"/>
+      <source type="statement" id-ref="ac-17.1_smt"/>
+      <source type="statement" id-ref="ac-20.1_smt.a"/>
+      <source type="statement" id-ref="ac-20.1_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.a"/>
+      <source type="statement" id-ref="au-2_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.c"/>
+      <source type="statement" id-ref="au-2_smt.d"/>
+      <source type="statement" id-ref="au-2_smt.e"/>
+      <source type="statement" id-ref="au-7.1_smt"/>
+      <source type="statement" id-ref="au-12_smt.a"/>
+      <source type="statement" id-ref="au-12_smt.b"/>
+      <source type="statement" id-ref="au-12_smt.c"/>
+      <source type="statement" id-ref="si-4.4_smt.a"/>
+      <source type="statement" id-ref="si-4.4_smt.b"/>
+      <source type="statement" id-ref="si-4.5_smt"/>
+      <source type="statement" id-ref="si-7.7_smt"/>
+      <target type="statement" id-ref="KSI-MLA-LET_smt"/>
+    </map>
+    <map uuid="8a93e3e1-40c1-53a4-8865-9afba7fc461b">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-17.1_smt"/>
+      <source type="statement" id-ref="ac-20.1_smt.a"/>
+      <source type="statement" id-ref="ac-20.1_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.a"/>
+      <source type="statement" id-ref="au-2_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.c"/>
+      <source type="statement" id-ref="au-2_smt.d"/>
+      <source type="statement" id-ref="au-2_smt.e"/>
+      <source type="statement" id-ref="au-3_smt.a"/>
+      <source type="statement" id-ref="au-3_smt.b"/>
+      <source type="statement" id-ref="au-3_smt.c"/>
+      <source type="statement" id-ref="au-3_smt.d"/>
+      <source type="statement" id-ref="au-3_smt.e"/>
+      <source type="statement" id-ref="au-3_smt.f"/>
+      <source type="statement" id-ref="au-3.1_smt"/>
+      <source type="statement" id-ref="au-4_smt"/>
+      <source type="statement" id-ref="au-5_smt.a"/>
+      <source type="statement" id-ref="au-5_smt.b"/>
+      <source type="statement" id-ref="au-6.1_smt"/>
+      <source type="statement" id-ref="au-6.3_smt"/>
+      <source type="statement" id-ref="au-7_smt.a"/>
+      <source type="statement" id-ref="au-7_smt.b"/>
+      <source type="statement" id-ref="au-7.1_smt"/>
+      <source type="statement" id-ref="au-8_smt.a"/>
+      <source type="statement" id-ref="au-8_smt.b"/>
+      <source type="statement" id-ref="au-9_smt.a"/>
+      <source type="statement" id-ref="au-9_smt.b"/>
+      <source type="statement" id-ref="au-11_smt"/>
+      <source type="statement" id-ref="ir-4.1_smt"/>
+      <source type="statement" id-ref="si-4.2_smt"/>
+      <source type="statement" id-ref="si-4.4_smt.a"/>
+      <source type="statement" id-ref="si-4.4_smt.b"/>
+      <source type="statement" id-ref="si-7.7_smt"/>
+      <target type="statement" id-ref="KSI-MLA-OSM_smt"/>
+    </map>
+    <map uuid="8c16bc87-1171-58e8-b11c-bcb93c0e5156">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2.4_smt"/>
+      <source type="statement" id-ref="ac-6.9_smt"/>
+      <source type="statement" id-ref="au-2_smt.a"/>
+      <source type="statement" id-ref="au-2_smt.b"/>
+      <source type="statement" id-ref="au-2_smt.c"/>
+      <source type="statement" id-ref="au-2_smt.d"/>
+      <source type="statement" id-ref="au-2_smt.e"/>
+      <source type="statement" id-ref="au-6_smt.a"/>
+      <source type="statement" id-ref="au-6_smt.b"/>
+      <source type="statement" id-ref="au-6_smt.c"/>
+      <source type="statement" id-ref="au-6.1_smt"/>
+      <source type="statement" id-ref="si-4_smt.a.1"/>
+      <source type="statement" id-ref="si-4_smt.a.2"/>
+      <source type="statement" id-ref="si-4_smt.b"/>
+      <source type="statement" id-ref="si-4_smt.c.1"/>
+      <source type="statement" id-ref="si-4_smt.c.2"/>
+      <source type="statement" id-ref="si-4_smt.d"/>
+      <source type="statement" id-ref="si-4_smt.e"/>
+      <source type="statement" id-ref="si-4_smt.f"/>
+      <source type="statement" id-ref="si-4_smt.g"/>
+      <source type="statement" id-ref="si-4.4_smt.a"/>
+      <source type="statement" id-ref="si-4.4_smt.b"/>
+      <target type="statement" id-ref="KSI-MLA-RVL_smt"/>
+    </map>
+    <map uuid="3d0a6427-f807-545b-a633-6490ae617460">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-2.2_smt"/>
+      <source type="statement" id-ref="cm-7.5_smt.a"/>
+      <source type="statement" id-ref="cm-7.5_smt.b"/>
+      <source type="statement" id-ref="cm-7.5_smt.c"/>
+      <source type="statement" id-ref="cm-8_smt.a.1"/>
+      <source type="statement" id-ref="cm-8_smt.a.2"/>
+      <source type="statement" id-ref="cm-8_smt.a.3"/>
+      <source type="statement" id-ref="cm-8_smt.a.4"/>
+      <source type="statement" id-ref="cm-8_smt.a.5"/>
+      <source type="statement" id-ref="cm-8_smt.b"/>
+      <source type="statement" id-ref="cm-8.1_smt"/>
+      <source type="statement" id-ref="cm-12_smt.a"/>
+      <source type="statement" id-ref="cm-12_smt.b"/>
+      <source type="statement" id-ref="cm-12_smt.c"/>
+      <source type="statement" id-ref="cm-12.1_smt"/>
+      <source type="statement" id-ref="cp-2.8_smt"/>
+      <target type="statement" id-ref="KSI-PIY-GIV_smt"/>
+    </map>
+    <map uuid="b2895c9b-d466-5861-9891-93dc439796c1">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-5_smt.a"/>
+      <source type="statement" id-ref="ac-5_smt.b"/>
+      <source type="statement" id-ref="ca-2_smt.a"/>
+      <source type="statement" id-ref="ca-2_smt.b.1"/>
+      <source type="statement" id-ref="ca-2_smt.b.2"/>
+      <source type="statement" id-ref="ca-2_smt.b.3"/>
+      <source type="statement" id-ref="ca-2_smt.c"/>
+      <source type="statement" id-ref="ca-2_smt.d"/>
+      <source type="statement" id-ref="ca-2_smt.e"/>
+      <source type="statement" id-ref="ca-2_smt.f"/>
+      <source type="statement" id-ref="cp-2.1_smt"/>
+      <source type="statement" id-ref="cp-4.1_smt"/>
+      <source type="statement" id-ref="ir-3.2_smt"/>
+      <source type="statement" id-ref="pm-3_smt.a"/>
+      <source type="statement" id-ref="pm-3_smt.b"/>
+      <source type="statement" id-ref="pm-3_smt.c"/>
+      <source type="statement" id-ref="sa-2_smt.a"/>
+      <source type="statement" id-ref="sa-2_smt.b"/>
+      <source type="statement" id-ref="sa-2_smt.c"/>
+      <source type="statement" id-ref="sa-3_smt.a"/>
+      <source type="statement" id-ref="sa-3_smt.b"/>
+      <source type="statement" id-ref="sa-3_smt.c"/>
+      <source type="statement" id-ref="sa-3_smt.d"/>
+      <source type="statement" id-ref="sr-2.1_smt"/>
+      <target type="statement" id-ref="KSI-PIY-RIS_smt"/>
+    </map>
+    <map uuid="1ef29039-9919-515e-9c1a-eb929647a14d">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-5_smt.a"/>
+      <source type="statement" id-ref="ac-5_smt.b"/>
+      <source type="statement" id-ref="au-3.3_smt"/>
+      <source type="statement" id-ref="cm-3.4_smt"/>
+      <source type="statement" id-ref="pl-8_smt.a.1"/>
+      <source type="statement" id-ref="pl-8_smt.a.2"/>
+      <source type="statement" id-ref="pl-8_smt.a.3"/>
+      <source type="statement" id-ref="pl-8_smt.a.4"/>
+      <source type="statement" id-ref="pl-8_smt.b"/>
+      <source type="statement" id-ref="pl-8_smt.c"/>
+      <source type="statement" id-ref="pm-7_smt"/>
+      <source type="statement" id-ref="sa-3_smt.a"/>
+      <source type="statement" id-ref="sa-3_smt.b"/>
+      <source type="statement" id-ref="sa-3_smt.c"/>
+      <source type="statement" id-ref="sa-3_smt.d"/>
+      <source type="statement" id-ref="sa-8_smt"/>
+      <source type="statement" id-ref="sc-4_smt"/>
+      <source type="statement" id-ref="sc-18_smt.a"/>
+      <source type="statement" id-ref="sc-18_smt.b"/>
+      <source type="statement" id-ref="si-10_smt"/>
+      <source type="statement" id-ref="si-11_smt.a"/>
+      <source type="statement" id-ref="si-11_smt.b"/>
+      <source type="statement" id-ref="si-16_smt"/>
+      <target type="statement" id-ref="KSI-PIY-RSD_smt"/>
+    </map>
+    <map uuid="34b9a1b7-350a-5358-92f9-bec8f606b112">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ra-5.11_smt"/>
+      <target type="statement" id-ref="KSI-PIY-RVD_smt"/>
+    </map>
+    <map uuid="3c1281f2-27bd-5bc3-9366-d36dd5aec916">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-2.3_smt"/>
+      <source type="statement" id-ref="cp-6_smt.a"/>
+      <source type="statement" id-ref="cp-6_smt.b"/>
+      <source type="statement" id-ref="cp-9_smt.a"/>
+      <source type="statement" id-ref="cp-9_smt.b"/>
+      <source type="statement" id-ref="cp-9_smt.c"/>
+      <source type="statement" id-ref="cp-9_smt.d"/>
+      <source type="statement" id-ref="cp-10_smt"/>
+      <source type="statement" id-ref="cp-10.2_smt"/>
+      <source type="statement" id-ref="si-12_smt"/>
+      <target type="statement" id-ref="KSI-RPL-ABO_smt"/>
+    </map>
+    <map uuid="1e73041f-746d-55eb-9d84-824ced434040">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cp-2_smt.a.1"/>
+      <source type="statement" id-ref="cp-2_smt.a.2"/>
+      <source type="statement" id-ref="cp-2_smt.a.3"/>
+      <source type="statement" id-ref="cp-2_smt.a.4"/>
+      <source type="statement" id-ref="cp-2_smt.a.5"/>
+      <source type="statement" id-ref="cp-2_smt.a.6"/>
+      <source type="statement" id-ref="cp-2_smt.a.7"/>
+      <source type="statement" id-ref="cp-2_smt.b"/>
+      <source type="statement" id-ref="cp-2_smt.c"/>
+      <source type="statement" id-ref="cp-2_smt.d"/>
+      <source type="statement" id-ref="cp-2_smt.e"/>
+      <source type="statement" id-ref="cp-2_smt.f"/>
+      <source type="statement" id-ref="cp-2_smt.g"/>
+      <source type="statement" id-ref="cp-2_smt.h"/>
+      <source type="statement" id-ref="cp-2.1_smt"/>
+      <source type="statement" id-ref="cp-2.3_smt"/>
+      <source type="statement" id-ref="cp-4.1_smt"/>
+      <source type="statement" id-ref="cp-6_smt.a"/>
+      <source type="statement" id-ref="cp-6_smt.b"/>
+      <source type="statement" id-ref="cp-6.1_smt"/>
+      <source type="statement" id-ref="cp-6.3_smt"/>
+      <source type="statement" id-ref="cp-7_smt.a"/>
+      <source type="statement" id-ref="cp-7_smt.b"/>
+      <source type="statement" id-ref="cp-7_smt.c"/>
+      <source type="statement" id-ref="cp-7.1_smt"/>
+      <source type="statement" id-ref="cp-7.2_smt"/>
+      <source type="statement" id-ref="cp-7.3_smt"/>
+      <source type="statement" id-ref="cp-8_smt"/>
+      <source type="statement" id-ref="cp-8.1_smt.a"/>
+      <source type="statement" id-ref="cp-8.1_smt.b"/>
+      <source type="statement" id-ref="cp-8.2_smt"/>
+      <source type="statement" id-ref="cp-10_smt"/>
+      <source type="statement" id-ref="cp-10.2_smt"/>
+      <target type="statement" id-ref="KSI-RPL-ARP_smt"/>
+    </map>
+    <map uuid="7814e219-9944-5b85-be94-629e5cc02650">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cp-2.3_smt"/>
+      <source type="statement" id-ref="cp-10_smt"/>
+      <target type="statement" id-ref="KSI-RPL-RRO_smt"/>
+    </map>
+    <map uuid="3975768d-9fcc-5a88-be15-7fe9410a1b1e">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cp-2.1_smt"/>
+      <source type="statement" id-ref="cp-2.3_smt"/>
+      <source type="statement" id-ref="cp-4_smt.a"/>
+      <source type="statement" id-ref="cp-4_smt.b"/>
+      <source type="statement" id-ref="cp-4_smt.c"/>
+      <source type="statement" id-ref="cp-4.1_smt"/>
+      <source type="statement" id-ref="cp-6_smt.a"/>
+      <source type="statement" id-ref="cp-6_smt.b"/>
+      <source type="statement" id-ref="cp-6.1_smt"/>
+      <source type="statement" id-ref="cp-9.1_smt"/>
+      <source type="statement" id-ref="cp-10_smt"/>
+      <source type="statement" id-ref="ir-3_smt"/>
+      <source type="statement" id-ref="ir-3.2_smt"/>
+      <target type="statement" id-ref="KSI-RPL-TRC_smt"/>
+    </map>
+    <map uuid="4f3b7774-c4a0-5a7f-8838-19dbe107d285">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-20_smt.a.1"/>
+      <source type="statement" id-ref="ac-20_smt.a.2"/>
+      <source type="statement" id-ref="ac-20_smt.b"/>
+      <source type="statement" id-ref="ra-3.1_smt.a"/>
+      <source type="statement" id-ref="ra-3.1_smt.b"/>
+      <source type="statement" id-ref="sa-9_smt.a"/>
+      <source type="statement" id-ref="sa-9_smt.b"/>
+      <source type="statement" id-ref="sa-9_smt.c"/>
+      <source type="statement" id-ref="sa-10_smt.a"/>
+      <source type="statement" id-ref="sa-10_smt.b"/>
+      <source type="statement" id-ref="sa-10_smt.c"/>
+      <source type="statement" id-ref="sa-10_smt.d"/>
+      <source type="statement" id-ref="sa-10_smt.e"/>
+      <source type="statement" id-ref="sa-11_smt.a"/>
+      <source type="statement" id-ref="sa-11_smt.b"/>
+      <source type="statement" id-ref="sa-11_smt.c"/>
+      <source type="statement" id-ref="sa-11_smt.d"/>
+      <source type="statement" id-ref="sa-11_smt.e"/>
+      <source type="statement" id-ref="sa-15.3_smt.a"/>
+      <source type="statement" id-ref="sa-15.3_smt.b"/>
+      <source type="statement" id-ref="sa-22_smt.a"/>
+      <source type="statement" id-ref="sa-22_smt.b"/>
+      <source type="statement" id-ref="si-7.1_smt"/>
+      <source type="statement" id-ref="sr-5_smt"/>
+      <source type="statement" id-ref="sr-6_smt"/>
+      <source type="statement" id-ref="ca-7.4_smt.a"/>
+      <source type="statement" id-ref="ca-7.4_smt.b"/>
+      <source type="statement" id-ref="ca-7.4_smt.c"/>
+      <source type="statement" id-ref="sc-18_smt.a"/>
+      <source type="statement" id-ref="sc-18_smt.b"/>
+      <target type="statement" id-ref="KSI-SCR-MIT_smt"/>
+    </map>
+    <map uuid="70af3ab0-19ee-5a12-9678-42b90630e9f3">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-20_smt.a.1"/>
+      <source type="statement" id-ref="ac-20_smt.a.2"/>
+      <source type="statement" id-ref="ac-20_smt.b"/>
+      <source type="statement" id-ref="ca-3_smt.a"/>
+      <source type="statement" id-ref="ca-3_smt.b"/>
+      <source type="statement" id-ref="ca-3_smt.c"/>
+      <source type="statement" id-ref="ir-6.3_smt"/>
+      <source type="statement" id-ref="ps-7_smt.a"/>
+      <source type="statement" id-ref="ps-7_smt.b"/>
+      <source type="statement" id-ref="ps-7_smt.c"/>
+      <source type="statement" id-ref="ps-7_smt.d"/>
+      <source type="statement" id-ref="ps-7_smt.e"/>
+      <source type="statement" id-ref="ra-5_smt.a"/>
+      <source type="statement" id-ref="ra-5_smt.b.1"/>
+      <source type="statement" id-ref="ra-5_smt.b.2"/>
+      <source type="statement" id-ref="ra-5_smt.b.3"/>
+      <source type="statement" id-ref="ra-5_smt.c"/>
+      <source type="statement" id-ref="ra-5_smt.d"/>
+      <source type="statement" id-ref="ra-5_smt.e"/>
+      <source type="statement" id-ref="ra-5_smt.f"/>
+      <source type="statement" id-ref="sa-9_smt.a"/>
+      <source type="statement" id-ref="sa-9_smt.b"/>
+      <source type="statement" id-ref="sa-9_smt.c"/>
+      <source type="statement" id-ref="si-5_smt.a"/>
+      <source type="statement" id-ref="si-5_smt.b"/>
+      <source type="statement" id-ref="si-5_smt.c"/>
+      <source type="statement" id-ref="si-5_smt.d"/>
+      <source type="statement" id-ref="sr-5_smt"/>
+      <source type="statement" id-ref="sr-6_smt"/>
+      <source type="statement" id-ref="sr-8_smt"/>
+      <target type="statement" id-ref="KSI-SCR-MON_smt"/>
+    </map>
+    <map uuid="14f3ea4f-da7b-539d-8719-9972444cf2d2">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-2.4_smt"/>
+      <source type="statement" id-ref="cm-2_smt.a"/>
+      <source type="statement" id-ref="cm-2_smt.b.1"/>
+      <source type="statement" id-ref="cm-2_smt.b.2"/>
+      <source type="statement" id-ref="cm-2_smt.b.3"/>
+      <source type="statement" id-ref="cm-2.2_smt"/>
+      <source type="statement" id-ref="cm-2.3_smt"/>
+      <source type="statement" id-ref="cm-6_smt.a"/>
+      <source type="statement" id-ref="cm-6_smt.b"/>
+      <source type="statement" id-ref="cm-6_smt.c"/>
+      <source type="statement" id-ref="cm-6_smt.d"/>
+      <source type="statement" id-ref="cm-7.1_smt.a"/>
+      <source type="statement" id-ref="cm-7.1_smt.b"/>
+      <source type="statement" id-ref="pl-9_smt"/>
+      <source type="statement" id-ref="pl-10_smt"/>
+      <source type="statement" id-ref="sa-5_smt.a.1"/>
+      <source type="statement" id-ref="sa-5_smt.a.2"/>
+      <source type="statement" id-ref="sa-5_smt.a.3"/>
+      <source type="statement" id-ref="sa-5_smt.b.1"/>
+      <source type="statement" id-ref="sa-5_smt.b.2"/>
+      <source type="statement" id-ref="sa-5_smt.b.3"/>
+      <source type="statement" id-ref="sa-5_smt.c"/>
+      <source type="statement" id-ref="sa-5_smt.d"/>
+      <source type="statement" id-ref="si-5_smt.a"/>
+      <source type="statement" id-ref="si-5_smt.b"/>
+      <source type="statement" id-ref="si-5_smt.c"/>
+      <source type="statement" id-ref="si-5_smt.d"/>
+      <source type="statement" id-ref="sr-10_smt"/>
+      <target type="statement" id-ref="KSI-SVC-ACM_smt"/>
+    </map>
+    <map uuid="ed679cd4-96f6-5993-af82-034441e162ed">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-17.2_smt"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.a.2"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.1"/>
+      <source type="statement" id-ref="ia-5.2_smt.b.2"/>
+      <source type="statement" id-ref="ia-5.6_smt"/>
+      <source type="statement" id-ref="sc-12_smt"/>
+      <source type="statement" id-ref="sc-17_smt.a"/>
+      <source type="statement" id-ref="sc-17_smt.b"/>
+      <target type="statement" id-ref="KSI-SVC-ASM_smt"/>
+    </map>
+    <map uuid="dfaf7449-79f4-5f88-a15d-212782cab953">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-7.1_smt.a"/>
+      <source type="statement" id-ref="cm-7.1_smt.b"/>
+      <source type="statement" id-ref="cm-12.1_smt"/>
+      <source type="statement" id-ref="ma-2_smt.a"/>
+      <source type="statement" id-ref="ma-2_smt.b"/>
+      <source type="statement" id-ref="ma-2_smt.c"/>
+      <source type="statement" id-ref="ma-2_smt.d"/>
+      <source type="statement" id-ref="ma-2_smt.e"/>
+      <source type="statement" id-ref="ma-2_smt.f"/>
+      <source type="statement" id-ref="pl-8_smt.a.1"/>
+      <source type="statement" id-ref="pl-8_smt.a.2"/>
+      <source type="statement" id-ref="pl-8_smt.a.3"/>
+      <source type="statement" id-ref="pl-8_smt.a.4"/>
+      <source type="statement" id-ref="pl-8_smt.b"/>
+      <source type="statement" id-ref="pl-8_smt.c"/>
+      <source type="statement" id-ref="sc-7_smt.a"/>
+      <source type="statement" id-ref="sc-7_smt.b"/>
+      <source type="statement" id-ref="sc-7_smt.c"/>
+      <source type="statement" id-ref="sc-39_smt"/>
+      <source type="statement" id-ref="si-2.2_smt"/>
+      <source type="statement" id-ref="si-4_smt.a.1"/>
+      <source type="statement" id-ref="si-4_smt.a.2"/>
+      <source type="statement" id-ref="si-4_smt.b"/>
+      <source type="statement" id-ref="si-4_smt.c.1"/>
+      <source type="statement" id-ref="si-4_smt.c.2"/>
+      <source type="statement" id-ref="si-4_smt.d"/>
+      <source type="statement" id-ref="si-4_smt.e"/>
+      <source type="statement" id-ref="si-4_smt.f"/>
+      <source type="statement" id-ref="si-4_smt.g"/>
+      <source type="statement" id-ref="sr-10_smt"/>
+      <target type="statement" id-ref="KSI-SVC-EIS_smt"/>
+    </map>
+    <map uuid="cd8cb3b0-fdd5-55c3-af6b-47ed5c911391">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="ac-1_smt.a.1.a"/>
+      <source type="statement" id-ref="ac-1_smt.a.1.b"/>
+      <source type="statement" id-ref="ac-1_smt.a.2"/>
+      <source type="statement" id-ref="ac-1_smt.b"/>
+      <source type="statement" id-ref="ac-1_smt.c.1"/>
+      <source type="statement" id-ref="ac-1_smt.c.2"/>
+      <source type="statement" id-ref="ac-17.2_smt"/>
+      <source type="statement" id-ref="cp-9.8_smt"/>
+      <source type="statement" id-ref="sc-8_smt"/>
+      <source type="statement" id-ref="sc-8.1_smt"/>
+      <source type="statement" id-ref="sc-13_smt.a"/>
+      <source type="statement" id-ref="sc-13_smt.b"/>
+      <source type="statement" id-ref="sc-20_smt.a"/>
+      <source type="statement" id-ref="sc-20_smt.b"/>
+      <source type="statement" id-ref="sc-21_smt"/>
+      <source type="statement" id-ref="sc-22_smt"/>
+      <source type="statement" id-ref="sc-23_smt"/>
+      <target type="statement" id-ref="KSI-SVC-SNT_smt"/>
+    </map>
+    <map uuid="749e0194-7884-501c-bf61-e4b73989369c">
+      <relationship>superset-of</relationship>
+      <source type="statement" id-ref="cm-2.2_smt"/>
+      <source type="statement" id-ref="cm-8.3_smt.a"/>
+      <source type="statement" id-ref="cm-8.3_smt.b"/>
+      <source type="statement" id-ref="sc-13_smt.a"/>
+      <source type="statement" id-ref="sc-13_smt.b"/>
+      <source type="statement" id-ref="sc-23_smt"/>
+      <source type="statement" id-ref="si-7_smt.a"/>
+      <source type="statement" id-ref="si-7_smt.b"/>
+      <source type="statement" id-ref="si-7.1_smt"/>
+      <source type="statement" id-ref="sr-10_smt"/>
+      <target type="statement" id-ref="KSI-SVC-VRI_smt"/>
+    </map>
+  </mapping>
+</mapping-collection>

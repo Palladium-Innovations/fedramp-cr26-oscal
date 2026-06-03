@@ -12,6 +12,32 @@ FedRAMP CR26 is already machine-readable in its own JSON format. OSCAL provides
 the broader exchange framework for catalogs, profiles, implementation
 statements, assessment results, POA&Ms, and control mappings.
 
+## Modeling Approach
+
+The current architecture uses a CR26 catalog as the source artifact, separate
+20x and Rev5 profile shells over that catalog, and an OSCAL mapping collection
+to describe relationships to NIST SP 800-53 Rev5. The mapping collection is
+thought to become the semantic binding layer that lets an implementation or
+assessment remain attached to NIST controls and statements while still producing
+a KSI-oriented FedRAMP 20x or Rev5 viewpoint.
+
+Mappings are oriented from NIST SP 800-53 Rev5 controls or statements to CR26
+rules and KSIs. Under the proof-of-concept assumption, the relevant NIST source
+set may be modeled as a `superset-of` the CR26/KSI target. The inverse claim is
+not made.
+
+The project emits a single mapping collection containing both control-level and
+statement-level maps. The control-level maps preserve the CR26 source
+references for discovery and coverage analysis. The statement-level maps expand
+those NIST control references through the NIST OSCAL catalog so
+assessment-oriented work can bind to specific OSCAL statement IDs.
+
+Source-provided artifact requirements, including CR26 `default_artifacts` and
+rule/KSI-specific `artifacts`, are preserved in the generated catalog as
+addressable `part` content. These are requirement-side statements about what
+must be supplied; they are not submitted evidence, SSP responses, or assessment
+results.
+
 ## Status
 
 Experimental. The FedRAMP CR26 source data is Public Preview material and may
@@ -22,9 +48,7 @@ official FedRAMP guidance.
 
 ```bash
 bun test
-bun run generate -- \
-  --input ../FedRAMP-rules/fedramp-consolidated-rules.json \
-  --out out
+bun run generate -- --out out
 ```
 
 Generated files:
@@ -39,7 +63,7 @@ out/FedRAMP/profile/20x/yaml/FedRAMP_20x_profile.yaml
 out/FedRAMP/profile/rev5/xml/FedRAMP_rev5_profile.xml
 out/FedRAMP/profile/rev5/json/FedRAMP_rev5_profile.json
 out/FedRAMP/profile/rev5/yaml/FedRAMP_rev5_profile.yaml
-out/FedRAMP/mapping/xml/FedRAMP_CR26_to_NIST_SP-800-53_rev5_mapping-collection.xml
+out/FedRAMP/mapping/xml/FedRAMP_NIST_SP-800-53_rev5_to_CR26_mapping-collection.xml
 ```
 
 Generated OSCAL artifacts under `out/FedRAMP` are intentionally tracked so the
@@ -49,14 +73,17 @@ changes.
 
 ## Configuration and Output Contract
 
-The generator is driven by `cr26-oscal.config.json`. The CR26 input file is
-supplied at runtime with `--input`, while project metadata, OSCAL settings, and
-artifact layout are configured in the project config.
+The generator is driven by `cr26-oscal.config.json`. Source inputs, project
+metadata, OSCAL settings, and artifact layout are all configured in the project
+config.
 
 The main configuration sections are:
 
 - `oscal`: Target OSCAL version, XML namespace, and XML model processing
   instruction.
+- `sources`: GitHub source files fetched by the generator, including the
+  FedRAMP CR26 rules JSON and the NIST SP 800-53 Rev5 OSCAL catalog JSON used
+  for statement expansion.
 - `metadata`: Shared artifact metadata such as version, last modified date,
   keyword props, source links, roles, parties, and responsible parties.
 - `metadata.*References`: External JSON files that can supply metadata props,
@@ -70,11 +97,13 @@ The main configuration sections are:
 - `output.profile.profiles`: Profile shells to generate from the harmonized
   catalog, including scope and KSI inclusion rules.
 - `output.mapping.mappings`: Mapping collections to generate from CR26 control
-  hints, including source and target resources.
+  hints, including source and target resources. Statement-level mappings use
+  the configured NIST OSCAL catalog JSON source to expand control references to
+  statement IDs.
 
 The generated catalog is the source artifact. Profile shells import the
 catalog, and non-XML catalog/profile files are derived from their XML
-counterparts. The mapping collection is currently emitted as XML only.
+counterparts. Mapping collections are currently emitted as XML only.
 
 ## OSCAL Validation using oscal-cli (NIST)
 
@@ -125,6 +154,7 @@ src/
   config.js            Project configuration loader.
   cr26-to-oscal.js     CR26-to-OSCAL catalog logic.
   ids.js               Deterministic UUID helpers.
+  sources.js           Configured source retrieval.
   validate-oscal.js    oscal-cli validation helper.
 test/
   fixtures/            Minimal CR26 fixture for tests.
@@ -135,7 +165,7 @@ The source is dependency-free JavaScript and is also intended to run under a
 working Node.js 20+ runtime:
 
 ```bash
-node src/cli.js --input ../FedRAMP-rules/fedramp-consolidated-rules.json --out out
+node src/cli.js --out out
 ```
 
 ## Future

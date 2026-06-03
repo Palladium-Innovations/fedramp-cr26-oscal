@@ -15,10 +15,10 @@ import {
 
 function usage() {
   return `Usage:
-  validate-oscal --out <generated-oscal-directory>
+  validate-oscal [--out <generated-oscal-directory>]
 
 Options:
-  --out, -o       Directory containing generated FedRAMP OSCAL artifacts.
+  --out, -o       Directory containing generated OSCAL artifacts. Defaults to out.
   --oscal-cli     Path to oscal-cli executable. Defaults to oscal-cli on PATH.
   --metaschema-root
                   Path to OSCAL src/metaschema. When provided, XML files are
@@ -71,6 +71,10 @@ function run(command, args) {
     process.stderr.write(result.stderr);
   }
 
+  if (result.error) {
+    throw result.error;
+  }
+
   if (result.status !== 0) {
     throw new Error(`Command failed: ${command} ${args.join(" ")}`);
   }
@@ -92,10 +96,6 @@ function metaschemaFilename(kind) {
   throw new Error(`Unsupported OSCAL kind: ${kind}`);
 }
 
-function generatedSchemaFilename(kind) {
-  return `${kind}.xsd`;
-}
-
 async function createSchemaCache(args) {
   if (!args.metaschemaRoot) {
     return undefined;
@@ -107,10 +107,6 @@ async function createSchemaCache(args) {
   };
 }
 
-function validateWithNativeCommand(args, kind, format, path) {
-  run(args.oscalCli, [kind, "validate", `--as=${format.id}`, path]);
-}
-
 function generateXmlSchema(args, cache, kind) {
   const cached = cache.schemasByKind.get(kind);
 
@@ -119,20 +115,18 @@ function generateXmlSchema(args, cache, kind) {
   }
 
   const metaschemaPath = join(args.metaschemaRoot, metaschemaFilename(kind));
-  const schemaPath = join(cache.directory, generatedSchemaFilename(kind));
+  const schemaPath = join(cache.directory, `${kind}.xsd`);
   run(args.oscalCli, ["metaschema", "generate-schema", "--overwrite", "--as=xml", metaschemaPath, schemaPath]);
   cache.schemasByKind.set(kind, schemaPath);
   return schemaPath;
 }
 
-function validateXmlWithGeneratedSchema(args, cache, kind, path) {
-  const schemaPath = generateXmlSchema(args, cache, kind);
-  run(args.xmllint, ["--noout", "--schema", schemaPath, path]);
-}
+function validateArtifact(args, cache, artifact) {
+  const { kind, format, path } = artifact;
 
-function validateArtifact(args, cache, kind, format, path) {
   if (cache && format.id === "xml") {
-    validateXmlWithGeneratedSchema(args, cache, kind, path);
+    const schemaPath = generateXmlSchema(args, cache, kind);
+    run(args.xmllint, ["--noout", "--schema", schemaPath, path]);
     return;
   }
 
@@ -141,7 +135,7 @@ function validateArtifact(args, cache, kind, format, path) {
     return;
   }
 
-  validateWithNativeCommand(args, kind, format, path);
+  run(args.oscalCli, [kind, "validate", `--as=${format.id}`, path]);
 }
 
 export async function main(argv = process.argv.slice(2)) {
@@ -158,25 +152,25 @@ export async function main(argv = process.argv.slice(2)) {
   try {
     for (const catalog of config.output.catalogs) {
       for (const format of catalogOutputFormats(config)) {
-        const catalogPath = join(args.out, ...catalogOutputPath(config, catalog, format));
-        process.stdout.write(`Validating ${basename(catalogPath)}\n`);
-        validateArtifact(args, schemaCache, "catalog", format, catalogPath);
+        const path = join(args.out, ...catalogOutputPath(config, catalog, format));
+        process.stdout.write(`Validating ${basename(path)}\n`);
+        validateArtifact(args, schemaCache, { kind: "catalog", format, path });
       }
     }
 
     for (const profile of config.output.profile?.profiles ?? []) {
       for (const format of catalogOutputFormats(config)) {
-        const profilePath = join(args.out, ...profileOutputPath(config, profile, format));
-        process.stdout.write(`Validating ${basename(profilePath)}\n`);
-        validateArtifact(args, schemaCache, "profile", format, profilePath);
+        const path = join(args.out, ...profileOutputPath(config, profile, format));
+        process.stdout.write(`Validating ${basename(path)}\n`);
+        validateArtifact(args, schemaCache, { kind: "profile", format, path });
       }
     }
 
     for (const mapping of config.output.mapping?.mappings ?? []) {
       for (const format of mappingOutputFormats(config)) {
-        const mappingPath = join(args.out, ...mappingOutputPath(config, mapping, format));
-        process.stdout.write(`Validating ${basename(mappingPath)}\n`);
-        validateArtifact(args, schemaCache, "mapping", format, mappingPath);
+        const path = join(args.out, ...mappingOutputPath(config, mapping, format));
+        process.stdout.write(`Validating ${basename(path)}\n`);
+        validateArtifact(args, schemaCache, { kind: "mapping", format, path });
       }
     }
   } finally {
@@ -184,6 +178,8 @@ export async function main(argv = process.argv.slice(2)) {
       await rm(schemaCache.directory, { recursive: true, force: true });
     }
   }
+
+  process.stdout.write("OSCAL validation passed.\n");
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

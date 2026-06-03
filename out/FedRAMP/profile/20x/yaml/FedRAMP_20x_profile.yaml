@@ -1,10 +1,10 @@
 ---
 profile:
-  uuid: 04a08533-e396-5455-9d8d-cd9958fa6df1
+  uuid: 7ec8110f-c95d-5189-a51d-36978398bc0f
   metadata:
     title: FedRAMP 20x Consolidated Rules for 2026 - Unofficial OSCAL Profile
     last-modified: 2026-05-05T00:00:00Z
-    version: 0.1.0
+    version: 0.2.0
     oscal-version: 1.2.1
     roles:
     - id: creator
@@ -36,33 +36,31 @@ profile:
       party-uuids:
       - 5edbc8e7-891d-539b-af7a-eb443cf98a4a
   imports:
-  - href: '#15dbe868-7839-53f5-9200-2c13c74c595e'
+  - href: '#4a33d17e-6237-5b30-8852-e8ef2834965d'
     include-controls:
     - with-ids:
-      - CDS-CSO-PUB
-      - CDS-CSO-SVC
-      - CDS-CSO-PAR
-      - CDS-CSO-UTC
-      - CDS-CSO-CBF
-      - CDS-CSO-RIS
-      - CDS-CSO-HAD
-      - CDS-CSO-PSM
-      - CDS-CSO-RPS
-      - CDS-TRC-USH
-      - CDS-TRC-PAC
-      - CDS-TRC-AAI
-      - CDS-TRC-ACL
-      - CDS-TRC-HMR
-      - CDS-TRC-SSM
-      - CDS-UTC-PGD
-      - CDS-UTC-AGA
-      - CDS-UTC-AAD
+      - AGU-AGC-AIP
+      - AGU-AGC-NAL
+      - AGU-AGC-GRC
+      - AGU-AGC-NAI
+      - AGU-AGC-NAR
+      - AGU-AGC-WKG
+      - AGU-AGC-LIA
+      - AGU-AGC-SIN
+      - AGU-USE-ABU
+      - AGU-USE-RCF
+      - AGU-USE-RSG
+      - AGU-USE-AFR
+      - AGU-USE-NFC
+      - AGU-USE-ROR
+      - AGU-USE-DSO
+      - AGU-USE-NPC
+      - AGU-USE-RIR
+      - AGU-SPN-MRC
       - CCM-AGM-ROR
-      - CCM-AGM-NFR
       - CCM-AGM-NFA
       - CCM-AGM-NAR
       - CCM-AGM-CSC
-      - CCM-AGM-NPC
       - CCM-OCR-AVL
       - CCM-OCR-NRD
       - CCM-OCR-FBM
@@ -80,6 +78,61 @@ profile:
       - CCM-QTR-RTP
       - CCM-QTR-SRR
       - CCM-QTR-SCR
+      - CDS-CSO-PUB
+      - CDS-CSO-SVC
+      - CDS-CSO-PAR
+      - CDS-CSO-UTC
+      - CDS-CSO-CBF
+      - CDS-CSO-RIS
+      - CDS-CSO-HAD
+      - CDS-CSO-PSM
+      - CDS-CSO-RPS
+      - CDS-TRC-USH
+      - CDS-TRC-PAC
+      - CDS-TRC-AAI
+      - CDS-TRC-ACL
+      - CDS-TRC-HMR
+      - CDS-TRC-SSM
+      - CDS-UTC-PGD
+      - CDS-UTC-AAD
+      - CDS-UTC-AGA
+      - FRC-FRP-MCM
+      - FRC-FRP-ECR
+      - FRC-CSO-CDS
+      - FRC-CSO-CCM
+      - FRC-CSO-FSI
+      - FRC-CSO-ICP
+      - FRC-CSO-MAS
+      - FRC-CSO-SCG
+      - FRC-CSO-SCN
+      - FRC-CSO-UCM
+      - FRC-CSO-VDR
+      - FRC-CSO-IVV
+      - FRC-CSO-POP
+      - FRC-CSO-STE
+      - FRC-CSO-RAA
+      - FRC-IAS-VVP
+      - FRC-IAS-OUC
+      - FRC-IAS-PAD
+      - FRC-IAS-MME
+      - FRC-IAS-SUM
+      - FRC-IAS-OSA
+      - FRC-IAS-EPX
+      - FRC-IAS-SHA
+      - FRC-CLA-ASF
+      - FRC-CLA-EAM
+      - FRC-CLA-AFR
+      - FRC-CLA-IVV
+      - FRC-APP-MLF
+      - FRC-APP-AFC
+      - FRC-APP-FCP
+      - FRC-APP-FIA
+      - FRC-APS-ATO
+      - FRC-CSX-SUM
+      - FRC-CSX-MAS
+      - FRC-IAX-UNP
+      - FRC-IAX-STE
+      - FRC-CLA-KSM
       - FSI-FRP-VRE
       - FSI-FRP-CDS
       - FSI-FRP-UFS
@@ -110,8 +163,8 @@ profile:
       - MAS-CSO-MDI
       - MAS-CSO-SUP
       - MKT-FRP-DSM
-      - MKT-FRP-SOF
       - MKT-FRP-MJS
+      - MKT-FRP-SOF
       - MKT-CSO-AGU
       - MKT-CSO-LRQ
       - MKT-IAS-OFR
@@ -123,6 +176,22 @@ profile:
       - MKT-PRE-REQ
       - MKT-PRE-DCP
       - MKT-PRE-DLA
+      - REC-FRP-FOC
+      - REC-FRP-RAO
+      - REC-FRP-DRD
+      - REC-IAS-ACC
+      - REC-IAS-ADA
+      - REC-IAS-PSC
+      - REC-IAS-ANR
+      - REC-IAS-RAS
+      - REC-IAS-RAR
+      - REC-IAS-RQU
+      - REC-IAS-AFI
+      - REC-IAS-CFI
+      - REC-IAS-PST
+      - REC-IAS-CAP
+      - REC-IAS-INV
+      - REC-IAS-SEP
       - SCG-CSO-RSC
       - SCG-CSO-AUP
       - SCG-CSO-PUB
@@ -133,6 +202,7 @@ profile:
       - SCG-ENH-MRG
       - SCG-ENH-VRH
       - SCN-FRP-CAP
+      - SCN-CSO-EVA
       - SCN-CSO-MAR
       - SCN-CSO-INF
       - SCN-CSO-HIS
@@ -140,7 +210,6 @@ profile:
       - SCN-CSO-ARI
       - SCN-CSO-NOM
       - SCN-CSO-EMG
-      - SCN-CSO-EVA
       - SCN-ADP-NTF
       - SCN-RTR-NNR
       - SCN-TRF-NIP
@@ -156,10 +225,11 @@ profile:
       - VDR-FRP-ADV
       - VDR-CSO-DET
       - VDR-CSO-RES
+      - VDR-CSO-FAV
+      - VDR-AGM-NFR
       - VDR-AGM-RVR
       - VDR-AGM-MAP
       - VDR-AGM-DRE
-      - VDR-AGM-NFR
       - VDR-BST-DFR
       - VDR-BST-ADT
       - VDR-BST-DAC
@@ -173,13 +243,14 @@ profile:
       - VDR-EVA-EFP
       - VDR-EVA-EFA
       - VDR-RPT-PER
-      - VDR-RPT-NID
       - VDR-RPT-VDT
       - VDR-RPT-AVI
+      - VDR-RPT-NID
       - VDR-RPT-HLO
       - VDR-RPT-RPD
       - VDR-TFR-MHR
       - VDR-TFR-MAV
+      - VDR-TFR-NMV
       - VDR-TFR-KEV
       - VDR-TFR-MRH
       - VDR-TFR-PSD
@@ -190,81 +261,8 @@ profile:
       - VDR-TFR-RMN
       - VDR-TFR-IRI
       - VDR-TFR-NRI
-      - FRC-FRP-MCM
-      - FRC-FRP-ECR
-      - FRC-CSO-CDS
-      - FRC-CSO-CCM
-      - FRC-CSO-FSI
-      - FRC-CSO-ICP
-      - FRC-CSO-MAS
-      - FRC-CSO-SCG
-      - FRC-CSO-SCN
-      - FRC-CSO-UCM
-      - FRC-CSO-VDR
-      - FRC-CSO-POP
-      - FRC-CSO-PVV
-      - FRC-CSO-FAV
-      - FRC-CSO-NMV
-      - FRC-CSO-IVV
-      - FRC-CSO-STE
-      - FRC-CSO-RAA
-      - FRC-IAS-VVP
-      - FRC-IAS-OUC
-      - FRC-IAS-PAD
-      - FRC-IAS-MME
-      - FRC-IAS-SUM
-      - FRC-IAS-OSA
-      - FRC-IAS-EPX
-      - FRC-IAS-SHA
-      - FRC-CLA-ASF
-      - FRC-CLA-EAM
-      - FRC-CLA-AFR
-      - FRC-CLA-IVV
-      - FRC-APP-MLF
-      - FRC-APP-AFC
-      - FRC-APP-FCP
-      - FRC-APP-FIA
-      - FRC-APS-ATO
-      - FRC-CSX-SUM
-      - FRC-CSX-MAS
-      - FRC-CSX-PMV
-      - FRC-IAX-STE
-      - FRC-IAX-UNP
-      - FRC-CLA-KSM
-      - AGU-AGC-AIP
-      - AGU-AGC-NAL
-      - AGU-AGC-GRC
-      - AGU-AGC-NAR
-      - AGU-AGC-NAI
-      - AGU-AGC-WKG
-      - AGU-AGC-LIA
-      - AGU-AGC-SIN
-      - AGU-USE-ABU
-      - AGU-USE-RCF
-      - AGU-USE-RSG
-      - AGU-USE-AFR
-      - AGU-USE-ROR
-      - AGU-USE-NFC
-      - AGU-USE-DSO
-      - AGU-USE-NPC
-      - AGU-USE-RIR
-      - AGU-SPN-MRC
-      - REC-FRP-RAO
-      - REC-FRP-FOC
-      - REC-FRP-DRD
-      - REC-IAS-ACC
-      - REC-IAS-ADA
-      - REC-IAS-PSC
-      - REC-IAS-ANR
-      - REC-IAS-RAS
-      - REC-IAS-RAR
-      - REC-IAS-SEP
-      - REC-IAS-RQU
-      - REC-IAS-AFI
-      - REC-IAS-CFI
-      - REC-IAS-PST
-      - REC-IAS-CAP
-      - REC-IAS-INV
+      - VDR-TFR-MVX
+      - KSI-CED-RAT
       - KSI-CMT-LMC
       - KSI-CMT-RMV
       - KSI-CMT-RVP
@@ -277,7 +275,6 @@ profile:
       - KSI-CNA-RNT
       - KSI-CNA-RVP
       - KSI-CNA-ULN
-      - KSI-CED-RAT
       - KSI-IAM-AAM
       - KSI-IAM-APM
       - KSI-IAM-ELP
@@ -301,6 +298,8 @@ profile:
       - KSI-RPL-ARP
       - KSI-RPL-RRO
       - KSI-RPL-TRC
+      - KSI-SCR-MIT
+      - KSI-SCR-MON
       - KSI-SVC-ACM
       - KSI-SVC-ASM
       - KSI-SVC-EIS
@@ -309,13 +308,11 @@ profile:
       - KSI-SVC-SNT
       - KSI-SVC-VCM
       - KSI-SVC-VRI
-      - KSI-SCR-MIT
-      - KSI-SCR-MON
   merge:
     as-is: true
   back-matter:
     resources:
-    - uuid: 15dbe868-7839-53f5-9200-2c13c74c595e
+    - uuid: 4a33d17e-6237-5b30-8852-e8ef2834965d
       description: FedRAMP Consolidated Rules for 2026 - Unofficial OSCAL Catalog
       rlinks:
       - href: ../../../catalog/xml/FedRAMP_CR26_catalog.xml
