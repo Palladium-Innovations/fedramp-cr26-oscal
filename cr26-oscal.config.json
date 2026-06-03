@@ -8,6 +8,22 @@
       "href": "https://github.com/usnistgov/OSCAL/releases/download/v1.2.1/oscal_complete_schema.xsd"
     }
   },
+  "sources": {
+    "cr26Rules": {
+      "type": "github-raw",
+      "owner": "FedRAMP",
+      "repo": "rules",
+      "ref": "main",
+      "path": "fedramp-consolidated-rules.json"
+    },
+    "nistRev5CatalogJson": {
+      "type": "github-raw",
+      "owner": "usnistgov",
+      "repo": "oscal-content",
+      "ref": "v1.4.0",
+      "path": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json"
+    }
+  },
   "output": {
     "rootFolder": "FedRAMP",
     "formats": [
@@ -79,19 +95,23 @@
       ],
       "mappings": [
         {
-          "id": "cr26-to-sp800-53-rev5",
-          "filenameBase": "FedRAMP_CR26_to_NIST_SP-800-53_rev5_mapping-collection",
-          "title": "FedRAMP CR26 to NIST SP 800-53 Rev5 - Unofficial OSCAL Mapping Collection",
-          "description": "Initial machine-derived mapping from CR26 source control references to NIST SP 800-53 Rev5 controls. Relationships require human review.",
+          "id": "sp800-53-rev5-to-cr26",
+          "filenameBase": "FedRAMP_NIST_SP-800-53_rev5_to_CR26_mapping-collection",
+          "title": "NIST SP 800-53 Rev5 to FedRAMP CR26 - Unofficial OSCAL Mapping Collection",
+          "description": "Initial machine-derived control- and statement-level mapping from NIST SP 800-53 Rev5 to FedRAMP CR26 rules and KSIs using CR26 source control references and the NIST OSCAL catalog statement structure. Relationships require human review.",
+          "granularities": [
+            "control",
+            "statement"
+          ],
           "sourceResource": {
-            "type": "catalog",
-            "href": "../../catalog/xml/FedRAMP_CR26_catalog.xml"
-          },
-          "targetResource": {
             "type": "catalog",
             "href": "https://raw.githubusercontent.com/usnistgov/oscal-content/v1.4.0/src/nist.gov/SP800-53/rev5/xml/NIST_SP-800-53_rev5_catalog.xml"
           },
-          "relationship": "intersects-with",
+          "targetResource": {
+            "type": "catalog",
+            "href": "../../catalog/xml/FedRAMP_CR26_catalog.xml"
+          },
+          "relationship": "superset-of",
           "method": "automation",
           "matchingRationale": "semantic",
           "status": "draft",
@@ -107,7 +127,7 @@
   },
   "metadata": {
     "lastModified": "2026-05-05T00:00:00.00000-00:00",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "propReferences": [
       "references/metadata-keywords.json"
     ],
@@ -121,11 +141,11 @@
       {
         "title": "Initial harmonized OSCAL catalog generation",
         "lastModified": "2026-05-05T00:00:00.00000-00:00",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "oscalVersion": "1.2.1",
         "versionHistory": {
-          "title": "fedramp-cr26-oscal 0.1.0 release history",
-          "href": "urn:palladium:fedramp-cr26-oscal:version-history:0.1.0"
+          "title": "fedramp-cr26-oscal 0.2.0 release history",
+          "href": "urn:palladium:fedramp-cr26-oscal:version-history:0.2.0"
         }
       }
     ]

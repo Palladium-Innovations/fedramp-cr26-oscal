@@ -1,9 +1,10 @@
 #!/usr/bin/env bun
 
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { loadConfig } from "./config.js";
+import { loadConfiguredSources } from "./sources.js";
 import {
   createCatalogOutputs,
   createMappingOutputs,
@@ -14,10 +15,9 @@ import {
 
 function usage() {
   return `Usage:
-  cr26-oscal --input <fedramp-consolidated-rules.json> [--out <directory>]
+  cr26-oscal [--out <directory>]
 
 Options:
-  --input, -i    Path to FedRAMP CR26 JSON source data.
   --out, -o      Output directory for generated OSCAL artifacts.
   --oscal-cli    Path to oscal-cli executable. Defaults to oscal-cli on PATH.
   --help, -h     Show this help.
@@ -26,7 +26,6 @@ Options:
 
 function parseArgs(argv) {
   const args = {
-    input: undefined,
     out: "out",
     oscalCli: "oscal-cli"
   };
@@ -36,8 +35,6 @@ function parseArgs(argv) {
 
     if (arg === "--help" || arg === "-h") {
       args.help = true;
-    } else if (arg === "--input" || arg === "-i") {
-      args.input = argv[++index];
     } else if (arg === "--out" || arg === "-o") {
       args.out = argv[++index];
     } else if (arg === "--oscal-cli") {
@@ -82,15 +79,11 @@ export async function main(argv = process.argv.slice(2)) {
     return;
   }
 
-  if (!args.input) {
-    throw new Error("Missing required --input argument.");
-  }
-
-  const rules = JSON.parse(await readFile(args.input, "utf8"));
   const config = await loadConfig();
+  const { cr26Rules: rules, nistCatalog } = await loadConfiguredSources(config);
   const catalogOutputs = createCatalogOutputs(rules, config);
   const profileOutputs = createProfileOutputs(rules, config);
-  const mappingOutputs = createMappingOutputs(rules, config);
+  const mappingOutputs = createMappingOutputs(rules, config, { nistCatalog });
 
   // catalog 
   for (const output of catalogOutputs) {

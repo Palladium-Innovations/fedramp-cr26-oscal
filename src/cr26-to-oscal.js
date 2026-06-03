@@ -55,7 +55,14 @@ function mappingUuid(mapping) {
 }
 
 function mapUuid(mapping, entry) {
-  return deterministicUuid(`map:${mapping.id}:${entry.sourceId}:${entry.targetIds.join(",")}:${mapping.relationship}`);
+  const sourceItemType = entry.sourceItemType ?? "control";
+  const targetItemType = entry.targetItemType ?? "control";
+  const typePrefix =
+    sourceItemType === "control" && targetItemType === "control" ? "" : `${sourceItemType}:${targetItemType}:`;
+
+  return deterministicUuid(
+    `map:${mapping.id}:${typePrefix}${entry.sourceIds.join(",")}:${entry.targetId}:${mapping.relationship}`
+  );
 }
 
 function catalogScopes(catalog) {
@@ -134,21 +141,99 @@ function profileControlIds(rules, profile) {
   ]);
 }
 
-function mappingTargets(item) {
+function nistControlIds(item) {
   return uniqueStrings(item.controls ?? []).filter(Boolean);
 }
 
-function frrMappingEntries(rules, mapping) {
+function collectStatementLeafIds(part) {
+  const childItems = (part.parts ?? []).filter((child) => child.name === "item");
+
+  if (childItems.length === 0) {
+    return part.id ? [part.id] : [];
+  }
+
+  return childItems.flatMap(collectStatementLeafIds);
+}
+
+function nistControlStatementIds(control) {
+  return uniqueStrings(
+    (control.parts ?? [])
+      .filter((part) => part.name === "statement")
+      .flatMap(collectStatementLeafIds)
+      .filter(Boolean)
+  );
+}
+
+function indexNistControlStatements(control, index) {
+  if (control.id) {
+    index.set(control.id, nistControlStatementIds(control));
+  }
+
+  for (const child of control.controls ?? []) {
+    indexNistControlStatements(child, index);
+  }
+}
+
+function indexNistGroupStatements(group, index) {
+  for (const control of group.controls ?? []) {
+    indexNistControlStatements(control, index);
+  }
+
+  for (const child of group.groups ?? []) {
+    indexNistGroupStatements(child, index);
+  }
+}
+
+export function createNistStatementIndex(nistCatalog) {
+  const catalog = nistCatalog?.catalog ?? nistCatalog;
+  const index = new Map();
+
+  for (const group of catalog?.groups ?? []) {
+    indexNistGroupStatements(group, index);
+  }
+
+  return index;
+}
+
+function nistStatementIds(item, nistStatementIndex) {
+  return uniqueStrings(nistControlIds(item).flatMap((controlId) => nistStatementIndex.get(controlId) ?? []));
+}
+
+function statementMappingEntry(cr26Id, item, nistStatementIndex) {
+  if (!item.statement) {
+    return undefined;
+  }
+
+  const sourceIds = nistStatementIds(item, nistStatementIndex);
+
+  if (sourceIds.length === 0) {
+    return undefined;
+  }
+
+  return {
+    sourceIds,
+    sourceItemType: "statement",
+    targetId: `${cr26Id}_smt`,
+    targetItemType: "statement"
+  };
+}
+
+function frrControlMappingEntries(rules, mapping) {
   const entries = [];
 
   for (const ruleSet of Object.values(rules.FRR ?? {})) {
     for (const scope of catalogScopes(mapping)) {
       for (const controls of Object.values(dataForScope(ruleSet, scope))) {
-        for (const [sourceId, item] of Object.entries(controls)) {
-          const targetIds = mappingTargets(item);
+        for (const [cr26Id, item] of Object.entries(controls)) {
+          const sourceIds = nistControlIds(item);
 
-          if (targetIds.length > 0) {
-            entries.push({ sourceId, targetIds });
+          if (sourceIds.length > 0) {
+            entries.push({
+              sourceIds,
+              sourceItemType: "control",
+              targetId: cr26Id,
+              targetItemType: "control"
+            });
           }
         }
       }
@@ -158,15 +243,20 @@ function frrMappingEntries(rules, mapping) {
   return entries;
 }
 
-function ksiMappingEntries(rules) {
+function ksiControlMappingEntries(rules) {
   const entries = [];
 
   for (const theme of Object.values(rules.KSI ?? {})) {
-    for (const [sourceId, item] of Object.entries(theme.indicators ?? {})) {
-      const targetIds = mappingTargets(item);
+    for (const [cr26Id, item] of Object.entries(theme.indicators ?? {})) {
+      const sourceIds = nistControlIds(item);
 
-      if (targetIds.length > 0) {
-        entries.push({ sourceId, targetIds });
+      if (sourceIds.length > 0) {
+        entries.push({
+          sourceIds,
+          sourceItemType: "control",
+          targetId: cr26Id,
+          targetItemType: "control"
+        });
       }
     }
   }
@@ -174,11 +264,98 @@ function ksiMappingEntries(rules) {
   return entries;
 }
 
-function mappingEntries(rules, mapping) {
+function frrStatementMappingEntries(rules, mapping, nistStatementIndex) {
+  const entries = [];
+
+  for (const ruleSet of Object.values(rules.FRR ?? {})) {
+    for (const scope of catalogScopes(mapping)) {
+      for (const controls of Object.values(dataForScope(ruleSet, scope))) {
+        for (const [cr26Id, item] of Object.entries(controls)) {
+          const entry = statementMappingEntry(cr26Id, item, nistStatementIndex);
+
+          if (entry) {
+            entries.push(entry);
+          }
+        }
+      }
+    }
+  }
+
+  return entries;
+}
+
+function ksiStatementMappingEntries(rules, nistStatementIndex) {
+  const entries = [];
+
+  for (const theme of Object.values(rules.KSI ?? {})) {
+    for (const [cr26Id, item] of Object.entries(theme.indicators ?? {})) {
+      const entry = statementMappingEntry(cr26Id, item, nistStatementIndex);
+
+      if (entry) {
+        entries.push(entry);
+      }
+    }
+  }
+
+  return entries;
+}
+
+function artifactRequirementPartId(controlId, scope, index, { classKey } = {}) {
+  return [controlId, "artifact", classKey, scope, index + 1].filter(Boolean).join("_");
+}
+
+function artifactRequirementClassName(scope, { classKey } = {}) {
+  return ["artifact", classKey ? `class-${classKey}` : undefined, `scope-${scope}`].filter(Boolean).join("-");
+}
+
+function defaultArtifactRequirementPartId(kind, index) {
+  return `${kind}_default_artifact_${index + 1}`;
+}
+
+function artifactValues(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (Array.isArray(value?.all_classes)) {
+    return value.all_classes;
+  }
+
+  return [];
+}
+
+function statementMappingEntries(rules, mapping, context) {
+  const nistStatementIndex = context?.nistStatementIndex;
+
+  if (!nistStatementIndex) {
+    throw new Error(`Mapping '${mapping.id}' requires a NIST OSCAL catalog JSON input for statement granularity.`);
+  }
+
   return [
-    ...frrMappingEntries(rules, mapping),
-    ...(includesKsi(mapping) ? ksiMappingEntries(rules) : [])
+    ...frrStatementMappingEntries(rules, mapping, nistStatementIndex),
+    ...(includesKsi(mapping) ? ksiStatementMappingEntries(rules, nistStatementIndex) : [])
   ];
+}
+
+function controlMappingEntries(rules, mapping) {
+  return [
+    ...frrControlMappingEntries(rules, mapping),
+    ...(includesKsi(mapping) ? ksiControlMappingEntries(rules) : [])
+  ];
+}
+
+function mappingEntries(rules, mapping, context) {
+  const entries = [];
+
+  if (mapping.granularities.includes("control")) {
+    entries.push(...controlMappingEntries(rules, mapping));
+  }
+
+  if (mapping.granularities.includes("statement")) {
+    entries.push(...statementMappingEntries(rules, mapping, context));
+  }
+
+  return entries;
 }
 
 /**
@@ -621,14 +798,41 @@ function noteParts(controlId, item) {
   }));
 }
 
+function artifactScopeParts(controlId, artifacts, { classKey } = {}) {
+  const parts = [];
+
+  for (const [scope, values] of Object.entries(artifacts ?? {})) {
+    for (const [index, artifact] of artifactValues(values).entries()) {
+      parts.push({
+        id: artifactRequirementPartId(controlId, scope, index, { classKey }),
+        name: "guidance",
+        className: artifactRequirementClassName(scope, { classKey }),
+        paragraphs: [artifact]
+      });
+    }
+  }
+
+  return parts;
+}
+
+function artifactParts(controlId, item) {
+  const parts = [...artifactScopeParts(controlId, item.artifacts)];
+
+  for (const [classKey, variant] of Object.entries(item.varies_by_class ?? {})) {
+    parts.push(...artifactScopeParts(controlId, variant.artifacts, { classKey }));
+  }
+
+  return parts;
+}
+
 function controlPartsXml(controlId, item) {
-  const parts = [...statementParts(controlId, item), ...noteParts(controlId, item)];
+  const parts = [...statementParts(controlId, item), ...noteParts(controlId, item), ...artifactParts(controlId, item)];
 
   if (parts.length === 0) {
     return "";
   }
 
-  return `\n${parts.map(partXml).join("\n")}`;
+  return `\n${parts.map((part) => partXml(part)).join("\n")}`;
 }
 
 function controlXml(id, item, className, context) {
@@ -645,6 +849,28 @@ function groupPartXml(name, value, indent = "    ") {
   return `\n${indent}<part name="${escapeXml(name)}">
 ${indent}  <p>${escapeXml(value)}</p>
 ${indent}</part>`;
+}
+
+function defaultArtifactPartsXml(rules, kind, indent = "  ") {
+  const artifacts = rules.info?.default_artifacts?.[kind] ?? [];
+
+  if (artifacts.length === 0) {
+    return "";
+  }
+
+  return `\n${artifacts
+    .map((artifact, index) =>
+      partXml(
+        {
+          id: defaultArtifactRequirementPartId(kind, index),
+          name: "instruction",
+          className: "default-artifact",
+          paragraphs: [artifact]
+        },
+        indent
+      )
+    )
+    .join("\n")}`;
 }
 
 function frrControlsByLabel(ruleSet, catalog) {
@@ -683,13 +909,14 @@ function frrGroupXml(rules, catalog, context) {
   const ruleSetGroups = Object.entries(rules.FRR ?? {}).map(([key, ruleSet]) =>
     frrRuleSetGroupXml(key, ruleSet, catalog, context)
   );
+  const defaultArtifacts = defaultArtifactPartsXml(rules, "FRR");
 
   if (ruleSetGroups.length === 0) {
     return "";
   }
 
   return `<group class="collection" id="FRR">
-  <title>FedRAMP Requirements and Recommendations</title>
+  <title>FedRAMP Requirements and Recommendations</title>${defaultArtifacts}
 ${ruleSetGroups.join("\n")}
 </group>`;
 }
@@ -705,13 +932,14 @@ ${controls.join("\n")}
 
 function ksiGroupXml(rules, context) {
   const themeGroups = Object.entries(rules.KSI ?? {}).map(([key, theme]) => ksiThemeGroupXml(key, theme, context));
+  const defaultArtifacts = defaultArtifactPartsXml(rules, "KSI");
 
   if (themeGroups.length === 0) {
     return "";
   }
 
   return `<group class="collection" id="KSI">
-  <title>Key Security Indicators</title>
+  <title>Key Security Indicators</title>${defaultArtifacts}
 ${themeGroups.join("\n")}
 </group>`;
 }
@@ -836,23 +1064,26 @@ function mappingResourceReferenceXml(name, resource) {
 }
 
 function mapXml(mapping, entry) {
+  const sourceItemType = entry.sourceItemType ?? "control";
+  const targetItemType = entry.targetItemType ?? "control";
+
   return `    <map uuid="${escapeXml(mapUuid(mapping, entry))}">
       <relationship>${escapeXml(mapping.relationship)}</relationship>
-      <source type="control" id-ref="${escapeXml(entry.sourceId)}"/>
-${entry.targetIds.map((targetId) => `      <target type="control" id-ref="${escapeXml(targetId)}"/>`).join("\n")}
+${entry.sourceIds.map((sourceId) => `      <source type="${escapeXml(sourceItemType)}" id-ref="${escapeXml(sourceId)}"/>`).join("\n")}
+      <target type="${escapeXml(targetItemType)}" id-ref="${escapeXml(entry.targetId)}"/>
     </map>`;
 }
 
-function mappingXml(rules, config, mapping) {
+function mappingXml(rules, config, mapping, context) {
   const metadata = mappingMetadata(config, mapping);
   const versionedMapping = {
     ...mapping,
     version: metadata.version
   };
-  const entries = mappingEntries(rules, mapping);
+  const entries = mappingEntries(rules, mapping, context);
 
   if (entries.length === 0) {
-    throw new Error(`Mapping collection '${mapping.id}' has no CR26 controls with target control references.`);
+    throw new Error(`Mapping collection '${mapping.id}' has no mapped entries.`);
   }
 
   return `  <mapping uuid="${escapeXml(mappingUuid(versionedMapping))}" method="${escapeXml(mapping.method)}" matching-rationale="${escapeXml(mapping.matchingRationale)}" status="${escapeXml(mapping.status)}">
@@ -863,14 +1094,15 @@ ${entries.map((entry) => mapXml(versionedMapping, entry)).join("\n")}
 }
 
 /**
- * Create an OSCAL mapping collection XML document from CR26 control hints.
+ * Create an OSCAL mapping collection XML document from NIST references in CR26 source hints.
  *
  * @param {object} rules FedRAMP CR26 source rules.
  * @param {object} config Project configuration.
  * @param {object} mapping Mapping output configuration.
+ * @param {object} context Additional source context used by mapping generation.
  * @returns {string} OSCAL mapping collection XML.
  */
-export function createMappingCollectionXml(rules, config, mapping) {
+export function createMappingCollectionXml(rules, config, mapping, context = {}) {
   const metadata = mappingMetadata(config, mapping);
 
   return `<?xml version="1.0" encoding="UTF-8"?>${xmlModel(config)}<mapping-collection xmlns="${escapeXml(config.oscal.namespace)}" uuid="${escapeXml(metadata.uuid)}">
@@ -885,7 +1117,7 @@ export function createMappingCollectionXml(rules, config, mapping) {
       <p>${escapeXml(mapping.description)}</p>
     </mapping-description>
   </provenance>
-${mappingXml(rules, config, mapping)}
+${mappingXml(rules, config, mapping, context)}
 </mapping-collection>
 `;
 }
@@ -1097,11 +1329,16 @@ export function createProfileOutputs(rules, config) {
  *
  * @param {object} rules FedRAMP CR26 source rules.
  * @param {object} config Project configuration.
+ * @param {object} options Additional source inputs used by mapping generation.
  * @returns {Array<object>} Mapping output records.
  */
-export function createMappingOutputs(rules, config) {
+export function createMappingOutputs(rules, config, options = {}) {
   const mappingConfig = config.output.mapping;
   const xmlFormat = mappingOutputFormats(config).find((format) => format.id === "xml");
+  const context = {
+    ...options,
+    nistStatementIndex: options.nistStatementIndex ?? (options.nistCatalog ? createNistStatementIndex(options.nistCatalog) : undefined)
+  };
 
   if (!mappingConfig || !xmlFormat) {
     return [];
@@ -1111,7 +1348,7 @@ export function createMappingOutputs(rules, config) {
     mapping,
     format: xmlFormat,
     path: mappingOutputPath(config, mapping, xmlFormat),
-    xml: createMappingCollectionXml(rules, config, mapping)
+    xml: createMappingCollectionXml(rules, config, mapping, context)
   }));
 }
 

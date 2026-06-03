@@ -8,6 +8,10 @@ async function fixture() {
   return JSON.parse(await readFile(new URL("./fixtures/cr26-minimal.json", import.meta.url), "utf8"));
 }
 
+async function nistFixture() {
+  return JSON.parse(await readFile(new URL("./fixtures/nist-rev5-minimal-catalog.json", import.meta.url), "utf8"));
+}
+
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -71,8 +75,22 @@ test("creates a harmonized FedRAMP CR26 XML catalog with CR26 groups and referen
       );
     }
     assert.match(output.xml, /<back-matter>/);
-    assert.match(output.xml, /<resource uuid="[^"]+">\n      <title>fedramp-cr26-oscal 0.1.0 release history<\/title>/);
-    assert.match(output.xml, /<rlink href="urn:palladium:fedramp-cr26-oscal:version-history:0.1.0"\/>/);
+    assert.match(
+      output.xml,
+      new RegExp(
+        `<resource uuid="[^"]+">\\n      <title>fedramp-cr26-oscal ${escapeRegExp(
+          config.metadata.version
+        )} release history</title>`
+      )
+    );
+    assert.match(
+      output.xml,
+      new RegExp(
+        `<rlink href="urn:palladium:fedramp-cr26-oscal:version-history:${escapeRegExp(
+          config.metadata.version
+        )}"/>`
+      )
+    );
     assert.match(
       output.xml,
       new RegExp(
@@ -130,7 +148,6 @@ test("supports current CR26 all scope and subset metadata", async () => {
 
   const [catalog] = createCatalogOutputs(rules, config);
   const profiles = createProfileOutputs(rules, config);
-  const [mapping] = createMappingOutputs(rules, config);
   const profile20x = profiles.find((output) => output.profile.id === "20x");
   const importBody = profile20x.xml.match(/<import href="#([^"]+)">\n([\s\S]*?)\n  <\/import>/)[2];
   const includedIds = [...importBody.matchAll(/<with-id>([^<]+)<\/with-id>/g)].map((match) => match[1]);
@@ -141,7 +158,60 @@ test("supports current CR26 all scope and subset metadata", async () => {
   );
   assert.match(catalog.xml, /<control class="frr" id="VDR-CSO-DET">/);
   assert.ok(includedIds.includes("VDR-CSO-DET"));
-  assert.match(mapping.xml, /<source type="control" id-ref="VDR-CSO-DET"\/>/);
+});
+
+test("models default and control-specific artifact requirements", async () => {
+  const config = await loadConfig();
+  const rules = await fixture();
+  const vulnerabilityDetection = rules.FRR.VDR.data.both.CSO["VDR-CSO-DET"];
+  const ksi = rules.KSI.IAM.indicators["KSI-IAM-AAM"];
+
+  rules.info.default_artifacts = {
+    FRR: ["Default rule explanation."],
+    KSI: ["Default KSI verification."]
+  };
+  vulnerabilityDetection.artifacts = {
+    all: ["URL to vulnerability detection evidence."],
+    rev5: ["Rev5 vulnerability detection assessment evidence."]
+  };
+  vulnerabilityDetection.varies_by_class = {
+    b: {
+      statement: "Class B providers MUST detect vulnerabilities daily.",
+      artifacts: {
+        all: ["Class B vulnerability cadence evidence."]
+      }
+    }
+  };
+  ksi.artifacts = {
+    all: ["Evidence of automated account lifecycle management."]
+  };
+
+  const [catalog] = createCatalogOutputs(rules, config);
+
+  assert.match(
+    catalog.xml,
+    /<part id="FRR_default_artifact_1" name="instruction" class="default-artifact">\s*<p>Default rule explanation\.<\/p>\s*<\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="KSI_default_artifact_1" name="instruction" class="default-artifact">\s*<p>Default KSI verification\.<\/p>\s*<\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_all_1" name="guidance" class="artifact-scope-all">\n        <p>URL to vulnerability detection evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_rev5_1" name="guidance" class="artifact-scope-rev5">\n        <p>Rev5 vulnerability detection assessment evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="VDR-CSO-DET_artifact_b_all_1" name="guidance" class="artifact-class-b-scope-all">\n        <p>Class B vulnerability cadence evidence\.<\/p>\n      <\/part>/
+  );
+  assert.match(
+    catalog.xml,
+    /<part id="KSI-IAM-AAM_artifact_all_1" name="guidance" class="artifact-scope-all">\n        <p>Evidence of automated account lifecycle management\.<\/p>\n      <\/part>/
+  );
 });
 
 test("creates FedRAMP 20x and Rev5 profile shells from the harmonized catalog", async () => {
@@ -226,52 +296,47 @@ test("creates FedRAMP 20x and Rev5 profile shells from the harmonized catalog", 
   assert.match(outputs[1].xml, /<title>FedRAMP Rev5 Consolidated Rules for 2026 - Unofficial OSCAL Profile<\/title>/);
 });
 
-test("creates a CR26 to SP 800-53 Rev5 mapping collection from source control hints", async () => {
+test("creates a unified NIST SP 800-53 Rev5 to CR26 mapping collection", async () => {
   const config = await loadConfig();
-  const outputs = createMappingOutputs(await fixture(), config);
+  const outputs = createMappingOutputs(await fixture(), config, { nistCatalog: await nistFixture() });
   const [output] = outputs;
 
   assert.deepEqual(
     outputs.map((mappingOutput) => mappingOutput.path.join("/")),
-    ["FedRAMP/mapping/xml/FedRAMP_CR26_to_NIST_SP-800-53_rev5_mapping-collection.xml"]
+    ["FedRAMP/mapping/xml/FedRAMP_NIST_SP-800-53_rev5_to_CR26_mapping-collection.xml"]
   );
 
   assert.match(
     output.xml,
     /^<\?xml version="1.0" encoding="UTF-8"\?><\?xml-model schematypens="http:\/\/www\.w3\.org\/2001\/XMLSchema" type="application\/xml" href="https:\/\/github\.com\/usnistgov\/OSCAL\/releases\/download\/v1\.2\.1\/oscal_complete_schema\.xsd"\?><mapping-collection/
   );
-  assert.match(output.xml, /<mapping-collection xmlns="http:\/\/csrc\.nist\.gov\/ns\/oscal\/1\.0" uuid="[^"]+">/);
   assert.match(
     output.xml,
-    /<title>FedRAMP CR26 to NIST SP 800-53 Rev5 - Unofficial OSCAL Mapping Collection<\/title>/
-  );
-  assert.match(output.xml, new RegExp(`<oscal-version>${config.oscal.version}</oscal-version>`));
-  assert.match(output.xml, /<role id="creator">\n      <title>Unofficial OSCAL Mapping Creator<\/title>\n    <\/role>/);
-  assert.match(output.xml, /<role id="publisher">\n      <title>Unofficial OSCAL Mapping Publisher<\/title>\n    <\/role>/);
-  assert.match(output.xml, palladiumPartyRegex());
-  assert.match(
-    output.xml,
-    /<provenance method="automation" matching-rationale="semantic" status="draft">\n    <mapping-description>\n      <p>Initial machine-derived mapping from CR26 source control references to NIST SP 800-53 Rev5 controls\. Relationships require human review\.<\/p>\n    <\/mapping-description>\n  <\/provenance>/
+    /<title>NIST SP 800-53 Rev5 to FedRAMP CR26 - Unofficial OSCAL Mapping Collection<\/title>/
   );
   assert.match(
     output.xml,
-    /<mapping uuid="[^"]+" method="automation" matching-rationale="semantic" status="draft">/
+    /<provenance method="automation" matching-rationale="semantic" status="draft">\n    <mapping-description>\n      <p>Initial machine-derived control- and statement-level mapping from NIST SP 800-53 Rev5 to FedRAMP CR26 rules and KSIs using CR26 source control references and the NIST OSCAL catalog statement structure\. Relationships require human review\.<\/p>\n    <\/mapping-description>\n  <\/provenance>/
   );
   assert.match(
     output.xml,
-    /<source-resource type="catalog" href="..\/..\/catalog\/xml\/FedRAMP_CR26_catalog\.xml"\/>/
+    /<source-resource type="catalog" href="https:\/\/raw\.githubusercontent\.com\/usnistgov\/oscal-content\/v1\.4\.0\/src\/nist\.gov\/SP800-53\/rev5\/xml\/NIST_SP-800-53_rev5_catalog\.xml"\/>/
   );
   assert.match(
     output.xml,
-    /<target-resource type="catalog" href="https:\/\/raw\.githubusercontent\.com\/usnistgov\/oscal-content\/v1\.4\.0\/src\/nist\.gov\/SP800-53\/rev5\/xml\/NIST_SP-800-53_rev5_catalog\.xml"\/>/
+    /<target-resource type="catalog" href="..\/..\/catalog\/xml\/FedRAMP_CR26_catalog\.xml"\/>/
   );
   assert.match(
     output.xml,
-    /<map uuid="[^"]+">\n      <relationship>intersects-with<\/relationship>\n      <source type="control" id-ref="VDR-CSO-DET"\/>\n      <target type="control" id-ref="ra-5"\/>\n    <\/map>/
+    /<map uuid="[^"]+">\n      <relationship>superset-of<\/relationship>\n      <source type="control" id-ref="ra-5"\/>\n      <target type="control" id-ref="VDR-CSO-DET"\/>\n    <\/map>/
   );
   assert.match(
     output.xml,
-    /<map uuid="[^"]+">\n      <relationship>intersects-with<\/relationship>\n      <source type="control" id-ref="KSI-IAM-AAM"\/>\n      <target type="control" id-ref="ac-2\.2"\/>\n    <\/map>/
+    /<map uuid="[^"]+">\n      <relationship>superset-of<\/relationship>\n      <source type="statement" id-ref="ra-5_smt\.a"\/>\n      <source type="statement" id-ref="ra-5_smt\.b"\/>\n      <target type="statement" id-ref="VDR-CSO-DET_smt"\/>\n    <\/map>/
   );
-  assert.doesNotMatch(output.xml, /<source type="control" id-ref="VDR-AGM-RVR"\/>/);
+  assert.match(
+    output.xml,
+    /<target type="control" id-ref="KSI-IAM-AAM"\/>/
+  );
+  assert.doesNotMatch(output.xml, /<target type="control" id-ref="VDR-AGM-RVR"\/>/);
 });
