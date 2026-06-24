@@ -7,7 +7,9 @@
     "cr26-oscal": "./src/cli.js"
   },
   "scripts": {
-    "generate": "bun src/cli.js",
+    "generate": "bun scripts/generate.js",
+    "generate:oscal": "bun src/cli.js",
+    "generate:fedramp": "bun scripts/generate-fedramp.js",
     "validate:oscal": "bun src/validate-oscal.js",
     "test": "bun test",
     "check": "bun test"

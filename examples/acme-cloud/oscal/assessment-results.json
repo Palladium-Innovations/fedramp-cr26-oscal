@@ -1,0 +1,148 @@
+{
+  "assessment-results": {
+    "uuid": "09050425-ff1e-5fcd-a067-3d323da06f9c",
+    "metadata": {
+      "roles": [
+        {
+          "id": "assessor",
+          "title": "Lead Assessor"
+        },
+        {
+          "id": "assessment-team",
+          "title": "Assessment Team"
+        }
+      ],
+      "title": "ACME Cloud KSI-IAM-AAM Assessment Results",
+      "parties": [
+        {
+          "name": "Example Independent Assessment Services",
+          "type": "organization",
+          "uuid": "33da91b4-3178-49d6-babb-948c9542fd13",
+          "links": [
+            {
+              "href": "https://example.com/assessment-services"
+            }
+          ]
+        }
+      ],
+      "version": "1.0",
+      "published": "2026-03-05T16:00:00-05:00",
+      "document-ids": [
+        {
+          "scheme": "http://oscal.io/oscal/identifier/content-uuid",
+          "identifier": "e1f36a7e-7f07-4c35-bf16-f72ffa9cc9e5"
+        }
+      ],
+      "last-modified": "2026-03-05T16:00:00-05:00",
+      "oscal-version": "1.2.1",
+      "responsible-parties": [
+        {
+          "role-id": "assessor",
+          "party-uuids": [
+            "33da91b4-3178-49d6-babb-948c9542fd13"
+          ]
+        }
+      ]
+    },
+    "import-ap": {
+      "href": "assessment-plan.json"
+    },
+    "results": [
+      {
+        "end": "2026-03-05T15:30:00-05:00",
+        "uuid": "3ffdaf31-5f43-5df1-a2e2-6f471a28a8db",
+        "start": "2026-03-05T08:00:00-05:00",
+        "title": "ACME Cloud Identity Account Management Assessment",
+        "findings": [
+          {
+            "uuid": "834f1d49-ccff-539c-bb62-a1cd263b71cc",
+            "title": "ACME.IAM.2.1v1: Critical-Risk Accounts Blocked",
+            "target": {
+              "type": "objective-id",
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ACME.IAM.2.1v1"
+            },
+            "description": "An automated account-risk policy blocking critical-risk accounts is present and enabled.",
+            "related-observations": [
+              {
+                "observation-uuid": "d4337622-1625-5388-9149-e570a170fc86"
+              }
+            ]
+          },
+          {
+            "uuid": "740278d0-34c9-57c5-9dbe-96522c241be1",
+            "title": "ACME.IAM.2.3v1: Critical-Risk Sign-ins Blocked",
+            "target": {
+              "type": "objective-id",
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ACME.IAM.2.3v1"
+            },
+            "remarks": "Tenant configuration meets the requirement for ACME.IAM.2.3v1. Controls: AC-2.12, AC-2.13.",
+            "description": "Assessment of ACME.IAM.2.3v1: sign-ins with critical risk signals are blocked.",
+            "related-observations": [
+              {
+                "observation-uuid": "ab461bc6-bfce-5f40-bc54-8a1b9692d957"
+              }
+            ]
+          }
+        ],
+        "description": "Trimmed assessment result containing the ACME identity account-management findings used for the KSI-IAM-AAM proof of concept.",
+        "observations": [
+          {
+            "uuid": "d4337622-1625-5388-9149-e570a170fc86",
+            "title": "Observation: ACME.IAM.2.1v1 - Critical-Risk Accounts Blocked",
+            "types": [
+              "finding"
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "remarks": "Critical-risk accounts are blocked by the ACME Identity Service account-risk policy. Controls AC-2(12) and AC-2(13) are satisfied.",
+            "subjects": [
+              {
+                "type": "assessment-activity",
+                "subject-uuid": "f8778b31-80d0-4ce7-8089-eaef63db47aa"
+              }
+            ],
+            "collected": "2026-03-05T15:30:00-05:00",
+            "description": "Examiner confirmed through a read-only ACME Identity Service configuration query that an account-risk policy with critical-risk matching and a block action is present and enabled."
+          },
+          {
+            "uuid": "ab461bc6-bfce-5f40-bc54-8a1b9692d957",
+            "title": "Observation: ACME.IAM.2.3v1 - Critical-Risk Sign-ins Blocked",
+            "types": [
+              "finding"
+            ],
+            "methods": [
+              "TEST"
+            ],
+            "remarks": "Critical-risk sign-ins are blocked by ACME Identity Service session policy. Controls AC-2(12) and AC-2(13) are satisfied.",
+            "subjects": [
+              {
+                "type": "assessment-activity",
+                "subject-uuid": "e7273bf6-6251-41f1-919e-d7d45f8f8c69"
+              }
+            ],
+            "collected": "2026-03-05T15:30:00-05:00",
+            "description": "Examiner confirmed through a read-only ACME Identity Service configuration query that sign-ins with critical risk signals are blocked before session establishment."
+          }
+        ],
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "ac-2.13"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

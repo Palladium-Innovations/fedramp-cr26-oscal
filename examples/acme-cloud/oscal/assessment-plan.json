@@ -1,0 +1,337 @@
+{
+  "assessment-plan": {
+    "uuid": "d4f5c3e2-5b6a-4c3e-9f7a-123456789abc",
+    "metadata": {
+      "title": "ACME Cloud KSI-IAM-AAM Assessment Plan",
+      "version": "DRAFT-01",
+      "published": "2026-03-13T12:00:00-04:00",
+      "document-ids": [
+        {
+          "scheme": "http://oscal.io/oscal/identifier/content-uuid",
+          "identifier": "335b0790-ac19-45b8-ae43-f21df818edfe"
+        }
+      ],
+      "last-modified": "2026-03-13T12:00:00-04:00",
+      "oscal-version": "1.2.1"
+    },
+    "import-ssp": {
+      "href": "system-security-plan.json"
+    },
+    "local-definitions": {
+      "activities": [
+        {
+          "uuid": "760fe3fc-45af-4c62-b095-265a56a1dedf",
+          "props": [
+            {
+              "ns": "http://comply0.com/ns/oscal",
+              "name": "machine-context",
+              "value": "{\"ProductNames\":\"aad\",\"component-uuid\":\"abe8d6c2-8508-4d22-aa2b-5e001ff3c6f7\"}"
+            },
+            {
+              "name": "method",
+              "value": "EXAMINE"
+            }
+          ],
+          "steps": [
+            {
+              "uuid": "f8778b31-80d0-4ce7-8089-eaef63db47aa",
+              "links": [
+                {
+                  "rel": "canonical",
+                  "href": "https://example.com/acme-cloud/checks/iam-risk-account-lockout#acmeiam21v1"
+                },
+                {
+                  "rel": "mitre",
+                  "href": "https://attack.mitre.org/techniques/T1078/",
+                  "text": "T1078: Valid Accounts"
+                },
+                {
+                  "rel": "mitre",
+                  "href": "https://attack.mitre.org/techniques/T1078/004/",
+                  "text": "T1078.004: Cloud Accounts"
+                }
+              ],
+              "props": [
+                {
+                  "name": "marking",
+                  "value": "NOCLASS"
+                },
+                {
+                  "ns": "http://cisa.gov/ns/oscal",
+                  "name": "criticality",
+                  "value": "SHALL"
+                }
+              ],
+              "title": "ACME.IAM.2.1v1",
+              "remarks": "Blocking high-risk account sessions reduces the chance that compromised credentials can access the service.",
+              "description": "Accounts with critical user-risk signals SHALL be blocked from interactive access.",
+              "reviewed-controls": {
+                "control-selections": [
+                  {
+                    "include-controls": [
+                      {
+                        "control-id": "ac-2.13",
+                        "statement-ids": [
+                          "ac-2.13_smt"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "uuid": "e7273bf6-6251-41f1-919e-d7d45f8f8c69",
+              "links": [
+                {
+                  "rel": "canonical",
+                  "href": "https://example.com/acme-cloud/checks/iam-risk-signin-block#acmeiam23v1"
+                },
+                {
+                  "rel": "reference",
+                  "href": "https://example.com/acme-cloud/docs/risk-signals",
+                  "text": "ACME identity risk signals"
+                },
+                {
+                  "rel": "reference",
+                  "href": "https://example.com/acme-cloud/docs/risk-signal-simulation",
+                  "text": "Simulating ACME identity risk signals"
+                },
+                {
+                  "rel": "reference",
+                  "href": "https://example.com/acme-cloud/docs/self-service-account-recovery",
+                  "text": "ACME self-service account recovery"
+                },
+                {
+                  "rel": "mitre",
+                  "href": "https://attack.mitre.org/techniques/T1078/",
+                  "text": "T1078: Valid Accounts"
+                },
+                {
+                  "rel": "mitre",
+                  "href": "https://attack.mitre.org/techniques/T1078/004/",
+                  "text": "T1078.004: Cloud Accounts"
+                }
+              ],
+              "props": [
+                {
+                  "name": "marking",
+                  "value": "NOCLASS"
+                },
+                {
+                  "ns": "http://cisa.gov/ns/oscal",
+                  "name": "criticality",
+                  "value": "SHALL"
+                }
+              ],
+              "title": "ACME.IAM.2.3v1",
+              "remarks": "This prevents high-risk authentication events from establishing a service session.",
+              "description": "Sign-ins with critical risk signals SHALL be blocked before session establishment.",
+              "reviewed-controls": {
+                "control-selections": [
+                  {
+                    "include-controls": [
+                      {
+                        "control-id": "ac-2.13",
+                        "statement-ids": [
+                          "ac-2.13_smt"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "title": "Assess ACME Identity Service Automated Account Management",
+          "description": "This activity examines the ACME Identity Service configuration for the account-management controls used in the KSI-IAM-AAM demonstration. The assessment evaluates whether automated identity risk signals cause account or sign-in blocking actions before a high-risk session is established. The assessment method is EXAMINE, using read-only configuration and telemetry queries against the ACME Cloud identity tenant."
+        }
+      ]
+    },
+    "reviewed-controls": {
+      "control-selections": [
+        {
+          "include-controls": [
+            {
+              "control-id": "ac-2.13"
+            }
+          ]
+        }
+      ]
+    },
+    "assessment-subjects": [
+      {
+        "type": "inventory-item",
+        "description": "The ACME Cloud identity tenant instance being assessed. Assume it is defined in the SSP.",
+        "include-subjects": [
+          {
+            "type": "inventory-item",
+            "subject-uuid": "791778c1-234b-4e30-8490-07ad2e6fec92"
+          }
+        ]
+      }
+    ],
+    "assessment-assets": {
+      "components": [
+        {
+          "type": "software",
+          "uuid": "abe8d6c2-8508-4d22-aa2b-5e001ff3c6f7",
+          "props": [
+            {
+              "ns": "http://comply0.com/ns/oscal",
+              "name": "machine-context",
+              "value": "{\"plugin-path\":\"Acme.ControlProbe.Identity.dll\",\"script-path\":\"Resources\\\\Invoke-AcmeIdentityProbe.ps1\",\"app-id\":\"c4d39d69-aea7-4acc-af2c-45c502d3a308\",\"opa-path\":\"/usr/local/bin\"}"
+            }
+          ],
+          "title": "ACME Identity Control Probe",
+          "status": {
+            "state": "operational"
+          },
+          "description": "CLI plugin for verifying ACME Cloud identity configuration settings used by this demonstration."
+        }
+      ],
+      "assessment-platforms": [
+        {
+          "uuid": "15000cf8-2f2a-4417-8b93-60a1f209ee95",
+          "title": "ACME Assessment Runner",
+          "uses-components": [
+            {
+              "component-uuid": "abe8d6c2-8508-4d22-aa2b-5e001ff3c6f7"
+            }
+          ]
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "type": "action",
+        "uuid": "c2f71c67-3d4c-43ba-ad9d-949d0396413f",
+        "props": [
+          {
+            "ns": "http://comply0.com/ns/oscal",
+            "name": "assessment-platform",
+            "value": "15000cf8-2f2a-4417-8b93-60a1f209ee95"
+          }
+        ],
+        "title": "Assess ACME Cloud automated account management signals",
+        "timing": {
+          "at-frequency": {
+            "unit": "hours",
+            "period": 24
+          }
+        },
+        "description": "Execute the ACME Identity Service account-management assessment slice for the KSI-IAM-AAM proof of concept.",
+        "associated-activities": [
+          {
+            "subjects": [
+              {
+                "type": "component",
+                "include-subjects": [
+                  {
+                    "type": "component",
+                    "subject-uuid": "c1111111-1111-4aaa-8888-111111111111"
+                  }
+                ]
+              }
+            ],
+            "activity-uuid": "760fe3fc-45af-4c62-b095-265a56a1dedf"
+          }
+        ]
+      }
+    ],
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "080172e1-3306-4f73-99b6-c1facbc21077",
+          "title": "ACME Identity Assessment Profile",
+          "rlinks": [
+            {
+              "href": "https://registry.oscal.io/api/v1/ezdpkothare/system-security-plans/573153c6-065b-436c-80c2-4d906eaf3d2e",
+              "media-type": "application/xml"
+            }
+          ]
+        },
+        {
+          "uuid": "124f8b2b-eb3d-41ae-a51e-91bc63343ad2",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/privileged-access"
+            }
+          ]
+        },
+        {
+          "uuid": "5ee11180-c408-4ca2-b8a3-3662994f16af",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/message-protection"
+            }
+          ]
+        },
+        {
+          "uuid": "cbf9ed4f-f5e4-4680-b685-c5350bf6fb95",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/mfa-context"
+            }
+          ]
+        },
+        {
+          "uuid": "7d48dde9-5cc4-46a9-84db-3e11c80fc470",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/device-code-flow"
+            }
+          ]
+        },
+        {
+          "uuid": "92bba98c-2aaa-4ab6-81d4-0963e1909c6f",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/admin-role-limits"
+            }
+          ]
+        },
+        {
+          "uuid": "18f3c619-5467-4bc6-a051-3ead543014e6",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/password-policy"
+            }
+          ]
+        },
+        {
+          "uuid": "fc35ac2e-123b-449f-9b99-9c74741f6f41",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/impersonation-protection"
+            }
+          ]
+        },
+        {
+          "uuid": "00bf0489-2b44-424b-b615-34e7d570f20e",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/security-policy-baselines"
+            }
+          ]
+        },
+        {
+          "uuid": "9fa55cc3-a706-47e1-9d0b-041bbed02e2a",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/collaboration-policy"
+            }
+          ]
+        },
+        {
+          "uuid": "33de5e76-02a8-42a3-93bb-0230e1901fa7",
+          "rlinks": [
+            {
+              "href": "https://example.com/acme-cloud/docs/audit-log-retention"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

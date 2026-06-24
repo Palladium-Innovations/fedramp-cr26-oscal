@@ -1,0 +1,60 @@
+{
+  "serviceIdentification": {
+    "providerName": {
+      "transform": "partyNameForRole",
+      "roleId": "cloud-service-provider"
+    },
+    "serviceName": {
+      "source": "system-characteristics.system-name"
+    },
+    "serviceAcronym": {
+      "source": "system-characteristics.props.service-acronym"
+    },
+    "serviceDescription": {
+      "source": "system-characteristics.description"
+    },
+    "certificationType": {
+      "source": "system-characteristics.props.certification-type"
+    },
+    "fedRampPackageId": {
+      "source": "system-characteristics.system-ids[0].id"
+    },
+    "website": {
+      "transform": "metadataLink",
+      "rel": "homepage"
+    },
+    "logo": {
+      "source": "system-characteristics.props.logo"
+    }
+  },
+  "serviceProperties": {
+    "serviceType": {
+      "source": "system-characteristics.props.cloud-service-model",
+      "transform": "cloudServiceModel"
+    },
+    "deploymentModel": {
+      "source": "system-characteristics.props.cloud-deployment-model",
+      "transform": "cloudDeploymentModel"
+    },
+    "digitalIdentityLevel": {
+      "transform": "digitalIdentityLevel"
+    }
+  },
+  "contactInformation": {
+    "transform": "contactsForRoles",
+    "roles": [
+      {
+        "roleId": "security-contact",
+        "contactType": "Security"
+      },
+      {
+        "roleId": "sales-contact",
+        "contactType": "Sales"
+      }
+    ]
+  },
+  "assessor": {
+    "transform": "assessorForRole",
+    "roleId": "independent-assessor"
+  }
+}
