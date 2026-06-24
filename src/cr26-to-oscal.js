@@ -1,4 +1,5 @@
 import { deterministicUuid } from "./ids.js";
+import { mapEntryXml } from "./mapping/collection.js";
 
 const MEDIA_TYPE_TEXT_PLAIN = "text/plain";
 const MEDIA_TYPE_TEXT_HTML = "text/html";
@@ -1064,14 +1065,14 @@ function mappingResourceReferenceXml(name, resource) {
 }
 
 function mapXml(mapping, entry) {
-  const sourceItemType = entry.sourceItemType ?? "control";
-  const targetItemType = entry.targetItemType ?? "control";
-
-  return `    <map uuid="${escapeXml(mapUuid(mapping, entry))}">
-      <relationship>${escapeXml(mapping.relationship)}</relationship>
-${entry.sourceIds.map((sourceId) => `      <source type="${escapeXml(sourceItemType)}" id-ref="${escapeXml(sourceId)}"/>`).join("\n")}
-      <target type="${escapeXml(targetItemType)}" id-ref="${escapeXml(entry.targetId)}"/>
-    </map>`;
+  return mapEntryXml({
+    uuid: mapUuid(mapping, entry),
+    relationship: mapping.relationship,
+    sourceItemType: entry.sourceItemType ?? "control",
+    targetItemType: entry.targetItemType ?? "control",
+    sourceIds: entry.sourceIds,
+    targetId: entry.targetId
+  });
 }
 
 function mappingXml(rules, config, mapping, context) {

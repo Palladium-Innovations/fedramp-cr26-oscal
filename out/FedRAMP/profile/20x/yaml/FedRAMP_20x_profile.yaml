@@ -39,11 +39,28 @@ profile:
   - href: '#4a33d17e-6237-5b30-8852-e8ef2834965d'
     include-controls:
     - with-ids:
+      - AFC-FRP-VRE
+      - AFC-FRP-CDS
+      - AFC-FRP-UFS
+      - AFC-FRP-PNT
+      - AFC-FRP-RQA
+      - AFC-FRP-ERT
+      - AFC-FRP-COR
+      - AFC-FRP-RPM
+      - AFC-CSO-INB
+      - AFC-CSO-NOC
+      - AFC-CSO-TFG
+      - AFC-CSO-RCV
+      - AFC-CSO-CRA
+      - AFC-CSO-EMR
+      - AFC-CSO-IMA
+      - AFC-CSO-ACK
       - AGU-AGC-AIP
-      - AGU-AGC-NAL
+      - AGU-AGC-NAA
       - AGU-AGC-GRC
       - AGU-AGC-NAI
       - AGU-AGC-NAR
+      - AGU-AGC-TPP
       - AGU-AGC-WKG
       - AGU-AGC-LIA
       - AGU-AGC-SIN
@@ -56,6 +73,7 @@ profile:
       - AGU-USE-DSO
       - AGU-USE-NPC
       - AGU-USE-RIR
+      - AGU-USE-CLA
       - AGU-SPN-MRC
       - CCM-AGM-ROR
       - CCM-AGM-NFA
@@ -80,10 +98,13 @@ profile:
       - CCM-QTR-SCR
       - CDS-CSO-PUB
       - CDS-CSO-SVC
-      - CDS-CSO-PAR
+      - CDS-CSO-FID
+      - CDS-CSO-FRC
+      - CDS-CSO-AVR
       - CDS-CSO-UTC
       - CDS-CSO-CBF
       - CDS-CSO-RIS
+      - CDS-CSO-IRP
       - CDS-CSO-HAD
       - CDS-CSO-PSM
       - CDS-CSO-RPS
@@ -93,89 +114,80 @@ profile:
       - CDS-TRC-ACL
       - CDS-TRC-HMR
       - CDS-TRC-SSM
-      - CDS-UTC-PGD
       - CDS-UTC-AAD
       - CDS-UTC-AGA
-      - FRC-FRP-MCM
-      - FRC-FRP-ECR
-      - FRC-CSO-CDS
-      - FRC-CSO-CCM
-      - FRC-CSO-FSI
-      - FRC-CSO-ICP
-      - FRC-CSO-MAS
-      - FRC-CSO-SCG
-      - FRC-CSO-SCN
-      - FRC-CSO-UCM
-      - FRC-CSO-VDR
-      - FRC-CSO-IVV
+      - CMU-CSO-CMD
+      - CMU-CSO-UVM
+      - CMU-CSO-CAT
+      - CPO-CSO-OVR
+      - CPO-CSO-MTD
+      - CPO-CSX-CPM
+      - FRC-CSO-FCP
+      - FRC-CSO-PKG
+      - FRC-CSO-JSN
+      - FRC-CSO-MRA
       - FRC-CSO-POP
-      - FRC-CSO-STE
-      - FRC-CSO-RAA
-      - FRC-IAS-VVP
-      - FRC-IAS-OUC
-      - FRC-IAS-PAD
-      - FRC-IAS-MME
-      - FRC-IAS-SUM
-      - FRC-IAS-OSA
-      - FRC-IAS-EPX
-      - FRC-IAS-SHA
       - FRC-CLA-ASF
       - FRC-CLA-EAM
-      - FRC-CLA-AFR
+      - FRC-CLA-MFR
+      - FRC-CLA-RFR
+      - FRC-CLA-OFR
       - FRC-CLA-IVV
       - FRC-APP-MLF
       - FRC-APP-AFC
       - FRC-APP-FCP
       - FRC-APP-FIA
+      - FRC-APP-NTP
+      - FRC-APP-USA
       - FRC-APS-ATO
-      - FRC-CSX-SUM
+      - FRC-CCL-UCC
+      - FRC-CCL-DCC
+      - FRC-CCL-DNP
+      - FRC-CSX-VVK
+      - FRC-CSX-MOT
+      - FRC-CSX-VVR
       - FRC-CSX-MAS
-      - FRC-IAX-UNP
-      - FRC-IAX-STE
-      - FRC-CLA-KSM
-      - FSI-FRP-VRE
-      - FSI-FRP-CDS
-      - FSI-FRP-UFS
-      - FSI-FRP-PNT
-      - FSI-FRP-RQA
-      - FSI-FRP-ERT
-      - FSI-FRP-COR
-      - FSI-FRP-RPM
-      - FSI-CSO-INB
-      - FSI-CSO-NOC
-      - FSI-CSO-TFG
-      - FSI-CSO-RCV
-      - FSI-CSO-CRA
-      - FSI-CSO-EMR
-      - FSI-CSO-IMA
-      - FSI-CSO-ACK
-      - ICP-FRP-ORV
-      - ICP-CSO-EFR
-      - ICP-CSO-DPR
-      - ICP-CSO-IIR
-      - ICP-CSO-OIR
-      - ICP-CSO-FIR
-      - ICP-CSO-EFI
-      - ICP-CSO-AIR
+      - IEC-FRP-ORV
+      - IEC-CSO-EFR
+      - IEC-CSO-DPR
+      - IEC-CSO-IIR
+      - IEC-CSO-OIR
+      - IEC-CSO-FIR
+      - IEC-CSO-EFI
+      - IEC-CSO-AIR
+      - IVV-CSO-FIA
+      - IVV-CSO-SEI
+      - IVV-CSO-SEE
+      - IVV-CSO-ICP
+      - IVV-CSO-DUS
+      - IVV-CSO-STE
+      - IVV-CSO-USR
+      - IVV-CSO-RAA
+      - IVV-IAS-VIM
+      - IVV-IAS-VEF
+      - IVV-IAS-SUM
+      - IVV-IAS-OSA
+      - IVV-IAS-VIP
+      - IVV-IAS-EPX
+      - IVV-IAS-SHA
+      - IVV-CSX-AIA
       - MAS-CSO-IIR
       - MAS-CSO-FLO
       - MAS-CSO-TPR
       - MAS-CSO-MDI
       - MAS-CSO-SUP
-      - MKT-FRP-DSM
-      - MKT-FRP-MJS
       - MKT-FRP-SOF
-      - MKT-CSO-AGU
-      - MKT-CSO-LRQ
+      - MKT-CSO-MLR
+      - MKT-CSO-PML
       - MKT-IAS-OFR
       - MKT-IAS-WEB
       - MKT-IAS-LRQ
       - MKT-CAS-WEB
       - MKT-CAS-LRQ
       - MKT-CAS-RFR
-      - MKT-PRE-REQ
-      - MKT-PRE-DCP
-      - MKT-PRE-DLA
+      - MKT-IIP-AGU
+      - MKT-IIP-DCP
+      - MKT-IIP-DLA
       - REC-FRP-FOC
       - REC-FRP-RAO
       - REC-FRP-DRD
@@ -218,50 +230,52 @@ profile:
       - SCN-TRF-NAV
       - SCN-TRF-UPD
       - SCN-TRF-TPR
-      - UCM-CSO-CMD
-      - UCM-CSO-UVM
-      - UCM-CSO-CAT
-      - VDR-FRP-ARP
-      - VDR-FRP-ADV
+      - SDR-CSO-FRR
+      - SDR-CSO-MTD
+      - SDR-CSX-KSI
+      - SDR-CSX-KMT
       - VDR-CSO-DET
       - VDR-CSO-RES
       - VDR-CSO-FAV
-      - VDR-AGM-NFR
-      - VDR-AGM-RVR
-      - VDR-AGM-MAP
-      - VDR-AGM-DRE
-      - VDR-BST-DFR
-      - VDR-BST-ADT
-      - VDR-BST-DAC
-      - VDR-BST-MSP
-      - VDR-BST-AKE
-      - VDR-BST-SIR
-      - VDR-EVA-ELX
-      - VDR-EVA-EIR
-      - VDR-EVA-EPA
-      - VDR-EVA-GRV
-      - VDR-EVA-EFP
-      - VDR-EVA-EFA
-      - VDR-RPT-PER
-      - VDR-RPT-VDT
-      - VDR-RPT-AVI
-      - VDR-RPT-NID
-      - VDR-RPT-HLO
-      - VDR-RPT-RPD
-      - VDR-TFR-MHR
-      - VDR-TFR-MAV
+      - VDR-CSO-DFR
+      - VDR-CSO-ADT
+      - VDR-CSO-DAC
+      - VDR-CSO-MSP
+      - VDR-CSO-AKE
+      - VDR-CSO-SIR
       - VDR-TFR-NMV
-      - VDR-TFR-KEV
-      - VDR-TFR-MRH
-      - VDR-TFR-PSD
       - VDR-TFR-PDD
       - VDR-TFR-PCD
-      - VDR-TFR-EVU
       - VDR-TFR-PVR
       - VDR-TFR-RMN
-      - VDR-TFR-IRI
-      - VDR-TFR-NRI
+      - VDR-TFR-KEV
+      - VDR-TFR-PSD
       - VDR-TFR-MVX
+      - VER-FRP-ARP
+      - VER-FRP-ADV
+      - VER-AGM-NFR
+      - VER-AGM-RVR
+      - VER-AGM-MAP
+      - VER-AGM-DRE
+      - VER-EVA-ELX
+      - VER-EVA-EIR
+      - VER-EVA-EPA
+      - VER-EVA-AIA
+      - VER-EVA-GRV
+      - VER-EVA-EFP
+      - VER-EVA-EFA
+      - VER-RPT-PER
+      - VER-RPT-VDT
+      - VER-RPT-AVI
+      - VER-RPT-NID
+      - VER-RPT-HLO
+      - VER-RPT-RPD
+      - VER-TFR-MHR
+      - VER-TFR-MAV
+      - VER-TFR-MRH
+      - VER-TFR-EVU
+      - VER-TFR-IRI
+      - VER-TFR-NRI
       - KSI-CED-RAT
       - KSI-CMT-LMC
       - KSI-CMT-RMV
@@ -305,7 +319,7 @@ profile:
       - KSI-SVC-EIS
       - KSI-SVC-PRR
       - KSI-SVC-RUD
-      - KSI-SVC-SNT
+      - KSI-SVC-SIN
       - KSI-SVC-VCM
       - KSI-SVC-VRI
   merge:

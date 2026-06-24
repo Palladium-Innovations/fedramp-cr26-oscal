@@ -1,0 +1,82 @@
+{
+  "certificationPackageOverviewUri": "certification-overview-package.json",
+  "fedRampRequirements": [],
+  "keySecurityIndicators": [
+    {
+      "ksiId": "KSI-IAM-AAM",
+      "ksiImplementation": [
+        "ACME Identity Service disables accounts when automated risk scoring identifies significant account compromise risk."
+      ],
+      "ksiValidation": [
+        "ACME.IAM.2.1v1: Accounts with critical user-risk signals SHALL be blocked from interactive access. Blocking high-risk account sessions reduces the chance that compromised credentials can access the service.",
+        "ACME.IAM.2.3v1: Sign-ins with critical risk signals SHALL be blocked before session establishment. This prevents high-risk authentication events from establishing a service session."
+      ],
+      "ksiAssessment": [
+        "ACME.IAM.2.1v1: Critical-Risk Accounts Blocked: An automated account-risk policy blocking critical-risk accounts is present and enabled. Status: satisfied.",
+        "ACME.IAM.2.3v1: Critical-Risk Sign-ins Blocked: Assessment of ACME.IAM.2.3v1: sign-ins with critical risk signals are blocked. Status: satisfied.",
+        "Observation: ACME.IAM.2.1v1 - Critical-Risk Accounts Blocked: Examiner confirmed through a read-only ACME Identity Service configuration query that an account-risk policy with critical-risk matching and a block action is present and enabled.",
+        "Observation: ACME.IAM.2.3v1 - Critical-Risk Sign-ins Blocked: Examiner confirmed through a read-only ACME Identity Service configuration query that sign-ins with critical risk signals are blocked before session establishment."
+      ],
+      "ksiTests": [
+        "ACME.IAM.2.1v1",
+        "ACME.IAM.2.3v1"
+      ],
+      "ksiEvidence": [
+        {
+          "evidenceType": "Audit Record",
+          "evidenceDescription": "Observation: ACME.IAM.2.1v1 - Critical-Risk Accounts Blocked",
+          "evidenceText": "Examiner confirmed through a read-only ACME Identity Service configuration query that an account-risk policy with critical-risk matching and a block action is present and enabled.",
+          "lastUpdated": "2026-03-05"
+        },
+        {
+          "evidenceType": "Audit Record",
+          "evidenceDescription": "Observation: ACME.IAM.2.3v1 - Critical-Risk Sign-ins Blocked",
+          "evidenceText": "Examiner confirmed through a read-only ACME Identity Service configuration query that sign-ins with critical risk signals are blocked before session establishment.",
+          "lastUpdated": "2026-03-05"
+        }
+      ]
+    },
+    {
+      "ksiId": "KSI-IAM-SUS",
+      "ksiImplementation": [
+        "ACME Identity Service disables accounts when automated risk scoring identifies significant account compromise risk."
+      ],
+      "ksiValidation": [
+        "ACME.IAM.2.1v1: Accounts with critical user-risk signals SHALL be blocked from interactive access. Blocking high-risk account sessions reduces the chance that compromised credentials can access the service.",
+        "ACME.IAM.2.3v1: Sign-ins with critical risk signals SHALL be blocked before session establishment. This prevents high-risk authentication events from establishing a service session."
+      ],
+      "ksiAssessment": [
+        "ACME.IAM.2.1v1: Critical-Risk Accounts Blocked: An automated account-risk policy blocking critical-risk accounts is present and enabled. Status: satisfied.",
+        "ACME.IAM.2.3v1: Critical-Risk Sign-ins Blocked: Assessment of ACME.IAM.2.3v1: sign-ins with critical risk signals are blocked. Status: satisfied.",
+        "Observation: ACME.IAM.2.1v1 - Critical-Risk Accounts Blocked: Examiner confirmed through a read-only ACME Identity Service configuration query that an account-risk policy with critical-risk matching and a block action is present and enabled.",
+        "Observation: ACME.IAM.2.3v1 - Critical-Risk Sign-ins Blocked: Examiner confirmed through a read-only ACME Identity Service configuration query that sign-ins with critical risk signals are blocked before session establishment."
+      ],
+      "ksiTests": [
+        "ACME.IAM.2.1v1",
+        "ACME.IAM.2.3v1"
+      ],
+      "ksiEvidence": [
+        {
+          "evidenceType": "Audit Record",
+          "evidenceDescription": "Observation: ACME.IAM.2.1v1 - Critical-Risk Accounts Blocked",
+          "evidenceText": "Examiner confirmed through a read-only ACME Identity Service configuration query that an account-risk policy with critical-risk matching and a block action is present and enabled.",
+          "lastUpdated": "2026-03-05"
+        },
+        {
+          "evidenceType": "Audit Record",
+          "evidenceDescription": "Observation: ACME.IAM.2.3v1 - Critical-Risk Sign-ins Blocked",
+          "evidenceText": "Examiner confirmed through a read-only ACME Identity Service configuration query that sign-ins with critical risk signals are blocked before session establishment.",
+          "lastUpdated": "2026-03-05"
+        }
+      ]
+    }
+  ],
+  "securityControls": [
+    {
+      "controlId": "ac-2.13",
+      "parameterValues": [],
+      "controlImplementationStatus": "Implemented",
+      "controlImplementationDescription": "ACME Identity Service disables accounts when automated risk scoring identifies significant account compromise risk."
+    }
+  ]
+}

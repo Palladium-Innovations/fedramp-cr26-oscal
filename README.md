@@ -23,8 +23,10 @@ a KSI-oriented FedRAMP 20x or Rev5 viewpoint.
 
 Mappings are oriented from NIST SP 800-53 Rev5 controls or statements to CR26
 rules and KSIs. Under the proof-of-concept assumption, the relevant NIST source
-set may be modeled as a `superset-of` the CR26/KSI target. The inverse claim is
-not made.
+requirements are modeled as a `superset-of` the CR26/KSI target requirement.
+This assumption is used only to demonstrate the OSCAL modeling pattern; applying
+it to a tailored baseline, SSP implementation, or assessment result would
+require additional review and evidence. The inverse claim is not made.
 
 The project emits a single mapping collection containing both control-level and
 statement-level maps. The control-level maps preserve the CR26 source
@@ -48,7 +50,16 @@ official FedRAMP guidance.
 
 ```bash
 bun test
-bun run generate -- --out out
+
+# Generate the OSCAL catalog, profiles, and mapping collection
+bun run generate:oscal -- --out out
+
+# generate the FedRAMP Consolidated Rules 26 (CR26) documents
+bun run generate:fedramp -- \
+  --ssp examples/acme-cloud/oscal/system-security-plan.json \
+  --ap examples/acme-cloud/oscal/assessment-plan.json \
+  --ar examples/acme-cloud/oscal/assessment-results.json \
+  --mapping out/FedRAMP/mapping/xml/FedRAMP_NIST_SP-800-53_rev5_to_CR26_mapping-collection.xml
 ```
 
 Generated files:
@@ -64,12 +75,25 @@ out/FedRAMP/profile/rev5/xml/FedRAMP_rev5_profile.xml
 out/FedRAMP/profile/rev5/json/FedRAMP_rev5_profile.json
 out/FedRAMP/profile/rev5/yaml/FedRAMP_rev5_profile.yaml
 out/FedRAMP/mapping/xml/FedRAMP_NIST_SP-800-53_rev5_to_CR26_mapping-collection.xml
+
+out/acme-cloud/certification-overview-package.json
+out/acme-cloud/security-decision-record.json
 ```
 
-Generated OSCAL artifacts under `out/FedRAMP` are intentionally tracked so the
-assembled catalog, profile shells, and mapping collection can be consumed
-directly from the repository. Regenerate them after converter or configuration
-changes.
+Generated OSCAL artifacts under `out/FedRAMP` and FedRAMP CR26 example outputs
+under `out/acme-cloud` are intentionally tracked so the assembled outputs can be
+consumed directly from the repository. Regenerate them after converter or
+configuration changes.
+
+## FedRAMP-Facing Example
+
+The `examples/acme-cloud` folder contains a narrow end-to-end example that uses
+OSCAL source artifacts to generate draft FedRAMP-facing JSON documents. These
+documents are generated from OSCAL source content and projection rules.
+
+The SDR adapter emits every KSI that has both a CR26 mapping and SSP coverage.
+With the current narrow ACME source set, that includes `KSI-IAM-AAM` and
+`KSI-IAM-SUS` because both are supported by the modeled `ac-2.13` requirement.
 
 ## Configuration and Output Contract
 
@@ -150,15 +174,26 @@ references/
   metadata-keywords.json
   metadata-responsibility.json
 src/
+  adapters/            FedRAMP-facing document adapters.
   cli.js               Command-line entrypoint.
   config.js            Project configuration loader.
   cr26-to-oscal.js     CR26-to-OSCAL catalog logic.
   ids.js               Deterministic UUID helpers.
+  mapping/             Shared mapping collection helpers.
   sources.js           Configured source retrieval.
   validate-oscal.js    oscal-cli validation helper.
+scripts/
+  generate-fedramp.js  Generates FedRAMP-facing example documents.
+mappings/
+  fedramp/             FedRAMP projection mappings.
+examples/
+  acme-cloud/          Narrow SSP/AP/AR to FedRAMP document example.
 test/
   fixtures/            Minimal CR26 fixture for tests.
-out/FedRAMP/           Published generated OSCAL artifacts.
+out/
+  acme-cloud/          Published generated FedRAMP CR26 artifacts.
+  FedRAMP/             Published generated OSCAL artifacts.
+
 ```
 
 The source is dependency-free JavaScript and is also intended to run under a
@@ -176,3 +211,6 @@ node src/cli.js --out out
 - Introduce validation (current iteration assumes everything is well formed)
 - Improve visibility for unmatched terms, duplicated keys (see above), and empty
   values.
+- Resolve how FRRs should be represented in OSCAL before populating SDR
+  `fedRampRequirements[]`.
+- Lightweight trust center for emitting CR26 documents

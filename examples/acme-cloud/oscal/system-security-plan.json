@@ -1,0 +1,319 @@
+{
+  "system-security-plan": {
+    "uuid": "abf7bed4-a773-4120-82d0-d08ec94a9ade",
+    "metadata": {
+      "title": "ACME Cloud System Security Plan",
+      "version": "DRAFT-01",
+      "published": "2026-03-13T12:00:00-04:00",
+      "document-ids": [
+        {
+          "scheme": "http://oscal.io/oscal/identifier/content-uuid",
+          "identifier": "573153c6-065b-436c-80c2-4d906eaf3d2e"
+        }
+      ],
+      "last-modified": "2026-03-13T12:00:00-04:00",
+      "oscal-version": "1.2.1",
+      "links": [
+        {
+          "rel": "homepage",
+          "href": "https://example.com/acme-cloud"
+        }
+      ],
+      "roles": [
+        {
+          "id": "cloud-service-provider",
+          "title": "Cloud Service Provider"
+        },
+        {
+          "id": "security-contact",
+          "title": "Security Contact"
+        },
+        {
+          "id": "sales-contact",
+          "title": "Sales Contact"
+        },
+        {
+          "id": "independent-assessor",
+          "title": "Independent Assessor"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "11111111-1111-4111-8111-111111111111",
+          "type": "organization",
+          "name": "ACME Corporation"
+        },
+        {
+          "uuid": "22222222-2222-4222-8222-222222222222",
+          "type": "person",
+          "name": "ACME Security Team",
+          "email-addresses": [
+            "security@example.com"
+          ]
+        },
+        {
+          "uuid": "33333333-3333-4333-8333-333333333333",
+          "type": "person",
+          "name": "ACME Sales Team",
+          "email-addresses": [
+            "sales@example.com"
+          ]
+        },
+        {
+          "uuid": "44444444-4444-4444-8444-444444444444",
+          "type": "organization",
+          "name": "Example Independent Assessment Services",
+          "props": [
+            {
+              "ns": "https://fedramp.gov/ns/cr26",
+              "name": "assessor-id",
+              "value": "000000"
+            }
+          ]
+        }
+      ],
+      "responsible-parties": [
+        {
+          "role-id": "cloud-service-provider",
+          "party-uuids": [
+            "11111111-1111-4111-8111-111111111111"
+          ]
+        },
+        {
+          "role-id": "security-contact",
+          "party-uuids": [
+            "22222222-2222-4222-8222-222222222222"
+          ]
+        },
+        {
+          "role-id": "sales-contact",
+          "party-uuids": [
+            "33333333-3333-4333-8333-333333333333"
+          ]
+        },
+        {
+          "role-id": "independent-assessor",
+          "party-uuids": [
+            "44444444-4444-4444-8444-444444444444"
+          ]
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "../../../out/FedRAMP/profile/rev5/json/FedRAMP_rev5_profile.json"
+    },
+    "system-characteristics": {
+      "status": {
+        "state": "operational"
+      },
+      "system-ids": [
+        {
+          "id": "fb8c67f9-6479-4d27-9711-b3f2eac8cd75",
+          "identifier-type": "http://ietf.org/rfc/rfc4122"
+        }
+      ],
+      "description": "ACME-managed SaaS environment used to demonstrate CR26-to-OSCAL traceability.",
+      "system-name": "ACME Cloud",
+      "system-information": {
+        "information-types": [
+          {
+            "uuid": "bab1b7f9-9487-45dd-b3e7-f297eb05f186",
+            "title": "Information Type #1",
+            "description": "A description of this information type."
+          }
+        ]
+      },
+      "authorization-boundary": {
+        "description": "The description of the authorization boundary belongs here."
+      },
+      "props": [
+        {
+          "ns": "https://example.com/ns/acme-cloud",
+          "name": "service-acronym",
+          "value": "ACME"
+        },
+        {
+          "ns": "https://fedramp.gov/ns/cr26",
+          "name": "certification-type",
+          "value": "20x"
+        },
+        {
+          "name": "cloud-service-model",
+          "value": "saas"
+        },
+        {
+          "name": "cloud-deployment-model",
+          "value": "public-cloud"
+        },
+        {
+          "name": "identity-assurance-level",
+          "value": "2"
+        },
+        {
+          "name": "authenticator-assurance-level",
+          "value": "2"
+        },
+        {
+          "name": "federation-assurance-level",
+          "value": "2"
+        },
+        {
+          "ns": "https://example.com/ns/acme-cloud",
+          "name": "logo",
+          "value": "https://example.com/acme-cloud/logo.svg"
+        }
+      ]
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "35d3f3f7-197d-431f-b8e8-eab196bacb03"
+        }
+      ],
+      "components": [
+        {
+          "type": "service",
+          "uuid": "c1111111-1111-4aaa-8888-111111111111",
+          "title": "ACME Identity Service",
+          "status": {
+            "state": "operational"
+          },
+          "description": "Identity and access management service for the ACME Cloud demonstration environment."
+        }
+      ],
+      "inventory-items": [
+        {
+          "uuid": "791778c1-234b-4e30-8490-07ad2e6fec92",
+          "props": [
+            {
+              "ns": "http://comply0.com/ns/oscal",
+              "name": "machine-context",
+              "value": "{\"TenantId\":\"d932f00c-7213-49f2-b10d-1d73bf7d4619\"}"
+            },
+            {
+              "ns": "https://fedramp.gov/ns/oscal",
+              "name": "vendor-name",
+              "value": "ACME"
+            },
+            {
+              "ns": "http://csrc.nist.gov/ns/oscal",
+              "name": "asset-type",
+              "value": "appliance"
+            },
+            {
+              "ns": "http://csrc.nist.gov/ns/oscal",
+              "name": "allows-authenticated-scan",
+              "value": "yes"
+            }
+          ],
+          "description": "Configured ACME Cloud identity tenant instance",
+          "implemented-components": [
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-IDENTITY"
+                }
+              ],
+              "component-uuid": "c1111111-1111-4aaa-8888-111111111111"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-MESSAGING"
+                }
+              ],
+              "component-uuid": "c2222222-2222-4bbb-8888-222222222222"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-CONTENT"
+                }
+              ],
+              "component-uuid": "c3333333-3333-4ccc-8888-333333333333"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-WORKFLOW"
+                }
+              ],
+              "component-uuid": "c4444444-4444-4ddd-8888-444444444444"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-REPORTING"
+                }
+              ],
+              "component-uuid": "c5555555-5555-4eee-8888-555555555555"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-MAIL"
+                }
+              ],
+              "component-uuid": "c6666666-6666-4fff-8888-666666666666"
+            },
+            {
+              "props": [
+                {
+                  "ns": "http://csrc.nist.gov/ns/oscal",
+                  "name": "asset-id",
+                  "value": "ASSET-ACME-DEFENSE"
+                }
+              ],
+              "component-uuid": "c7777777-7777-4aaa-8888-777777777777"
+            }
+          ]
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "This is the control implementation for the system.",
+      "implemented-requirements": [
+        {
+          "uuid": "a0040001-0001-4001-8001-000000000001",
+          "control-id": "ac-2.13",
+          "by-components": [
+            {
+              "uuid": "b0040001-1111-4001-8001-000000000001",
+              "description": "ACME Identity Service disables accounts when automated risk scoring identifies significant account compromise risk.",
+              "component-uuid": "c1111111-1111-4aaa-8888-111111111111",
+              "implementation-status": {
+                "state": "implemented"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "9f8a2ce9-0c06-4e01-98d8-fcc1405c7291",
+          "title": "ACME Identity Assessment Profile",
+          "rlinks": [
+            {
+              "href": "https://registry.oscal.io/api/v1/ezdpkothare/profiles/50f38a2a-e7a0-4558-8070-542813a0fc78",
+              "media-type": "application/oscal+json"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

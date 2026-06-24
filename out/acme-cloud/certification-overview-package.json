@@ -1,0 +1,35 @@
+{
+  "serviceIdentification": {
+    "providerName": "ACME Corporation",
+    "serviceName": "ACME Cloud",
+    "serviceAcronym": "ACME",
+    "serviceDescription": "ACME-managed SaaS environment used to demonstrate CR26-to-OSCAL traceability.",
+    "certificationType": "20x",
+    "fedRampPackageId": "fb8c67f9-6479-4d27-9711-b3f2eac8cd75",
+    "website": "https://example.com/acme-cloud",
+    "logo": "https://example.com/acme-cloud/logo.svg"
+  },
+  "serviceProperties": {
+    "serviceType": [
+      "SaaS"
+    ],
+    "deploymentModel": "Public Cloud",
+    "digitalIdentityLevel": "IAL2 / AAL2 / FAL2"
+  },
+  "contactInformation": [
+    {
+      "contactType": "Security",
+      "contactName": "ACME Security Team",
+      "contactEmail": "security@example.com"
+    },
+    {
+      "contactType": "Sales",
+      "contactName": "ACME Sales Team",
+      "contactEmail": "sales@example.com"
+    }
+  ],
+  "assessor": {
+    "name": "Example Independent Assessment Services",
+    "id": "000000"
+  }
+}
